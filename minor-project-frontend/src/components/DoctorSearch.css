@@ -1,0 +1,478 @@
+/* Doctor Search Styles */
+.doctor-search {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 2rem;
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background: #e0e7ff;
+}
+
+.search-header h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.search-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-box svg {
+  color: #9ca3af;
+  margin-right: 0.5rem;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.filter-select {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.doctors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  height: calc(100vh - 200px);
+}
+
+.doctors-list {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.doctor-card:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+}
+
+.doctor-card.selected {
+  border-color: #4f46e5;
+  background: #f0f4ff;
+}
+
+.doctor-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.doctor-avatar.large {
+  width: 80px;
+  height: 80px;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #4f46e5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-info h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.specialization {
+  color: #4f46e5;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.qualification {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.doctor-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location, .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.experience, .fee {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.fee {
+  font-weight: 600;
+  color: #059669;
+}
+
+.no-doctors {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.doctor-details {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.profile-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-info h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.profile-info .specialization {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-info .qualification {
+  margin-bottom: 0.75rem;
+}
+
+.profile-info .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.detail-section p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.available-days {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.day-tag {
+  background: #e0e7ff;
+  color: #4f46e5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: #4338ca;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-outline:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+}
+
+.modal-form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.records-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background 0.2s;
+}
+
+.record-item:hover {
+  background: #f3f4f6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.modal-actions button {
+  padding: 0.75rem 1.5rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .doctors-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .doctor-details {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-search {
+    padding: 1rem;
+  }
+  
+  .search-filters {
+    flex-direction: column;
+  }
+  
+  .search-box {
+    min-width: auto;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .modal {
+    width: 95%;
+  }
+}
