@@ -235,6 +235,46 @@ html {
   align-items: center;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
 [data-theme="dark"] .landing-header {
   background: rgba(31, 41, 55, 0.95);
 }
@@ -379,7 +419,7 @@ html {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: calc(var(--header-height) + 2rem) 0 6rem;
+  padding: calc(var(--header-height) + 8rem) 0 6rem;
   overflow: hidden;
   min-height: 100vh;
   display: flex;

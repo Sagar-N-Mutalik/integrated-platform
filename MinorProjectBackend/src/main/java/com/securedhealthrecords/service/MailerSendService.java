@@ -17,6 +17,7 @@ public class MailerSendService {
     private final WebClient webClient;
     private final String fromEmail;
     private final String fromName;
+    private final boolean enabled;
 
     public MailerSendService(
             @Value("${mailersend.api-key}") String apiKey,
@@ -25,15 +26,27 @@ public class MailerSendService {
         
         this.fromEmail = fromEmail;
         this.fromName = fromName;
+        // Consider service disabled if apiKey or from fields are missing or placeholders
+        this.enabled = apiKey != null && !apiKey.isBlank() && !apiKey.toLowerCase().contains("your-")
+                && fromEmail != null && !fromEmail.isBlank();
         
-        this.webClient = WebClient.builder()
-                .baseUrl("https://api.mailersend.com/v1")
-                .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiKey)
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .build();
+        if (this.enabled) {
+            this.webClient = WebClient.builder()
+                    .baseUrl("https://api.mailersend.com/v1")
+                    .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiKey)
+                    .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                    .build();
+        } else {
+            this.webClient = null;
+            log.warn("MailerSend is disabled: missing or placeholder API key/from-email. Emails will be skipped in development.");
+        }
     }
 
     public void sendOtpEmail(String toEmail, String otp) {
+        if (!enabled) {
+            log.info("[DEV] Skipping OTP email to {} (MailerSend disabled)", toEmail);
+            return;
+        }
         try {
             Map<String, Object> emailData = Map.of(
                 "from", Map.of(
@@ -59,6 +72,10 @@ public class MailerSendService {
     }
 
     public void sendShareNotificationEmail(String toEmail, String shareLink, String sharedBy) {
+        if (!enabled) {
+            log.info("[DEV] Skipping share notification email to {} (MailerSend disabled)", toEmail);
+            return;
+        }
         try {
             Map<String, Object> emailData = Map.of(
                 "from", Map.of(

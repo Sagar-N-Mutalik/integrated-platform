@@ -41,15 +41,14 @@ public class SecurityConfig {
                 // Authorization rules
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/api/v1/auth/**",
-                                "/api/v1/hospitals/**",
-                                "/api/v1/share/view/**",
-                                "/v2/api-docs",
-                                "/configuration/ui",
-                                "/swagger-resources/**",
-                                "/configuration/security",
-                                "/swagger-ui.html",
-                                "/webjars/**"
+                                // Note: matchers are evaluated after servlet context-path (/api/v1)
+                                "/auth/**",
+                                "/hospitals/**",
+                                "/share/view/**",
+                                // Springdoc OpenAPI v3 endpoints
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

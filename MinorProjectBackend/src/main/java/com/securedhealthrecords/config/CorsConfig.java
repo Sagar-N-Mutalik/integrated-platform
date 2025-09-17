@@ -15,7 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(@org.springframework.lang.NonNull CorsRegistry registry) {
                 // Allows all endpoints to be accessed from the specified origin
                 registry.addMapping("/api/v1/**")
-                        .allowedOrigins("http://localhost:3000") // Replace with your frontend URL
+                        .allowedOrigins("http://localhost:3000", "http://localhost:3001") // Development origins
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

@@ -29,8 +29,8 @@ public class AuthController {
     }
     
     @PostMapping("/send-otp")
-    public ResponseEntity<AuthResponseDTO> sendOtp(@RequestParam String email) {
-        AuthResponseDTO response = authService.sendOtp(email);
+    public ResponseEntity<AuthResponseDTO> sendOtp(@Valid @RequestBody AuthRequestDTO request) {
+        AuthResponseDTO response = authService.sendOtp(request.getEmail());
         return ResponseEntity.ok(response);
     }
     
