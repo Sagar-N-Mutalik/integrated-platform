@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Heart, Shield, Users, Calendar, FileText, 
   ArrowRight, Star, MapPin, ChevronRight, Check,
-  Zap, Lock, Share2, Activity, Award, Clock, MessageSquare, Phone, Mail
+  Zap, Lock, Share2, Activity, Award, Clock, MessageSquare, Phone, Mail, Upload
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -92,49 +92,7 @@ const StatItem = ({ value, label, icon: Icon, index }) => {
   );
 };
 
-// Animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const FeatureCard = ({ icon: Icon, title, description, index }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={fadeInUp}
-      transition={{ delay: index * 0.1 }}
-      className="feature-card"
-    >
-      <div className="feature-icon">
-        <Icon size={32} />
-      </div>
-      <h3 className="feature-title">{title}</h3>
-      <p className="feature-description">{description}</p>
-    </motion.div>
-  );
-};
+// Removed duplicate animation variants and FeatureCard definition
 
 const LandingPage = ({ onLogin, onSignup }) => {
   const [healthTips, setHealthTips] = useState([]);
@@ -468,7 +426,6 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
         
         <div className="scroll-indicator">
-          <span>Scroll to explore</span>
           <div className="mouse">
             <div className="wheel"></div>
           </div>
@@ -875,7 +832,6 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
         
         <div className="scroll-indicator">
-          <span>Scroll to explore</span>
           <div className="mouse">
             <div className="wheel"></div>
           </div>
