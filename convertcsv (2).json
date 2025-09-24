@@ -1,0 +1,20 @@
+[
+ {
+   "A": "Doctor Name",
+   "B": "Specialty",
+   "C": "Experience",
+   "D": "Hospital Affiliation"
+ },
+ {
+   "A": "Dr. Ashwal A J",
+   "B": "Interventional Cardiology",
+   "C": "Not specified",
+   "D": "Sahyadri Narayana Multispeciality Hospital"
+ },
+ {
+   "A": "Dr. Balasubramani R",
+   "B": "Cardiothoracic & Vascular Surgery",
+   "C": "Not specified",
+   "D": "Sahyadri Narayana Multispeciality Hospital"
+ }
+]
