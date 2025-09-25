@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
 import DoctorSearch from './components/DoctorSearch';
 import { ThemeProvider } from './components/ThemeContext';
+import { ToastProvider } from './components/ToastContext';
 import ThemeToggle from './components/ThemeToggle';
 import './App.css';
 import './components/ThemeToggle.css';
@@ -22,7 +23,6 @@ const AppContent = () => {
     if (token && userData) {
       try { 
         setUser(JSON.parse(userData)); 
-        setCurrentView('dashboard');
       } catch (_) { 
         localStorage.removeItem('token'); 
         localStorage.removeItem('user'); 
@@ -70,7 +70,7 @@ const AppContent = () => {
     localStorage.removeItem('token'); 
     localStorage.removeItem('user'); 
     setUser(null); 
-    setCurrentView('landing');
+    setCurrentView('login');
   };
   
   const handleFileUpload = () => window.location.reload();
@@ -80,6 +80,11 @@ const AppContent = () => {
 
   const handleNavigation = (view) => {
     setCurrentView(view);
+  };
+
+  const handleAccountDeleted = () => {
+    setUser(null);
+    setCurrentView('landing');
   };
 
   if (loading) {
@@ -128,13 +133,14 @@ const AppContent = () => {
             onSearchDoctors={() => setCurrentView('doctors')}
             onFileUpload={handleFileUpload}
             onFileShare={handleFileShare}
+            onAccountDeleted={handleAccountDeleted}
           />
         )}
         
         {currentView === 'doctors' && (
           <DoctorSearch 
             user={user}
-            onBackToDashboard={() => setCurrentView('dashboard')}
+            onBack={() => setCurrentView('dashboard')}
           />
         )}
       </div>
@@ -142,9 +148,11 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <ThemeProvider>
-    <AppContent />
-  </ThemeProvider>
+  <ToastProvider>
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  </ToastProvider>
 );
 
 export default App;

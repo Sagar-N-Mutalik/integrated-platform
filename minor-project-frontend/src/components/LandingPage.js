@@ -185,7 +185,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
   const features = [
     {
       icon: Shield,
-      title: "Military-Grade Security",
+      title: "End-to-End Encryption",
       description: "Your health data is protected with end-to-end encryption and blockchain technology, ensuring maximum security and privacy."
     },
     {

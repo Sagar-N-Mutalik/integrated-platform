@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Star, Calendar, Send, ArrowLeft } from 'lucide-react';
 import './DoctorSearch.css';
+import { useToast } from './ToastContext';
 
 const DoctorSearch = ({ onBack, user }) => {
   const [doctors, setDoctors] = useState([]);
@@ -12,8 +13,9 @@ const DoctorSearch = ({ onBack, user }) => {
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [showSendRecordsModal, setShowSendRecordsModal] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { showToast } = useToast();
 
-  const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad'];
+  const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad','Karnataka','Kerala'];
   const specializations = ['Cardiologist', 'Neurologist', 'Pediatrician', 'Dermatologist', 'Orthopedic', 'Gynecologist', 'ENT', 'General Medicine'];
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const DoctorSearch = ({ onBack, user }) => {
       }
     } catch (error) {
       console.error('Failed to fetch doctors:', error);
+      showToast('Failed to fetch doctors, loading sample data.', 'warning');
       // Set sample data if API fails
       setSampleDoctors();
     } finally {
@@ -306,6 +309,7 @@ const AppointmentModal = ({ doctor, user, onClose }) => {
     symptoms: '',
     notes: ''
   });
+  const { showToast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -329,13 +333,13 @@ const AppointmentModal = ({ doctor, user, onClose }) => {
       });
 
       if (response.ok) {
-        alert('Appointment booked successfully!');
+        showToast('Appointment booked successfully', 'success');
         onClose();
       } else {
-        alert('Failed to book appointment');
+        showToast('Failed to book appointment', 'error');
       }
     } catch (error) {
-      alert('Error booking appointment');
+      showToast('Error booking appointment', 'error');
     }
   };
 
@@ -399,6 +403,7 @@ const SendRecordsModal = ({ doctor, user, onClose }) => {
   const [selectedRecords, setSelectedRecords] = useState([]);
   const [message, setMessage] = useState('');
   const [userFiles, setUserFiles] = useState([]);
+  const { showToast } = useToast();
 
   useEffect(() => {
     fetchUserFiles();
@@ -438,13 +443,13 @@ const SendRecordsModal = ({ doctor, user, onClose }) => {
       });
 
       if (response.ok) {
-        alert('Records sent successfully!');
+        showToast('Records sent successfully', 'success');
         onClose();
       } else {
-        alert('Failed to send records');
+        showToast('Failed to send records', 'error');
       }
     } catch (error) {
-      alert('Error sending records');
+      showToast('Error sending records', 'error');
     }
   };
 

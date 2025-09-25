@@ -1,21 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import { Upload, Folder, File, Download, Share2, Trash2, Plus, Search, Filter } from 'lucide-react';
+import { 
+  Upload, Folder, File, Download, Share2, Trash2, 
+  Plus, Search, Filter, AlertCircle, CheckCircle 
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useToast } from './ToastContext';
 import './FileManager.css';
+
+// Utility function to format file size
+const formatFileSize = (bytes) => {
+  if (bytes === 0) return '0 Bytes';
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+};
 
 const FileManager = ({ user }) => {
   const [files, setFiles] = useState([]);
-  const [folders, setFolders] = useState([]);
-  const [currentFolder, setCurrentFolder] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState('all');
-  const [showCreateFolder, setShowCreateFolder] = useState(false);
-  const [newFolderName, setNewFolderName] = useState('');
+  const [isDragging, setIsDragging] = useState(false);
+  const { showToast } = useToast();
+
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    
+    const files = e.dataTransfer.files;
+    if (files.length) {
+      handleFileUpload({ target: { files } });
+    }
+  };
 
   useEffect(() => {
     fetchUserFiles();
-    fetchUserFolders();
   }, [user]);
 
   const fetchUserFiles = async () => {
@@ -34,87 +71,62 @@ const FileManager = ({ user }) => {
     }
   };
 
-  const fetchUserFolders = async () => {
-    try {
-      const response = await fetch(`/api/v1/folders/user/${user.id}`, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setFolders(data);
-      }
-    } catch (error) {
-      console.error('Error fetching folders:', error);
-    }
+
+  const validateFile = (file) => {
+    // Allow all file types as per requirement (png, jpg, pdf, doc, docx, etc.)
+    return true;
   };
 
   const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
+    const files = event.target.files;
+    if (!files.length) return;
 
     setIsUploading(true);
     setUploadProgress(0);
 
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('userId', user.id);
-    if (currentFolder) {
-      formData.append('folderId', currentFolder.id);
-    }
-
     try {
-      const response = await fetch('/api/v1/files/upload', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
-        body: formData
-      });
+      const totalFiles = files.length;
+      let uploadedCount = 0;
 
-      if (response.ok) {
-        const uploadedFile = await response.json();
-        setFiles(prev => [...prev, uploadedFile]);
-        setUploadProgress(100);
-        setTimeout(() => {
-          setIsUploading(false);
-          setUploadProgress(0);
-        }, 1000);
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (!validateFile(file)) {
+          throw new Error(`Invalid file type: ${file.name}`);
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('userId', user.id);
+
+        const response = await fetch('/api/v1/files/upload', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          const uploadedFile = await response.json();
+          setFiles(prev => [...prev, uploadedFile]);
+          uploadedCount++;
+          setUploadProgress((uploadedCount / totalFiles) * 100);
+        } else {
+          throw new Error(`Failed to upload ${file.name}`);
+        }
       }
+
+      // Refresh the file list after all uploads are complete
+      fetchUserFiles();
     } catch (error) {
       console.error('Error uploading file:', error);
+      showToast(error.message || 'Error uploading file', 'error');
+    } finally {
       setIsUploading(false);
+      setUploadProgress(0);
     }
   };
 
-  const createFolder = async () => {
-    if (!newFolderName.trim()) return;
-
-    try {
-      const response = await fetch('/api/v1/folders/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify({
-          name: newFolderName,
-          userId: user.id,
-          parentFolderId: currentFolder?.id
-        })
-      });
-
-      if (response.ok) {
-        const newFolder = await response.json();
-        setFolders(prev => [...prev, newFolder]);
-        setNewFolderName('');
-        setShowCreateFolder(false);
-      }
-    } catch (error) {
-      console.error('Error creating folder:', error);
-    }
-  };
 
   const deleteFile = async (fileId) => {
     try {
@@ -127,9 +139,11 @@ const FileManager = ({ user }) => {
 
       if (response.ok) {
         setFiles(prev => prev.filter(file => file.id !== fileId));
+        showToast('File deleted', 'success');
       }
     } catch (error) {
       console.error('Error deleting file:', error);
+      showToast('Error deleting file', 'error');
     }
   };
 
@@ -145,84 +159,63 @@ const FileManager = ({ user }) => {
       if (response.ok) {
         const shareData = await response.json();
         navigator.clipboard.writeText(shareData.shareUrl);
-        alert('Share link copied to clipboard!');
+        showToast('Share link copied to clipboard', 'success');
       }
     } catch (error) {
       console.error('Error sharing file:', error);
+      showToast('Error sharing file', 'error');
     }
   };
 
   const filteredFiles = files.filter(file => {
     const matchesSearch = file.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = filterType === 'all' || file.type.includes(filterType);
-    const matchesFolder = !currentFolder || file.folderId === currentFolder.id;
-    return matchesSearch && matchesFilter && matchesFolder;
+    return matchesSearch;
   });
-
-  const currentFolders = folders.filter(folder => 
-    (!currentFolder && !folder.parentFolderId) || 
-    (currentFolder && folder.parentFolderId === currentFolder.id)
-  );
-
   return (
-    <div className="file-manager">
+    <div className="file-manager"
+      onDragEnter={handleDragEnter}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       <div className="file-manager-header">
-        <div className="breadcrumb">
-          <button 
-            onClick={() => setCurrentFolder(null)}
-            className={!currentFolder ? 'active' : ''}
-          >
-            My Files
-          </button>
-          {currentFolder && (
-            <>
-              <span>/</span>
-              <span className="active">{currentFolder.name}</span>
-            </>
-          )}
-        </div>
-
-        <div className="file-actions">
-          <div className="search-filter">
-            <div className="search-box">
-              <Search size={20} />
-              <input
-                type="text"
-                placeholder="Search files..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <select 
-              value={filterType} 
-              onChange={(e) => setFilterType(e.target.value)}
-              className="filter-select"
-            >
-              <option value="all">All Types</option>
-              <option value="image">Images</option>
-              <option value="pdf">PDF</option>
-              <option value="document">Documents</option>
-            </select>
-          </div>
-
-          <button 
-            onClick={() => setShowCreateFolder(true)}
-            className="btn btn-secondary"
-          >
-            <Plus size={20} /> New Folder
-          </button>
-
-          <label className="btn btn-primary upload-btn">
-            <Upload size={20} /> Upload File
+        <h2>My Files</h2>
+        
+        <div className="header-actions">
+          <div className="search-box">
+            <Search size={20} />
             <input
-              type="file"
-              onChange={handleFileUpload}
-              style={{ display: 'none' }}
-              accept="*/*"
+              type="text"
+              placeholder="Search files..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
-          </label>
+          </div>
+          
+          <button className="upload-btn" onClick={() => document.getElementById('file-upload').click()}>
+            <Upload size={20} />
+            Upload Files
+          </button>
+          <input
+            id="file-upload"
+            type="file"
+            multiple
+            onChange={handleFileUpload}
+            style={{ display: 'none' }}
+            accept="*/*"
+          />
         </div>
       </div>
+
+      {isDragging && (
+        <div className="drag-overlay">
+          <div className="drag-content">
+            <Upload size={48} />
+            <h3>Drop your files here</h3>
+            <p>All file types are supported</p>
+          </div>
+        </div>
+      )}
 
       {isUploading && (
         <div className="upload-progress">
@@ -236,46 +229,7 @@ const FileManager = ({ user }) => {
         </div>
       )}
 
-      {showCreateFolder && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <h3>Create New Folder</h3>
-            <input
-              type="text"
-              placeholder="Folder name"
-              value={newFolderName}
-              onChange={(e) => setNewFolderName(e.target.value)}
-              className="form-input"
-            />
-            <div className="modal-actions">
-              <button onClick={() => setShowCreateFolder(false)} className="btn btn-secondary">
-                Cancel
-              </button>
-              <button onClick={createFolder} className="btn btn-primary">
-                Create
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       <div className="file-grid">
-        {currentFolders.map(folder => (
-          <div 
-            key={folder.id} 
-            className="file-item folder-item"
-            onClick={() => setCurrentFolder(folder)}
-          >
-            <div className="file-icon">
-              <Folder size={48} />
-            </div>
-            <div className="file-info">
-              <span className="file-name">{folder.name}</span>
-              <span className="file-meta">{folder.fileCount || 0} files</span>
-            </div>
-          </div>
-        ))}
-
         {filteredFiles.map(file => (
           <div key={file.id} className="file-item">
             <div className="file-icon">
@@ -318,11 +272,11 @@ const FileManager = ({ user }) => {
         ))}
       </div>
 
-      {filteredFiles.length === 0 && currentFolders.length === 0 && (
+      {filteredFiles.length === 0 && (
         <div className="empty-state">
           <File size={64} />
           <h3>No files found</h3>
-          <p>Upload your first file or create a folder to get started</p>
+          <p>Upload your first file to get started</p>
         </div>
       )}
     </div>

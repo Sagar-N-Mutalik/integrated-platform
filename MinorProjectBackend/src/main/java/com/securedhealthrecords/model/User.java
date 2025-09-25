@@ -26,6 +26,12 @@ public class User {
     private String password; // BCrypt hashed password
     
     private LocalDateTime createdAt;
+
+    // Profile fields
+    private Integer age;
+    private String gender;
+    private String phone;
+    private Boolean notificationsEnabled;
     
     public User(String fullName, String email, String password) {
         this.fullName = fullName;

@@ -23,4 +23,10 @@ public class UserDTO {
     private String email;
     
     private LocalDateTime createdAt;
+
+    // Profile fields
+    private Integer age;
+    private String gender;
+    private String phone;
+    private Boolean notificationsEnabled;
 }
