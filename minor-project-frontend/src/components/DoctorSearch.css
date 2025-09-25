@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: #f8fafc;
   padding: 2rem;
+  color: #1f2937;
 }
 
 .search-header {
@@ -145,6 +146,70 @@
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 0.25rem 0;
+}
+
+.doctor-info p {
+  color: #6b7280;
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+.doctor-specialization {
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.doctor-location {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #6b7280;
+}
+
+.doctor-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #f59e0b;
+}
+
+.doctor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
 }
 
 .specialization {
@@ -325,18 +390,19 @@
 
 .modal {
   background: white;
-  border-radius: 1rem;
-  max-width: 500px;
-  width: 90%;
+  border-radius: 16px;
+  max-width: 560px;
+  width: 92%;
   max-height: 90vh;
   overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -362,11 +428,11 @@
 }
 
 .modal-form {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -419,7 +485,7 @@
 
 .modal-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: flex-end;
   padding-top: 1rem;
   border-top: 1px solid #e5e7eb;
