@@ -28,7 +28,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
   useEffect(() => {
     fetchUserStats();
     fetchProfile();
-  }, [user]);
+  }, []);
 
   const fetchUserStats = async () => {
     try {
@@ -227,34 +227,20 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
       case 'settings':
         return (
           <div className="settings-section">
-            <h2>Settings</h2>
-            <div className="settings-card">
-              <h3>Preferences</h3>
-              <div className="setting-item">
-                <label>Notifications</label>
-                <div className="toggle-switch">
-                  <input 
-                    type="checkbox" 
-                    id="notifications" 
-                    checked={!!profile.notificationsEnabled} 
-                    onChange={(e)=> setProfile({...profile, notificationsEnabled: e.target.checked})} 
-                  />
-                  <label htmlFor="notifications" className="toggle-label">
-                    <span className="toggle-slider"></span>
-                  </label>
-                  <span className="toggle-text">{profile.notificationsEnabled ? 'On' : 'Off'}</span>
+            <div className="settings-card-container">
+              <div className="settings-card">
+                <h3>Settings</h3>
+                <div className="setting-actions">
+                  <button className="action-btn primary" onClick={()=> setCurrentView('profile')}>
+                    Edit Profile
+                  </button>
+                  <button className="action-btn secondary" onClick={onLogout}>
+                    Logout
+                  </button>
+                  <button className="action-btn danger" onClick={deleteAccount}>
+                    Delete Account
+                  </button>
                 </div>
-              </div>
-              <div className="setting-actions">
-                <button className="action-btn primary" onClick={()=> setCurrentView('profile')}>
-                  Edit Profile
-                </button>
-                <button className="action-btn primary" onClick={saveProfile} disabled={savingProfile}>
-                  {savingProfile ? 'Saving...' : 'Save Preferences'}
-                </button>
-                <button className="action-btn danger" onClick={deleteAccount}>
-                  Delete Account
-                </button>
               </div>
             </div>
           </div>
