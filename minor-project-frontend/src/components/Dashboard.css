@@ -1,32 +1,36 @@
-/* Dashboard Styles */
+/* Unified Dark Theme - Same as Landing Page */
 :root {
   --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --secondary-color: #6b7280;
-  --success-color: #10b981;
+  --secondary-color: #10b981;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;
-  --background-color: #f8fafc;
+  
+  /* Unified Colors - Same as Landing Page */
+  --bg: #0f172a;
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #f8fafc;
+  --sidebar-text-secondary: #94a3b8;
   --card-bg: #ffffff;
   --text-color: #1f2937;
   --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --border-color: #2d3748;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   --border-radius: 0.5rem;
 }
 
 .dashboard {
   display: flex;
   height: 100vh;
-  background: var(--background-color);
+  background: var(--bg);
+  color: var(--sidebar-text);
 }
 
 /* Sidebar */
 .dashboard-sidebar {
   width: 280px;
-  background: white;
+  background: var(--sidebar-bg);
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
@@ -70,13 +74,13 @@
 .user-details h3 {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin: 0 0 4px 0;
 }
 
 .user-details p {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: rgba(144, 129, 162, 0.37);
   margin: 0;
 }
 
@@ -215,6 +219,9 @@
   font-weight: 600;
   color: var(--text-color);
   margin: 0 0 24px 0;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .action-grid {
@@ -376,52 +383,83 @@
 /* Action Buttons */
 .setting-actions {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 32px;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .action-btn {
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.action-btn:hover::before {
+  left: 100%;
 }
 
 .action-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.action-btn:active {
+  transform: translateY(-2px) scale(1.02);
 }
 
 .action-btn.primary {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: white;
+  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.4);
 }
 
 .action-btn.primary:hover {
   background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.6);
 }
 
 .action-btn.secondary {
-  background: #f3f4f6;
-  color: var(--text-color);
-  border-color: var(--border-color);
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  box-shadow: 0 8px 32px rgba(107, 114, 128, 0.4);
 }
 
 .action-btn.secondary:hover {
-  background: #e5e7eb;
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  box-shadow: 0 20px 40px rgba(107, 114, 128, 0.6);
 }
 
 .action-btn.danger {
-  background: var(--danger-color);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
+  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.4);
 }
 
 .action-btn.danger:hover {
-  background: #dc2626;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.6);
 }
 
 .action-btn:disabled {

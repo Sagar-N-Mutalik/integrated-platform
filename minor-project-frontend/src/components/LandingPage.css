@@ -557,15 +557,15 @@ html {
 }
 
 .feature-card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 2.5rem 2rem;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  border: 1px solid var(--border);
+  text-align: center;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-light) 100%);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s 
+    cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .feature-card:hover {
@@ -901,7 +901,7 @@ html {
 
 /* Features Section */
 .features {
-  background: var(--bg-color);
+  background: var(--bg);
   padding: 5rem 0;
   position: relative;
 }
@@ -1016,8 +1016,25 @@ html {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   font-weight: 800;
+}
+
+
+.features-cta {
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center;    /* Vertically centers the content */
+  padding-top: 5rem;      /* Pushes it down from the top */
+  min-height: 300px;      /* Ensures the container has some height to center within */
+}
+
+.cta-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Optional: Adjusts space between lines */
 }
 
 .tips-grid {
@@ -1027,7 +1044,7 @@ html {
 }
 
 .tip-card {
-  background: var(--card-bg);
+  background:rgba(255, 255, 255, 0.05);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -1059,7 +1076,7 @@ html {
 .tip-card h3 {
   font-size: 1.375rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: var(--gradient-primary);
   font-weight: 700;
 }
 
@@ -1079,7 +1096,7 @@ html {
 
 /* Featured Doctors Section */
 .featured-doctors {
-  background: var(--bg-color);
+  background: var(--bg);
   padding: 5rem 0;
   position: relative;
 }
@@ -1203,22 +1220,25 @@ html {
   font-size: 0.875rem;
   font-weight: 500;
 }
-
 .view-all {
   text-align: center;
 }
 
 /* CTA Section */
 .cta {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #1e293b;
   padding: 5rem 0;
   color: white;
+  border-top: 1px solid #374151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
 
 .cta-content {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .cta h2 {
@@ -1280,8 +1300,26 @@ html {
   }
   
   .container {
-    padding: 0 1rem;
-  }
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  min-height: 100vh;        /* full screen height */
+}
+
+
+.section.cta {
+  display: flex;
+  justify-content: center;  /* horizontal */
+  align-items: center;      /* vertical */
+  min-height: 100vh;        /* full viewport height */
+}
+
+.section.cta .cta-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+
   
   .landing-header .container {
     padding: 1rem;
@@ -1291,4 +1329,14 @@ html {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* === FIX FOR CENTERING THE CTA SECTION === */
+.features-cta .cta-content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }

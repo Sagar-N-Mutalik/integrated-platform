@@ -7,9 +7,7 @@ import LandingPage from './components/LandingPage';
 import DoctorSearch from './components/DoctorSearch';
 import { ThemeProvider } from './components/ThemeContext';
 import { ToastProvider } from './components/ToastContext';
-import ThemeToggle from './components/ThemeToggle';
 import './App.css';
-import './components/ThemeToggle.css';
 
 const AppContent = () => {
   const [user, setUser] = useState(null);
@@ -98,7 +96,6 @@ const AppContent = () => {
 
   return (
     <div className="App">
-      <ThemeToggle />
         {currentView === 'landing' && (
           <LandingPage 
             onLogin={() => setCurrentView('login')}

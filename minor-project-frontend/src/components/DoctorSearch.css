@@ -1,9 +1,9 @@
-/* Doctor Search Styles */
+/* Doctor Search Styles - Unified Dark Theme */
 .doctor-search {
   min-height: 100vh;
-  background: #f8fafc;
+  background: #0f172a;
   padding: 2rem;
-  color: #1f2937;
+  color: #f8fafc;
 }
 
 .search-header {
@@ -50,7 +50,7 @@
   background: white;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: 0.001rem;
   flex: 1;
   min-width: 300px;
 }

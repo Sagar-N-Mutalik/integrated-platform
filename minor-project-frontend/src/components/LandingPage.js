@@ -106,57 +106,32 @@ const LandingPage = ({ onLogin, onSignup }) => {
   const contactRef = useRef(null);
 
   useEffect(() => {
-    // Fetch data
+    // Fetch data on component mount
     const fetchData = async () => {
-      try {
-        await Promise.all([
-          fetchHealthTips(),
-          fetchFeaturedDoctors()
-        ]);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+        try {
+            // These functions are defined below in your component
+            await fetchHealthTips();
+            await fetchFeaturedDoctors();
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     };
     
     fetchData();
 
-    // Add scroll event listener for header
+    // Add scroll event listener for header styling
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+        // setScrolled is a state updater from useState
+        setScrolled(window.scrollY > 50);
     };
 
-    // Smooth scroll for anchor links
-    const handleAnchorClick = (e) => {
-      const targetId = e.currentTarget.getAttribute('href');
-      if (targetId.startsWith('#')) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      }
-    };
-
-    // Add event listeners
     window.addEventListener('scroll', handleScroll);
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', handleAnchorClick);
-    });
 
-    // Cleanup
+    // Cleanup the scroll listener when the component unmounts
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', handleAnchorClick);
-      });
+        window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+}, []); // <-- The empty dependency array ensures this runs only once.
 
   const fetchHealthTips = async () => {
     try {
@@ -403,7 +378,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
                   <Shield size={48} />
                 </div>
                 <h3>Your Health, Secured</h3>
-                <p>Military-grade encryption keeps your medical data safe and private</p>
+                <p>End-to-End encryption keeps your medical data safe and private</p>
                 <div className="card-stats">
                   <div className="stat">
                     <span className="stat-value">99.9%</span>
@@ -593,7 +568,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* CTA Section
       <section className="section cta">
         <div className="container">
           <motion.div
@@ -621,7 +596,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
       
       {/* Contact Section */}
       <section id="contact" className="section contact" ref={contactRef}>
