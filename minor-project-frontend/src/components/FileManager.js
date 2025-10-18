@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { 
   Upload, Folder, File, Download, Share2, Trash2, 
@@ -5,6 +6,10 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useToast } from './ToastContext';
+=======
+import React, { useState, useEffect, useCallback } from 'react';
+import { Upload, Folder, File, Download, Share2, Trash2, Plus, Search } from 'lucide-react';
+>>>>>>> a435646 (chatbot)
 import './FileManager.css';
 
 // Utility function to format file size
@@ -51,11 +56,15 @@ const FileManager = ({ user }) => {
     }
   };
 
+<<<<<<< HEAD
   useEffect(() => {
     fetchUserFiles();
   }, [user]);
 
   const fetchUserFiles = async () => {
+=======
+  const fetchUserFiles = useCallback(async () => {
+>>>>>>> a435646 (chatbot)
     try {
       const response = await fetch(`/api/v1/files/user/${user.id}`, {
         headers: {
@@ -69,13 +78,36 @@ const FileManager = ({ user }) => {
     } catch (error) {
       console.error('Error fetching files:', error);
     }
-  };
+  }, [user.id]);
 
+<<<<<<< HEAD
 
   const validateFile = (file) => {
     // Allow all file types as per requirement (png, jpg, pdf, doc, docx, etc.)
     return true;
   };
+=======
+  const fetchUserFolders = useCallback(async () => {
+    try {
+      const response = await fetch(`/api/v1/folders/user/${user.id}`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setFolders(data);
+      }
+    } catch (error) {
+      console.error('Error fetching folders:', error);
+    }
+  }, [user.id]);
+
+  useEffect(() => {
+    fetchUserFiles();
+    fetchUserFolders();
+  }, [fetchUserFiles, fetchUserFolders]);
+>>>>>>> a435646 (chatbot)
 
   const handleFileUpload = async (event) => {
     const files = event.target.files;

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// Router components not used in current implementation
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
 import DoctorSearch from './components/DoctorSearch';
+import Chatbot from './components/Chatbot';
 import { ThemeProvider } from './components/ThemeContext';
 import { ToastProvider } from './components/ToastContext';
 import './App.css';
@@ -27,6 +28,12 @@ const AppContent = () => {
       }
     }
     setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    const handler = () => setCurrentView('chatbot');
+    window.addEventListener('navToChatbot', handler);
+    return () => window.removeEventListener('navToChatbot', handler);
   }, []);
 
   const apiCall = async (endpoint, data) => {
@@ -76,9 +83,10 @@ const AppContent = () => {
     // File sharing functionality implemented in ShareModal
   };
 
-  const handleNavigation = (view) => {
-    setCurrentView(view);
-  };
+  // Navigation handler - currently not used
+  // const handleNavigation = (view) => {
+  //   setCurrentView(view);
+  // };
 
   const handleAccountDeleted = () => {
     setUser(null);
@@ -136,6 +144,13 @@ const AppContent = () => {
         
         {currentView === 'doctors' && (
           <DoctorSearch 
+            user={user}
+            onBack={() => setCurrentView('dashboard')}
+          />
+        )}
+
+        {currentView === 'chatbot' && (
+          <Chatbot
             user={user}
             onBack={() => setCurrentView('dashboard')}
           />

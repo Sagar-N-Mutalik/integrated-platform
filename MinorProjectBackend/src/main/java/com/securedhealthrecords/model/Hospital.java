@@ -26,6 +26,10 @@ public class Hospital {
     private String description;
     private String email;
     private String phone;
+    private String type;
+    private String specialties;
+    private String emergency;
+    private String website;
     private Boolean isActive;
     private String createdAt;
     private String updatedAt;

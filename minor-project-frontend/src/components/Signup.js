@@ -5,11 +5,11 @@ import './Auth.css';
 const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogin, authError }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [passwordStrength, setPasswordStrength] = useState(0);
+  // const [passwordStrength, setPasswordStrength] = useState(0); // Not used
   const [showOtpForm, setShowOtpForm] = useState(false);
-  const [otpSent, setOtpSent] = useState(false);
+  // const [otpSent, setOtpSent] = useState(false); // Not used
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false); // Not used
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -204,8 +204,8 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                 {errors.termsAccepted && <span className="field-error">{errors.termsAccepted}</span>}
               </div>
 
-              <button type="submit" className="submit-btn" disabled={loading}>
-                {loading ? <div className="loading"></div> : 'Create Account'}
+              <button type="submit" className="submit-btn">
+                Create Account
               </button>
             </form>
 

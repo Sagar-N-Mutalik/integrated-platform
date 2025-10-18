@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Upload, X, File, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import './FileUpload.css';
 
-const FileUpload = ({ onClose, onUpload, currentPath }) => {
+const FileUpload = ({ onClose, onUpload, currentPath, user }) => {
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef();
@@ -45,9 +45,10 @@ const FileUpload = ({ onClose, onUpload, currentPath }) => {
 
         const formData = new FormData();
         formData.append('file', fileData.file);
-        if (parentId) formData.append('parentId', parentId);
+        if (parentId) formData.append('folderId', parentId);
+        if (user?.id) formData.append('userId', user.id);
 
-        const response = await fetch('/api/v1/nodes/file', {
+        const response = await fetch('/api/v1/files/upload', {
           method: 'POST',
           headers: { 'Authorization': `Bearer ${token}` },
           body: formData

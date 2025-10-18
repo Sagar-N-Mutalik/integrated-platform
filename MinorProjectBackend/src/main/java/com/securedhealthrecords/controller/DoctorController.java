@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/doctors")
+@RequestMapping("/doctors")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class DoctorController {

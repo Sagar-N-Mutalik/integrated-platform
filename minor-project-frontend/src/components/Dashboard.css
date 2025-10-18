@@ -168,7 +168,25 @@
   flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 .stat-card {
+=======
+.action-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+>>>>>>> a435646 (chatbot)
   background: white;
   border-radius: 16px;
   padding: 24px;

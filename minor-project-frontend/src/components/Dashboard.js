@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
   User, FileText, Calendar, Settings, Upload, Users, Home
 } from 'lucide-react';
@@ -21,16 +21,21 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
   const navigationItems = [
     { id: 'overview', icon: Home, label: 'Overview' },
     { id: 'files', icon: FileText, label: 'My Files' },
+    { id: 'chatbot', icon: Users, label: 'Health Chatbot' },
     { id: 'doctors', icon: Users, label: 'Find Doctors' },
     { id: 'settings', icon: Settings, label: 'Settings' }
   ];
 
+<<<<<<< HEAD
   useEffect(() => {
     fetchUserStats();
     fetchProfile();
   }, []);
 
   const fetchUserStats = async () => {
+=======
+  const fetchUserStats = useCallback(async () => {
+>>>>>>> a435646 (chatbot)
     try {
       const response = await fetch(`/api/v1/files/stats/${user.id}`, {
         headers: {
@@ -46,7 +51,11 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user.id]);
+
+  useEffect(() => {
+    fetchUserStats();
+  }, [fetchUserStats]);
 
   const fetchProfile = async () => {
     try {
@@ -188,6 +197,15 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
         return renderOverview();
       case 'files':
         return <FileManager user={user} />;
+      case 'chatbot':
+        // Delegate navigation up to App to show Chatbot full view
+        return (
+          <div style={{ padding: 20 }}>
+            <h2>Health Chatbot</h2>
+            <p>Open the chatbot to ask questions or analyze reports.</p>
+            <button className="action-card" onClick={() => window.dispatchEvent(new CustomEvent('navToChatbot'))}>Open Chatbot</button>
+          </div>
+        );
       case 'doctors':
         onSearchDoctors();
         return null;

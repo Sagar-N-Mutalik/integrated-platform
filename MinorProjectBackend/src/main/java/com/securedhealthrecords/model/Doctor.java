@@ -12,6 +12,7 @@ public class Doctor {
     @Id
     private String id;
     private String fullName;
+    private String name;
     private String email;
     private String phone;
     private String specialization;
@@ -20,6 +21,7 @@ public class Doctor {
     private String city;
     private String hospitalId;
     private String hospitalName;
+    private String hospital;
     private String profileImage;
     private String bio;
     private List<String> availableDays;

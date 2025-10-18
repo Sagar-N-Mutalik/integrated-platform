@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
+<<<<<<< HEAD
   Heart, Shield, Users, Calendar, FileText, 
   ArrowRight, Star, MapPin, ChevronRight, Check,
   Zap, Lock, Share2, Activity, Award, Clock, MessageSquare, Phone, Mail, Upload
+=======
+  Heart, Shield, Users, Calendar, 
+  ArrowRight, Star, 
+  Zap, Lock, Share2, Activity, Clock, MessageSquare, Phone, Mail, Upload
+>>>>>>> a435646 (chatbot)
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -29,22 +35,7 @@ const staggerContainer = {
   }
 };
 
-const slideIn = (direction = 'left') => ({
-  hidden: { 
-    opacity: 0, 
-    x: direction === 'left' ? -50 : 50,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-  },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: [0.16, 1, 0.3, 1],
-      delay: 0.2
-    } 
-  }
-});
+// Animation function removed - not used
 
 const FeatureCard = ({ icon: Icon, title, description, index }) => {
   const [ref, inView] = useInView({
@@ -71,7 +62,7 @@ const FeatureCard = ({ icon: Icon, title, description, index }) => {
   );
 };
 
-const StatItem = ({ value, label, icon: Icon, index }) => {
+const StatItem = ({ value, label, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -92,11 +83,14 @@ const StatItem = ({ value, label, icon: Icon, index }) => {
   );
 };
 
+<<<<<<< HEAD
 // Removed duplicate animation variants and FeatureCard definition
 
+=======
+>>>>>>> a435646 (chatbot)
 const LandingPage = ({ onLogin, onSignup }) => {
   const [healthTips, setHealthTips] = useState([]);
-  const [featuredDoctors, setFeaturedDoctors] = useState([]);
+  // const [featuredDoctors, setFeaturedDoctors] = useState([]); // Not used
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const heroRef = useRef(null);
@@ -125,6 +119,25 @@ const LandingPage = ({ onLogin, onSignup }) => {
         setScrolled(window.scrollY > 50);
     };
 
+<<<<<<< HEAD
+=======
+    // Smooth scroll for anchor links
+    const handleAnchorClick = (e) => {
+      const targetId = e.currentTarget.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    // Add event listeners
+>>>>>>> a435646 (chatbot)
     window.addEventListener('scroll', handleScroll);
 
     // Cleanup the scroll listener when the component unmounts
@@ -149,8 +162,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
     try {
       const response = await fetch('/api/v1/doctors');
       if (response.ok) {
-        const doctors = await response.json();
-        setFeaturedDoctors(doctors.slice(0, 3)); // Show only 3 doctors
+        // const doctors = await response.json(); // Not used
+        // setFeaturedDoctors(doctors.slice(0, 3)); // Show only 3 doctors - not used
       }
     } catch (error) {
       console.error('Failed to fetch doctors:', error);
@@ -260,10 +273,10 @@ const LandingPage = ({ onLogin, onSignup }) => {
     <div className="landing-page">
       <header className={`landing-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <button className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Heart className="logo-icon" />
             <span className="logo-text">HealthVault</span>
-          </a>
+          </button>
           
           <button 
             className={`mobile-menu-button ${isMenuOpen ? 'open' : ''}`} 
@@ -476,7 +489,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
-      
+
       {/* How It Works Section */}
       <section id="how-it-works" className="section how-it-works" ref={howItWorksRef}>
         <div className="container">
@@ -514,7 +527,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section id="testimonials" className="section testimonials" ref={testimonialsRef}>
         <div className="container">
@@ -547,8 +560,10 @@ const LandingPage = ({ onLogin, onSignup }) => {
                     <Star 
                       key={i} 
                       size={16} 
-                      fill={i < testimonial.rating ? "#F59E0B" : "none"} 
-                      color={i < testimonial.rating ? "#F59E0B" : "#D1D5DB"} 
+                      style={{
+                        fill: i < testimonial.rating ? "#F59E0B" : "none",
+                        color: i < testimonial.rating ? "#F59E0B" : "#D1D5DB"
+                      }}
                     />
                   ))}
                 </div>
@@ -567,6 +582,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
       
       {/* CTA Section
       <section className="section cta">
@@ -598,6 +614,9 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
       </section> */}
       
+=======
+
+>>>>>>> a435646 (chatbot)
       {/* Contact Section */}
       <section id="contact" className="section contact" ref={contactRef}>
         <div className="container">
@@ -751,6 +770,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* CTA Section */}
       <section className="hero" ref={heroRef}>
         <div className="hero-content">
@@ -813,6 +833,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
         </div>
       </section>
       
+=======
+>>>>>>> a435646 (chatbot)
       {/* Floating particles background */}
       <div className="particles">
         {[...Array(15)].map((_, i) => (
@@ -841,18 +863,18 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 accessible, and comprehensive health record management.
               </p>
               <div className="social-links">
-                <a href="#" aria-label="Facebook">
+                <button aria-label="Facebook">
                   <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="Twitter">
+                </button>
+                <button aria-label="Twitter">
                   <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn">
+                </button>
+                <button aria-label="LinkedIn">
                   <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="Instagram">
+                </button>
+                <button aria-label="Instagram">
                   <i className="fab fa-instagram"></i>
-                </a>
+                </button>
               </div>
             </div>
             
@@ -863,29 +885,29 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Pricing</a></li>
+                <li><button>Pricing</button></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h3 className="footer-heading">Resources</h3>
               <ul className="footer-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">API Documentation</a></li>
-                <li><a href="#">Status</a></li>
+                <li><button>Blog</button></li>
+                <li><button>Help Center</button></li>
+                <li><button>Tutorials</button></li>
+                <li><button>API Documentation</button></li>
+                <li><button>Status</button></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h3 className="footer-heading">Company</h3>
               <ul className="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><button>About Us</button></li>
+                <li><button>Careers</button></li>
+                <li><button>Press</button></li>
+                <li><button>Partners</button></li>
+                <li><button>Contact</button></li>
               </ul>
             </div>
           </div>
@@ -895,9 +917,9 @@ const LandingPage = ({ onLogin, onSignup }) => {
               &copy; {new Date().getFullYear()} HealthVault. All rights reserved.
             </p>
             <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
+              <button>Privacy Policy</button>
+              <button>Terms of Service</button>
+              <button>Cookie Policy</button>
             </div>
           </div>
         </div>

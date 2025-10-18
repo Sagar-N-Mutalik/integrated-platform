@@ -41,6 +41,7 @@ public class SecurityConfig {
                 // Authorization rules
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+<<<<<<< HEAD
                                 // Note: matchers are evaluated after servlet context-path (/api/v1)
                                 "/auth/**",
                                 "/hospitals/**",
@@ -49,6 +50,19 @@ public class SecurityConfig {
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html"
+=======
+                                "/auth/**",
+                                "/hospitals/**",
+                                "/doctors/**",
+                                "/chat/message",
+                                "/share/view/**",
+                                "/v2/api-docs",
+                                "/configuration/ui",
+                                "/swagger-resources/**",
+                                "/configuration/security",
+                                "/swagger-ui.html",
+                                "/webjars/**"
+>>>>>>> a435646 (chatbot)
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

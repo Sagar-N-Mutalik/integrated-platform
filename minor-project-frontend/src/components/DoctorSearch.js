@@ -18,6 +18,7 @@ const DoctorSearch = ({ onBack, user }) => {
   const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad','Karnataka','Kerala'];
   const specializations = ['Cardiologist', 'Neurologist', 'Pediatrician', 'Dermatologist', 'Orthopedic', 'Gynecologist', 'ENT', 'General Medicine'];
 
+<<<<<<< HEAD
   const setSampleDoctors = useCallback(() => {
     const sampleDoctors = [
       {
@@ -60,6 +61,8 @@ const DoctorSearch = ({ onBack, user }) => {
     setDoctors(sampleDoctors);
   }, []);
 
+=======
+>>>>>>> a435646 (chatbot)
   const fetchDoctors = useCallback(async () => {
     try {
       const response = await fetch('/api/v1/doctors');
@@ -74,8 +77,64 @@ const DoctorSearch = ({ onBack, user }) => {
     } finally {
       setLoading(false);
     }
+<<<<<<< HEAD
   }, [showToast, setSampleDoctors]);
 
+=======
+  }, []);
+
+  const setSampleDoctors = () => {
+    const sampleDoctors = [
+      {
+        id: '1',
+        fullName: 'Dr. Sarah Johnson',
+        specialization: 'Cardiologist',
+        qualification: 'MD, DM Cardiology',
+        experience: '10+ years',
+        city: 'Mumbai',
+        hospitalName: 'Apollo Hospital',
+        rating: 4.8,
+        totalReviews: 156,
+        consultationFee: '₹800',
+        bio: 'Experienced cardiologist specializing in interventional cardiology and heart disease prevention.',
+        availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Friday'],
+        isAvailable: true
+      },
+      {
+        id: '2',
+        fullName: 'Dr. Raj Patel',
+        specialization: 'Neurologist',
+        qualification: 'MD, DM Neurology',
+        experience: '8+ years',
+        city: 'Delhi',
+        hospitalName: 'AIIMS Delhi',
+        rating: 4.7,
+        totalReviews: 89,
+        consultationFee: '₹1000',
+        bio: 'Neurologist with expertise in stroke management and neurodegenerative diseases.',
+        availableDays: ['Monday', 'Wednesday', 'Thursday', 'Saturday'],
+        isAvailable: true
+      },
+      {
+        id: '3',
+        fullName: 'Dr. Priya Sharma',
+        specialization: 'Pediatrician',
+        qualification: 'MD Pediatrics',
+        experience: '12+ years',
+        city: 'Bangalore',
+        hospitalName: 'Manipal Hospital',
+        rating: 4.9,
+        totalReviews: 203,
+        consultationFee: '₹600',
+        bio: 'Pediatrician dedicated to child health and development with special interest in neonatology.',
+        availableDays: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        isAvailable: true
+      }
+    ];
+    setDoctors(sampleDoctors);
+  };
+
+>>>>>>> a435646 (chatbot)
   const filterDoctors = useCallback(() => {
     let filtered = doctors;
 
@@ -99,6 +158,7 @@ const DoctorSearch = ({ onBack, user }) => {
 
   useEffect(() => {
     fetchDoctors();
+<<<<<<< HEAD
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -106,6 +166,13 @@ const DoctorSearch = ({ onBack, user }) => {
     filterDoctors();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doctors, searchTerm, selectedCity, selectedSpecialization]);
+=======
+  }, [fetchDoctors]);
+
+  useEffect(() => {
+    filterDoctors();
+  }, [filterDoctors]);
+>>>>>>> a435646 (chatbot)
 
   const handleDoctorSelect = (doctor) => {
     setSelectedDoctor(doctor);
