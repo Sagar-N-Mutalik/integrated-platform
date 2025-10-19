@@ -1,0 +1,56 @@
+[
+ {
+   "A": "Doctor Name",
+   "B": "Specialty",
+   "C": "Experience",
+   "D": "Hospital Affiliation"
+ },
+ {
+   "A": "Dr. Mallesh P",
+   "B": "Cardiologist",
+   "C": "42+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Murali Babu",
+   "B": "Cardiothoracic and Vascular Surgeon",
+   "C": "36+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Vikram Huded",
+   "B": "Neurologist",
+   "C": "27+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Dhananjay RS",
+   "B": "Cardiologist",
+   "C": "25+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Sathyanarayana MVV",
+   "B": "Neurosurgeon",
+   "C": "24+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Guruprasad S Pujar",
+   "B": "Neurologist",
+   "C": "20+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Sreenivasa B",
+   "B": "Cardiologist",
+   "C": "12+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ },
+ {
+   "A": "Dr. Naveen H N",
+   "B": "Urologist",
+   "C": "12+ years",
+   "D": "SS Narayana Health Super Specialty Center"
+ }
+]
