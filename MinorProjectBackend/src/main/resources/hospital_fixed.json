@@ -1,0 +1,232 @@
+[
+  {
+    "name": "Apollo BGS Hospitals",
+    "district": "Mysuru",
+    "address": "Kuvempunagar",
+    "c": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics",
+    "phone1": "+91 80 6904 9759",
+    "phone2": "1066",
+    "email": "apollohospitals.com/mysore"
+  },
+  {
+    "name": "Manipal Hospital",
+    "district": "Mysuru",
+    "address": "Siddique Nagar",
+    "c": "Private",
+    "specialties": "Cardiology, Neurology, Orthopaedics, Organ Transplants",
+    "phone1": "0821-350 3500",
+    "phone2": "0821-350 3500",
+    "email": "manipalhospitals.com/mysore"
+  },
+  {
+    "name": "Narayana Multispeciality Hospital",
+    "district": "Mysuru",
+    "address": "Devanur",
+    "c": "Private",
+    "specialties": "Cancer Care, Cardiology, Nephrology, Neurology",
+    "phone1": "180 0309 0309",
+    "phone2": "24/7 Helpline",
+    "email": "narayanahealth.org"
+  },
+  {
+    "name": "JSS Hospital",
+    "district": "Mysuru",
+    "address": "M.G. Road",
+    "c": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Nephrology",
+    "phone1": "0821-233 5555",
+    "phone2": "14455",
+    "email": "jsshospital.in"
+  },
+  {
+    "name": "Kamakshi Hospital",
+    "district": "Mysuru",
+    "address": "Kuvempunagar",
+    "c": "Private",
+    "specialties": "Orthopaedics, Gynaecology, Urology, General Surgery",
+    "phone1": "0821-254 5981",
+    "phone2": "+91 98456 42981",
+    "email": "kamakshihospital.org"
+  },
+  {
+    "name": "Sigma Hospital",
+    "district": "Mysuru",
+    "address": "Saraswathipuram",
+    "c": "Private",
+    "specialties": "Urology, Laparoscopic Surgery, Nephrology, Gynaecology",
+    "phone1": "0821-426 6661",
+    "phone2": "9108028661",
+    "email": "sigmahospital.in"
+  },
+  {
+    "name": "Clearmedi Radiant Hospital",
+    "district": "Mysuru",
+    "address": "Vijayanagar",
+    "c": "Private",
+    "specialties": "Cancer Care, Gastroenterology, Nephrology, Orthopaedics",
+    "phone1": "+91 7900900953",
+    "phone2": "0821-233 6666",
+    "email": "clearmedi.in"
+  },
+  {
+    "name": "DRM Multi Speciality Hospital",
+    "district": "Mysuru",
+    "address": "Vontikoppal",
+    "c": "Private",
+    "specialties": "Orthopaedics, Neurosurgery, Cardiology, Gastroenterology",
+    "phone1": "+91 8105424247",
+    "phone2": "24/7 Helpline",
+    "email": "drmhospital.com"
+  },
+  {
+    "name": "Secure Hospital",
+    "district": "Mysuru",
+    "address": "Lakshmipuram",
+    "c": "Private",
+    "specialties": "Cardiology, Orthopaedics, Neurology, Gynaecology",
+    "phone1": "+91 96113 64968",
+    "phone2": "+91 88840 55044",
+    "email": "securehospital.in"
+  },
+  {
+    "name": "Manipal Hospital",
+    "district": "Bengaluru",
+    "address": "Old Airport Road",
+    "c": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics",
+    "phone1": "1800 102 5555",
+    "phone2": "105710",
+    "email": "info@manipalhospitals.com"
+  },
+  {
+    "name": "Apollo Hospitals",
+    "district": "Bengaluru",
+    "address": "Bannerghatta Road",
+    "c": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone1": "+91 80 6904 9765",
+    "phone2": "1066",
+    "email": "info@apollohospitals.com"
+  },
+  {
+    "name": "Fortis Hospital",
+    "district": "Bengaluru",
+    "address": "Bannerghatta Road",
+    "c": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurology, Orthopaedics",
+    "phone1": "+91 96633 67253",
+    "phone2": "080 6621 4444",
+    "email": "fortishealthcare.com"
+  },
+  {
+    "name": "Kasturba Hospital",
+    "district": "Udupi",
+    "address": "Manipal",
+    "c": "Private",
+    "specialties": "Multi-Super Specialty, Cardiology, Oncology, Neurology, Transplants",
+    "phone1": "0820-2922761",
+    "phone2": "0820-2922222",
+    "email": "medical.superintendent@manipal.edu"
+  },
+  {
+    "name": "Adarsha Hospital",
+    "district": "Udupi",
+    "address": "Udupi City",
+    "c": "Private",
+    "specialties": "Neurosurgery, Cardiology (Cath Lab), Oncology",
+    "phone1": "0820-2535289",
+    "phone2": "0820-2535289",
+    "email": "adaudp@gmail.com"
+  },
+  {
+    "name": "Hitech Medicare Hospital",
+    "district": "Udupi",
+    "address": "Ambalpadi, Udupi",
+    "c": "Private",
+    "specialties": "Neurology, Gastroenterology, Orthopaedics, OBG",
+    "phone1": "0820-2533331",
+    "phone2": "0820-2533331",
+    "email": "hospitalhitech@yahoo.com"
+  },
+  {
+    "name": "SS Narayana Health Super Specialty Center",
+    "district": "Davangere",
+    "address": "Jnanashankara",
+    "c": "Private",
+    "specialties": "Cardiac Sciences, Neurosciences, Renal Sciences, Gastroenterology",
+    "phone1": "1800 309 0309",
+    "phone2": "08192-263344",
+    "email": "narayanahealth.org"
+  },
+  {
+    "name": "Bapuji Hospital",
+    "district": "Davangere",
+    "address": "MCC 'B' Block",
+    "c": "Private",
+    "specialties": "General Medicine, General Surgery, Orthopaedics, OBG, Cardiology",
+    "phone1": "1800-425-99099",
+    "phone2": "08192-253850",
+    "email": "jjmmc.org/our-hospitals.php"
+  },
+  {
+    "name": "Sahyadri Narayana Multispeciality Hospital",
+    "district": "Shivamogga",
+    "address": "Harakere",
+    "c": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics, Nephrology",
+    "phone1": "1800 309 0309",
+    "phone2": "24/7 Emergency Dept.",
+    "email": "info.shimoga@narayanahealth.org"
+  },
+  {
+    "name": "Sarji Hospital",
+    "district": "Shivamogga",
+    "address": "Durgigudi",
+    "c": "Private",
+    "specialties": "Obstetrics, Gynaecology, Paediatrics, Neonatology",
+    "phone1": "08182-405505",
+    "phone2": "24/7 Emergency Dept.",
+    "email": "admin@sarjihospital.com"
+  },
+  {
+    "name": "HCG Suchirayu Hospital",
+    "district": "Hubli",
+    "address": "Gokul Road",
+    "c": "Private",
+    "specialties": "Cardiology, Neurosciences, Orthopaedics, Nephrology",
+    "phone1": "7406499999",
+    "phone2": "7022 424111",
+    "email": "info.ao@hcgel.com"
+  },
+  {
+    "name": "Secure Hospital",
+    "district": "Hubli",
+    "address": "Dollars Colony, Gokul Road",
+    "c": "Private",
+    "specialties": "Cardiac Sciences, Neurosciences, Orthopaedics, Gynaecology",
+    "phone1": "+91 96110 43233",
+    "phone2": "+91 96110 43233",
+    "email": "securehospital.in"
+  },
+  {
+    "name": "RIMS Teaching Hospital",
+    "district": "Raichur",
+    "address": "Hyderabad Road",
+    "c": "Government",
+    "specialties": "General Medicine & Surgery, OBG, Paediatrics, Orthopaedics, Cardiology, Urology, Gastroenterology",
+    "phone1": "08532-238488",
+    "phone2": "08532-238488",
+    "email": "rimsraichur.karnataka.gov.in"
+  },
+  {
+    "name": "Navodaya Medical College Hospital",
+    "district": "Raichur",
+    "address": "Navodaya Nagar",
+    "c": "Private",
+    "specialties": "General Medicine & Surgery, OBG, Orthopaedics, Paediatrics, Cardiology, Neurology, Oncology",
+    "phone1": "+91-8532-223234",
+    "phone2": "+91-8532-223234",
+    "email": "navodayahospital.co.in"
+  }
+]

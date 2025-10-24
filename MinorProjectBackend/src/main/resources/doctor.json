@@ -1,0 +1,99 @@
+[
+  {
+    "fullName": "Dr. Anish Behl",
+    "specialization": "Endocrinology & Diabetes Care",
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+  },
+  {
+    "fullName": "Dr. RamaKrishna M N",
+    "specialization": "General Medicine",
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+  },
+  {
+    "fullName": "Dr. Arti Behl",
+    "specialization": "Psychiatry & Psychology",
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+  },
+  {
+    "fullName": "Dr. Upendra Shenoy",
+    "specialization": "Cardiothoracic Vascular Surgeon",
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar"
+  },
+  {
+    "fullName": "Dr. Jayaram B N",
+    "specialization": "Aesthetic and Reconstructive Surgeon",
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar"
+  },
+  {
+    "fullName": "Dr. Keshava Murthy",
+    "specialization": "Cardiologist",
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur"
+  },
+  {
+    "fullName": "Dr. Sunil Kumar S",
+    "specialization": "Cardiologist",
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road"
+  },
+  {
+    "fullName": "Dr. Arun Srinivasa",
+    "specialization": "Cardiologist",
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital"
+  },
+  {
+    "fullName": "Dr. Hema Raveesh",
+    "specialization": "Interventional Cardiologist",
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram"
+  },
+  {
+    "fullName": "Dr. Anil K Bhat",
+    "specialization": "Anaesthesiology",
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal"
+  },
+  {
+    "fullName": "Dr. Narasimha Pai D",
+    "specialization": "Cardiology",
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal"
+  },
+  {
+    "fullName": "Dr. G. S. Chandrashekar",
+    "specialization": "Managing Director & Chief Surgeon",
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi"
+  },
+  {
+    "fullName": "Dr. Mallesh P",
+    "specialization": "Cardiologist",
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center"
+  },
+  {
+    "fullName": "Dr. Murali Babu",
+    "specialization": "Cardiothoracic and Vascular Surgeon",
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center"
+  },
+  {
+    "fullName": "Dr. Ajit V Kulkarni",
+    "specialization": "Cardiology - Interventional Cardiologist",
+    "district": "Raichur",
+    "hospitalName": "Vijay Poly Clinic"
+  },
+  {
+    "fullName": "Dr. Gopinath",
+    "specialization": "Cardiology - Cardiologist",
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital"
+  }
+]
+

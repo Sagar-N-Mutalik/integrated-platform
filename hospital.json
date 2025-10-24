@@ -1,0 +1,122 @@
+[
+  {
+    "district": "Bengaluru",
+    "name": "Manipal Hospital",
+    "address": "Old Airport Road",
+    "C": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics",
+    "phone1": "1800 102 5555",
+    "phone2": "105710",
+    "email": "info@manipalhospitals.com"
+  },
+  {
+    "district": "Bengaluru",
+    "name": "Apollo Hospitals",
+    "address": "Bannerghatta Road",
+    "C": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone1": "+91 80 6904 9765",
+    "phone2": "1066",
+    "email": "info@apollohospitals.com"
+  },
+  {
+    "district": "Mysuru",
+    "name": "Apollo BGS Hospital",
+    "address": "Kuvempunagar",
+    "C": "Private Multi-Specialty",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone1": "+91 80 6904 9759",
+    "phone2": "1066",
+    "email": "apollohospitals.com/mysore"
+  },
+  {
+    "district": "Mysuru",
+    "name": "Manipal Hospital",
+    "address": "Siddique Nagar",
+    "C": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurology, Orthopaedics, Organ Transplants",
+    "phone1": "0821-350 3500",
+    "phone2": "0821-350 3500",
+    "email": "manipalhospitals.com/mysore"
+  },
+  {
+    "district": "Mysuru",
+    "name": "Narayana Multispeciality Hospital",
+    "address": "Devanur",
+    "C": "Private Multi-Specialty",
+    "specialties": "Cancer Care, Cardiology, Nephrology, Neurology",
+    "phone1": "180 0309 0309",
+    "phone2": "24/7 Helpline",
+    "email": "narayanahealth.org"
+  },
+  {
+    "district": "Mysuru",
+    "name": "JSS Hospital",
+    "address": "M.G. Road",
+    "C": "Private Multi-Specialty (Teaching)",
+    "specialties": "Cardiology, Oncology, Neurology, Nephrology",
+    "phone1": "0821-233 5555",
+    "phone2": "14455",
+    "email": "jsshospital.in"
+  },
+  {
+    "district": "Udupi",
+    "name": "Kasturba Hospital, Manipal",
+    "address": "Manipal",
+    "C": "Private (Teaching)",
+    "specialties": "Multi-Super Specialty, Cardiology, Oncology, Neurology, Transplants",
+    "phone1": "0820-2922761",
+    "phone2": "0820-2922222",
+    "email": "medical.superintendent@manipal.edu"
+  },
+  {
+    "district": "Udupi",
+    "name": "Adarsha Hospital, Udupi",
+    "address": "Udupi City",
+    "C": "Private Multi-Specialty",
+    "specialties": "Neurosurgery, Cardiology (Cath Lab), Oncology",
+    "phone1": "0820-2535289",
+    "phone2": "0820-2535289",
+    "email": "adaudp@gmail.com"
+  },
+  {
+    "district": "Shivamogga",
+    "name": "Sahyadri Narayana Multispeciality Hospital",
+    "address": "Harakere",
+    "C": "Private Multi-Specialty",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics, Nephrology",
+    "phone1": "1800 309 0309",
+    "phone2": "24/7 Emergency Dept.",
+    "email": "info.shimoga@narayanahealth.org"
+  },
+  {
+    "district": "Hubli",
+    "name": "HCG Suchirayu Hospital",
+    "address": "Gokul Road",
+    "C": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurosciences, Orthopaedics, Nephrology",
+    "phone1": "7406499999",
+    "phone2": "7022 424111",
+    "email": "info.ao@hcgel.com"
+  },
+  {
+    "district": "Davangere",
+    "name": "SS Narayana Health Super Specialty Center",
+    "address": "Jnanashankara",
+    "C": "Private Super-Specialty",
+    "specialties": "Cardiac Sciences, Neurosciences, Renal Sciences, Gastroenterology",
+    "phone1": "1800 309 0309",
+    "phone2": "08192-263344",
+    "email": "narayanahealth.org"
+  },
+  {
+    "district": "Raichur",
+    "name": "Raichur Institute of Medical Sciences (RIMS)",
+    "address": "Hyderabad Road",
+    "C": "Government Teaching",
+    "specialties": "General Medicine & Surgery, OBG, Paediatrics, Orthopaedics, Cardiology, Urology, Gastroenterology",
+    "phone1": "08532-238488",
+    "phone2": "08532-238488",
+    "email": "rimsraichur.karnataka.gov.in"
+  }
+]

@@ -9,12 +9,13 @@ import com.securedhealthrecords.repository.HospitalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils; // Import StringUtils for checking empty strings
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+// @Component  // DISABLED: Using JsonDataLoader instead
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
@@ -24,143 +25,144 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        initializeHospitals();
-        initializeDoctors();
-        initializeHealthTips();
-    }
-
-    private void initializeHospitals() {
+        // --- Correct Logic: Only seed if the database collection is EMPTY ---
         if (hospitalRepository.count() == 0) {
-            List<Hospital> hospitals = Arrays.asList(
-                createHospital("Apollo Hospital", "Mumbai", "Comprehensive healthcare services", "apollo-mumbai@hospital.com", "+91-22-12345678"),
-                createHospital("AIIMS Delhi", "Delhi", "Premier medical institute", "contact@aiims.edu", "+91-11-26588500"),
-                createHospital("Manipal Hospital", "Bangalore", "Multi-specialty hospital", "info@manipalhospitals.com", "+91-80-25502121"),
-                createHospital("Fortis Hospital", "Chennai", "Advanced medical care", "info@fortishealthcare.com", "+91-44-66765000"),
-                createHospital("Max Healthcare", "Kolkata", "Quality healthcare services", "info@maxhealthcare.com", "+91-33-66206620")
-            );
-            hospitalRepository.saveAll(hospitals);
+            System.out.println(">>> No hospitals found in DB. Seeding sample hospital data...");
+            initializeHospitals(); // Call helper only if empty
+        } else {
+             System.out.println(">>> Hospitals already exist in DB. Skipping hospital seed.");
         }
-    }
 
-    private void initializeDoctors() {
+        // Check doctors AFTER hospitals, as doctors might need linked hospital IDs
         if (doctorRepository.count() == 0) {
-            List<Hospital> hospitals = hospitalRepository.findAll();
-            
-            List<Doctor> doctors = Arrays.asList(
-                createDoctor("Dr. Sarah Johnson", "sarah.johnson@hospital.com", "+91-9876543210", 
-                    "Cardiologist", "MD, DM Cardiology", "10+ years", "Mumbai", 
-                    hospitals.get(0).getId(), "Apollo Hospital", 4.8, 156, "₹800",
-                    "Experienced cardiologist specializing in interventional cardiology and heart disease prevention.",
-                    Arrays.asList("Monday", "Tuesday", "Wednesday", "Friday")),
-                
-                createDoctor("Dr. Raj Patel", "raj.patel@aiims.edu", "+91-9876543211",
-                    "Neurologist", "MD, DM Neurology", "8+ years", "Delhi",
-                    hospitals.get(1).getId(), "AIIMS Delhi", 4.7, 89, "₹1000",
-                    "Neurologist with expertise in stroke management and neurodegenerative diseases.",
-                    Arrays.asList("Monday", "Wednesday", "Thursday", "Saturday")),
-                
-                createDoctor("Dr. Priya Sharma", "priya.sharma@manipal.com", "+91-9876543212",
-                    "Pediatrician", "MD Pediatrics", "12+ years", "Bangalore",
-                    hospitals.get(2).getId(), "Manipal Hospital", 4.9, 203, "₹600",
-                    "Pediatrician dedicated to child health and development with special interest in neonatology.",
-                    Arrays.asList("Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")),
-                
-                createDoctor("Dr. Amit Kumar", "amit.kumar@fortis.com", "+91-9876543213",
-                    "Orthopedic", "MS Orthopedics", "15+ years", "Chennai",
-                    hospitals.get(3).getId(), "Fortis Hospital", 4.6, 134, "₹900",
-                    "Orthopedic surgeon specializing in joint replacement and sports medicine.",
-                    Arrays.asList("Monday", "Tuesday", "Thursday", "Friday")),
-                
-                createDoctor("Dr. Meera Singh", "meera.singh@maxhealthcare.com", "+91-9876543214",
-                    "Dermatologist", "MD Dermatology", "7+ years", "Kolkata",
-                    hospitals.get(4).getId(), "Max Healthcare", 4.5, 78, "₹700",
-                    "Dermatologist with expertise in cosmetic dermatology and skin cancer treatment.",
-                    Arrays.asList("Monday", "Wednesday", "Friday", "Saturday"))
-            );
-            
-            doctorRepository.saveAll(doctors);
+             System.out.println(">>> No doctors found in DB. Seeding sample doctor data...");
+            // Ensure hospitals exist before trying to seed doctors that link to them
+             if (hospitalRepository.count() > 0) {
+                 initializeDoctors(); // Call helper only if doctors are empty AND hospitals exist
+             } else {
+                 System.err.println(">>> ERROR: Cannot seed sample doctors because no hospitals exist in the database!");
+             }
+        } else {
+             System.out.println(">>> Doctors already exist in DB. Skipping doctor seed.");
         }
-    }
 
-    private void initializeHealthTips() {
         if (healthTipRepository.count() == 0) {
-            List<HealthTip> tips = Arrays.asList(
-                createHealthTip("Stay Hydrated for Better Health", 
-                    "Drink at least 8 glasses of water daily to maintain optimal health and energy levels. Proper hydration helps in digestion, circulation, and temperature regulation.",
-                    "NUTRITION", "Dr. Health Expert"),
-                
-                createHealthTip("Daily Movement is Essential",
-                    "Incorporate 30 minutes of physical activity into your daily routine for better cardiovascular health. This can include walking, swimming, or any activity you enjoy.",
-                    "EXERCISE", "Fitness Specialist"),
-                
-                createHealthTip("Practice Mindful Moments",
-                    "Take 5-10 minutes daily for meditation or deep breathing to reduce stress and improve focus. Mental health is just as important as physical health.",
-                    "MENTAL_HEALTH", "Mental Health Counselor"),
-                
-                createHealthTip("Eat a Balanced Diet",
-                    "Include a variety of fruits, vegetables, whole grains, and lean proteins in your diet. A balanced diet provides essential nutrients for optimal body function.",
-                    "NUTRITION", "Nutritionist"),
-                
-                createHealthTip("Get Quality Sleep",
-                    "Aim for 7-9 hours of quality sleep each night. Good sleep is crucial for physical recovery, mental clarity, and overall well-being.",
-                    "GENERAL", "Sleep Specialist"),
-                
-                createHealthTip("Regular Health Checkups",
-                    "Schedule regular health checkups with your doctor to catch potential health issues early. Prevention is always better than cure.",
-                    "GENERAL", "General Practitioner")
-            );
-            
-            healthTipRepository.saveAll(tips);
+             System.out.println(">>> No health tips found in DB. Seeding sample health tips...");
+            initializeHealthTips(); // Call helper only if empty
+        } else {
+            System.out.println(">>> Health tips already exist in DB. Skipping health tip seed.");
         }
     }
 
-    private Hospital createHospital(String name, String city, String description, String email, String phone) {
+    // Helper method to create sample hospitals IF NEEDED
+    private void initializeHospitals() {
+        // This code only runs if hospitalRepository.count() was 0
+        List<Hospital> hospitals = Arrays.asList(
+            // Sample data uses districts from your list and includes 'c' field
+            createHospital("Manipal Hospital", "Bangalore", "Old Airport Road", "Private (Teaching)", "Cardiology, Oncology, Neurology", "18001025555", "105710", "info@manipal.com"),
+             createHospital("Apollo BGS Hospital", "Mysuru", "Kuvempunagar", "Private", "Cardiac Sciences, Oncology", "+918069049759", "1066", "info@apollo.com"),
+             createHospital("Kasturba Hospital", "Udupi", "Manipal", "Private (Teaching)", "Multi-Super Specialty, Cardiology", "0820-2922761", "0820-2922222", "medical.superintendent@manipal.edu")
+             // Add more samples using your 7 districts if desired (Raichur, Davangere, Hubli, Shivamogga)
+        );
+        hospitalRepository.saveAll(hospitals);
+         System.out.println(">>> Sample hospitals seeded successfully.");
+    }
+
+    // Helper method to create sample doctors IF NEEDED
+    private void initializeDoctors() {
+        // This code only runs if doctorRepository.count() was 0
+        List<Hospital> hospitals = hospitalRepository.findAll(); // Get hospitals (sample or real)
+        // Need hospitals to link doctors - critical check already done in run() method
+        // but double-checking here is safe.
+        if (hospitals.isEmpty()) {
+             System.err.println(">>> ERROR: Cannot seed sample doctors because no hospitals exist in the database (Checked again in initializeDoctors)!");
+             return; // Stop if no hospitals are available to link to
+        }
+         // Safer way to get hospital IDs for linking sample doctors
+         String hospital1Id = !hospitals.isEmpty() ? hospitals.get(0).getId() : "tempHospitalId1";
+         String hospital1Name = !hospitals.isEmpty() ? hospitals.get(0).getName() : "Sample Hospital 1";
+         // Use modulo to safely wrap around if fewer hospitals than needed
+         int numHospitals = hospitals.size();
+         String hospital2Id = hospitals.get(1 % numHospitals).getId();
+         String hospital2Name = hospitals.get(1 % numHospitals).getName();
+         String hospital3Id = hospitals.get(2 % numHospitals).getId();
+         String hospital3Name = hospitals.get(2 % numHospitals).getName();
+
+
+        List<Doctor> doctors = Arrays.asList(
+            // Sample data uses districts from your list
+            createDoctor("Dr. Priya Sharma", "Pediatrician", "Bangalore", hospital1Name, hospital1Id),
+             createDoctor("Dr. Anish Behl", "Endocrinology & Diabetes Care", "Mysuru", hospital2Name, hospital2Id),
+             createDoctor("Dr. Anil K Bhat", "Anaesthesiology", "Udupi", hospital3Name, hospital3Id)
+            // Add more samples using your 7 districts if desired
+        );
+        doctorRepository.saveAll(doctors);
+         System.out.println(">>> Sample doctors seeded successfully.");
+    }
+
+    // --- Helper methods updated with NULL CHECKS ---
+
+    private Hospital createHospital(String name, String district, String address, String c, String specialties, String phone1, String phone2, String email) {
         Hospital hospital = new Hospital();
-        hospital.setName(name);
-        hospital.setCity(city);
-        hospital.setDescription(description);
-        hospital.setEmail(email);
-        hospital.setPhone(phone);
-        hospital.setIsActive(true);
+        // Add null/empty checks for safety
+        if (StringUtils.hasText(name)) hospital.setName(name);
+        if (StringUtils.hasText(district)) hospital.setDistrict(district);
+        if (StringUtils.hasText(address)) hospital.setAddress(address);
+        if (StringUtils.hasText(c)) hospital.setC(c); // Check 'c'
+        if (StringUtils.hasText(specialties)) hospital.setSpecialties(specialties);
+        if (StringUtils.hasText(phone1)) hospital.setPhone1(phone1);
+        if (StringUtils.hasText(phone2)) hospital.setPhone2(phone2);
+        if (StringUtils.hasText(email)) hospital.setEmail(email);
+
+        hospital.setIsActive(true); // Default to active
         hospital.setCreatedAt(LocalDateTime.now().toString());
         hospital.setUpdatedAt(LocalDateTime.now().toString());
         return hospital;
     }
 
-    private Doctor createDoctor(String fullName, String email, String phone, String specialization,
-                               String qualification, String experience, String city, String hospitalId,
-                               String hospitalName, Double rating, Integer totalReviews, String consultationFee,
-                               String bio, List<String> availableDays) {
+    private Doctor createDoctor(String fullName, String specialization, String district, String hospitalName, String hospitalId) {
         Doctor doctor = new Doctor();
-        doctor.setFullName(fullName);
-        doctor.setEmail(email);
-        doctor.setPhone(phone);
-        doctor.setSpecialization(specialization);
-        doctor.setQualification(qualification);
-        doctor.setExperience(experience);
-        doctor.setCity(city);
-        doctor.setHospitalId(hospitalId);
-        doctor.setHospitalName(hospitalName);
-        doctor.setRating(rating);
-        doctor.setTotalReviews(totalReviews);
-        doctor.setConsultationFee(consultationFee);
-        doctor.setBio(bio);
-        doctor.setAvailableDays(availableDays);
-        doctor.setIsAvailable(true);
+        // Add null/empty checks
+        if (StringUtils.hasText(fullName)) doctor.setFullName(fullName);
+        if (StringUtils.hasText(specialization)) doctor.setSpecialization(specialization);
+        if (StringUtils.hasText(district)) doctor.setDistrict(district);
+        if (StringUtils.hasText(hospitalName)) doctor.setHospitalName(hospitalName);
+        if (StringUtils.hasText(hospitalId)) doctor.setHospitalId(hospitalId); // Link to hospital
+
+        doctor.setIsAvailable(true); // Default to available
         doctor.setCreatedAt(LocalDateTime.now().toString());
         doctor.setUpdatedAt(LocalDateTime.now().toString());
+        // Add defaults for optional fields
+        doctor.setRating(4.5);
+        doctor.setTotalReviews(20);
+        doctor.setConsultationFee("₹600");
         return doctor;
     }
 
+     private void initializeHealthTips() {
+        // This code only runs if healthTipRepository.count() was 0
+        List<HealthTip> tips = Arrays.asList(
+                createHealthTip("Stay Hydrated", "Drink 8 glasses of water daily...", "NUTRITION", "Dr. Health"),
+                createHealthTip("Move Daily", "Incorporate 30 mins of activity...", "EXERCISE", "Fitness Coach"),
+                 createHealthTip("Mindful Moments", "Practice 5-10 mins of meditation...", "MENTAL_HEALTH", "Wellness Expert")
+        );
+        healthTipRepository.saveAll(tips);
+         System.out.println(">>> Sample health tips seeded successfully.");
+    }
+
+    // Helper for HealthTip (Add null checks if necessary)
     private HealthTip createHealthTip(String title, String content, String category, String author) {
         HealthTip tip = new HealthTip();
-        tip.setTitle(title);
-        tip.setContent(content);
-        tip.setCategory(category);
-        tip.setAuthor(author);
+         if (StringUtils.hasText(title)) tip.setTitle(title);
+         if (StringUtils.hasText(content)) tip.setContent(content);
+         if (StringUtils.hasText(category)) tip.setCategory(category);
+         if (StringUtils.hasText(author)) tip.setAuthor(author);
         tip.setIsActive(true);
         tip.setCreatedAt(LocalDateTime.now().toString());
         tip.setUpdatedAt(LocalDateTime.now().toString());
         return tip;
     }
 }
+
+
+
