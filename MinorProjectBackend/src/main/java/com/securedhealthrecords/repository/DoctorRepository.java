@@ -8,9 +8,12 @@ import java.util.List;
 
 @Repository
 public interface DoctorRepository extends MongoRepository<Doctor, String> {
-    List<Doctor> findByCity(String city);
-    List<Doctor> findBySpecialization(String specialization);
-    List<Doctor> findByCityAndSpecialization(String city, String specialization);
-    List<Doctor> findByHospitalId(String hospitalId);
-    List<Doctor> findByIsAvailable(Boolean isAvailable);
+
+    List<Doctor> findByDistrictIgnoreCase(String district);
+
+    List<Doctor> findByFullNameContainingIgnoreCase(String fullName);
+
+    List<Doctor> findBySpecializationContainingIgnoreCase(String specialization);
+
+    List<Doctor> findByDistrictIgnoreCaseAndSpecializationContainingIgnoreCase(String district, String specialization);
 }

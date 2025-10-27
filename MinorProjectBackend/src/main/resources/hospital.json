@@ -1,0 +1,1092 @@
+[
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital",
+    "location": "Old Airport Road",
+    "hospitalType": "Private",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics",
+    "phone": "1800 102 5555",
+    "altPhone": "105710",
+    "contact": "info@manipalhospitals.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals",
+    "location": "Bannerghatta Road",
+    "hospitalType": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone": "+91 80 6904 9765",
+    "altPhone": "1066",
+    "contact": "info@apollohospitals.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital",
+    "location": "Bannerghatta Road",
+    "hospitalType": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurology, Orthopaedics",
+    "phone": "+91 96633 67253",
+    "altPhone": "080 6621 4444",
+    "contact": "fortishealthcare.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital",
+    "location": "Bellandur",
+    "hospitalType": "Private",
+    "specialties": "Brain & Spine, Cardiac Sciences, Orthopaedics, Renal Sciences",
+    "phone": "080 4969 4969",
+    "altPhone": "080 4962 4962",
+    "contact": "info@sakraworldhospital.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital",
+    "location": "Hebbal",
+    "hospitalType": "Private",
+    "specialties": "Oncology, Cardiac Sciences, Neurosciences, Gastroenterology",
+    "phone": "080-4342-0100",
+    "altPhone": "080-4647-4647",
+    "contact": "customercare.aster@asterhospital.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City",
+    "location": "Hosur Road",
+    "hospitalType": "Private",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone": "1800 309 0309",
+    "altPhone": "+91 97384 97384",
+    "contact": "narayanahealth.org"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital",
+    "location": "Kengeri",
+    "hospitalType": "Private",
+    "specialties": "Transplants (Liver, Kidney), Oncology, Neurosciences, Gastroenterology",
+    "phone": "+91 80 2625 5555",
+    "altPhone": "+91 73377 02225",
+    "contact": "info.kengeri@gleneagleshospitals.co.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital",
+    "location": "M S Ramaiah Nagar",
+    "hospitalType": "Private",
+    "specialties": "Cardiology, Orthopaedics, Gynaecology, Cardiothoracic Surgery",
+    "phone": "080-23608888",
+    "altPhone": "1800 123 1133",
+    "contact": "contact@msrmh.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals",
+    "location": "Jayanagar",
+    "hospitalType": "Private",
+    "specialties": "Neurosciences, Cardiology, Orthopaedics, Oncology",
+    "phone": "080 69555555",
+    "altPhone": "080 42888100",
+    "contact": "infojnr@sagarhospitals.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital",
+    "location": "Yeshwanthpur",
+    "hospitalType": "Private",
+    "specialties": "Orthopaedics, Trauma, Spine Surgery, Sports Medicine",
+    "phone": "080 61 222 000",
+    "altPhone": "080 61 222 000",
+    "contact": "sparshhospital.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre",
+    "location": "Sampangi Ram Nagar",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Medical, Surgical & Radiation Oncology, Hematology",
+    "phone": "74064 99999",
+    "altPhone": "080 4667 8888",
+    "contact": "info@hcgel.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital",
+    "location": "Hebbal",
+    "hospitalType": "Private (Not-for-Profit)",
+    "specialties": "Cardiology, Paediatrics, Orthopaedics, Gynaecology",
+    "phone": "080-23330323",
+    "altPhone": "080 2202 4700",
+    "contact": "bbh.org.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital",
+    "location": "Ramamurthy Nagar",
+    "hospitalType": "Private",
+    "specialties": "Bariatric Surgery, General Medicine, Neurology, Paediatrics",
+    "phone": null,
+    "altPhone": "24/7",
+    "contact": "practo.com/bangalore/hospital/koshys-hospital"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital",
+    "location": "Yelahanka",
+    "hospitalType": "Private",
+    "specialties": "General Medicine, Gastroenterology, Orthopaedics, Pulmonology",
+    "phone": null,
+    "altPhone": "24/7",
+    "contact": "practo.com/bangalore/hospital/navachethana-hospital"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha's Hospital",
+    "location": "Nrupathunga Road",
+    "hospitalType": "Private (Not-for-Profit)",
+    "specialties": "General Medicine, Surgery, Gynaecology, Paediatrics",
+    "phone": "080-2223 0473",
+    "altPhone": "080-2223 0473",
+    "contact": "stmarthas.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital",
+    "location": "Mahalakshmi Layout",
+    "hospitalType": "Private",
+    "specialties": "Cardiology, Oncology, Orthopaedics, Gynaecology",
+    "phone": null,
+    "altPhone": "24/7",
+    "contact": "sanjeevinihospital.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital",
+    "location": "K.R. Market",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, General Surgery, Orthopaedics, Trauma",
+    "phone": "080-26701150",
+    "altPhone": "080-26703320",
+    "contact": "victoriahospital.karnataka.gov.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon",
+    "location": "Shivaji Nagar",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Surgery, Cardiology, Nephrology",
+    "phone": "080-25591362",
+    "altPhone": "080-25591054",
+    "contact": "blch.karnataka.gov.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sri Jayadeva Institute",
+    "location": "Jayanagar",
+    "hospitalType": "Govt. (Specialized)",
+    "specialties": "Cardiology, Cardiothoracic Surgery, Paediatric Cardiology",
+    "phone": "+91-80-2297-7400",
+    "altPhone": "+91-80-2297-7202",
+    "contact": "info@jayadevacardiology.com"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute",
+    "location": "Hombegowda Nagar",
+    "hospitalType": "Govt. (Specialized)",
+    "specialties": "Medical, Surgical & Radiation Oncology, Cancer Research",
+    "phone": "080-26094000",
+    "altPhone": "080-26094200",
+    "contact": "contactus@kmio.org"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS",
+    "location": "Lakkasandra",
+    "hospitalType": "Govt. (Specialized)",
+    "specialties": "Psychiatry, Neurology, Neurosurgery, Mental Health",
+    "phone": "080-26995201",
+    "altPhone": "14416",
+    "contact": "ms@nimhans.ac.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College",
+    "location": "Sarjapur Road",
+    "hospitalType": "Private (Not-for-Profit)",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics",
+    "phone": "+91 080 2206 5003",
+    "altPhone": "+91 080 2206 5001",
+    "contact": "sjmch.infodesk@stjohns.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Vani Vilas Hospital",
+    "location": "K.R. Road",
+    "hospitalType": "Government",
+    "specialties": "Obstetrics, Gynaecology, Paediatrics, Neonatology",
+    "phone": "+91 80 26703224",
+    "altPhone": "+91 80 26703224",
+    "contact": null
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Indira Gandhi Institute",
+    "location": "Dharmaram College",
+    "hospitalType": "Government",
+    "specialties": "Paediatric Surgery, Paediatric Oncology, Neonatology",
+    "phone": "+91 80 26919200",
+    "altPhone": "+91 80 26919200",
+    "contact": "igich.karnataka.gov.in"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital",
+    "location": "Malleshwaram",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Surgery, Paediatrics, Gynaecology",
+    "phone": "+91 80 23341433",
+    "altPhone": "+91 80 23341433",
+    "contact": null
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "ESI Hospital",
+    "location": "Rajajinagar",
+    "hospitalType": "Government",
+    "specialties": "Orthopaedics, Dermatology, ENT, General Medicine",
+    "phone": "+91 80 23125522",
+    "altPhone": "+91 80 23125522",
+    "contact": null
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Rajiv Gandhi Institute",
+    "location": "Hombegowda Nagar",
+    "hospitalType": "Government",
+    "specialties": "Pulmonology, Thoracic Surgery, Respiratory Diseases",
+    "phone": "080-26701150",
+    "altPhone": "080-26701150",
+    "contact": "rguhs.ac.in"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "location": "Jnanashankara",
+    "hospitalType": "Private Super-Specialty",
+    "specialties": "Cardiac Sciences, Neurosciences, Renal Sciences, Gastroenterology",
+    "phone": "1800 309 0309",
+    "altPhone": "08192-263344",
+    "contact": "narayanahealth.org"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Bapuji Hospital",
+    "location": "MCC 'B' Block",
+    "hospitalType": "Private (Teaching)",
+    "specialties": "General Medicine, General Surgery, Orthopaedics, OBG, Cardiology",
+    "phone": "1800-425-99099",
+    "altPhone": "08192-253850",
+    "contact": "jjmmc.org/our-hospitals.php"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "City Central Hospital Pvt Ltd",
+    "location": "PJ Extension",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Critical Care, Trauma, Gynaecology, Orthopaedics",
+    "phone": "08192-253717",
+    "altPhone": "08192-253717",
+    "contact": "cchdavanagere.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Aaraike Super Speciality Hospital",
+    "location": "KTJ Nagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "General Medicine, Neurology, ENT, General Surgery",
+    "phone": "08192-233446",
+    "altPhone": "7383446516",
+    "contact": "aaraikehospitals.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "location": "PJ Extension",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "OBG, Paediatrics, Orthopaedics, Urology, General Surgery",
+    "phone": "08192-225623",
+    "altPhone": "72592 15444",
+    "contact": "admindvg@soukhyadahospitals.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SSIMS–SPARSH Hospital",
+    "location": "S O G Colony",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Neuroscience, General Medicine, Emergency Care",
+    "phone": "080 61 222 000",
+    "altPhone": "080 61 222 000",
+    "contact": "customercare@sparshhospital.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "location": "Hadadi Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurology, Oncology, Orthopaedics, Nephrology",
+    "phone": "08192-260111",
+    "altPhone": "94486 55000",
+    "contact": "info@nanjappalifecare.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Srushti Speciality Hospital",
+    "location": "Hadadi Road",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Obstetrics & Gynaecology, Paediatrics, Infertility",
+    "phone": "9148267369",
+    "altPhone": "9148267369",
+    "contact": "srushtispecialityhospital@gmail.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Tawakkul Hospital",
+    "location": "PJ Extension",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Laparoscopic Surgery, General Surgery, Hernia, Gallstones",
+    "phone": "99019 24855",
+    "altPhone": "99019 24855",
+    "contact": "info@tawakkulhospital.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Sri Durga Hospital",
+    "location": "Shamanur Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Trauma, Spine Surgery, Joint Replacement",
+    "phone": "08192 463321",
+    "altPhone": "24/7 Trauma Care",
+    "contact": "sridurgahospital02@gmail.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "location": "PJ Extension",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "General Surgery, Gynaecology, Orthopaedics, Paediatrics",
+    "phone": "08192-230203",
+    "altPhone": "9742733116",
+    "contact": "suchethana.hospital@gmail.com"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Vishwas Super Speciality",
+    "location": "Nijalingappa Layout",
+    "hospitalType": "Private Super-Specialty",
+    "specialties": "Orthopaedics, Neurology",
+    "phone": "75800 75844",
+    "altPhone": "75800 75844",
+    "contact": "vishwashospitals.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "location": "Manipal",
+    "hospitalType": "Private (Teaching)",
+    "specialties": "Multi-Super Specialty, Cardiology, Oncology, Neurology, Transplants",
+    "phone": "0820-2922761",
+    "altPhone": "0820-2922222",
+    "contact": "medical.superintendent@manipal.edu"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "location": "Udupi City",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Neurosurgery, Cardiology (Cath Lab), Oncology",
+    "phone": "0820-2535289",
+    "altPhone": "0820-2535289",
+    "contact": "adaudp@gmail.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital",
+    "location": "Ambalpadi, Udupi",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Neurology, Gastroenterology, Orthopaedics, OBG",
+    "phone": "0820-2533331",
+    "altPhone": "0820-2533331",
+    "contact": "hospitalhitech@yahoo.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital",
+    "location": "Ajjarkad, Udupi",
+    "hospitalType": "Private (Teaching)",
+    "specialties": "Multi-Specialty, General Surgery, Paediatrics, Orthopaedics, OBG",
+    "phone": "+91 7259032864",
+    "altPhone": "+91 820-2942160",
+    "contact": "office.tmaph@manipal.edu"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital",
+    "location": "Udupi City",
+    "hospitalType": "Private (Not-for-Profit)",
+    "specialties": "Multi-Specialty, Cardiology, Neurosurgery, Fertility, OBG",
+    "phone": "0820-2520334",
+    "altPhone": "0820-2520334",
+    "contact": "info@lombardhospital.in"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mitra Hospital, Udupi",
+    "location": "Udupi City",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Emergency & Trauma, Cardiology, General Surgery",
+    "phone": "0820-2520598",
+    "altPhone": "0820-2520598",
+    "contact": "mitra@mitrahospital.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital",
+    "location": "Brahmavar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Paediatrics, General Medicine, Orthopaedics",
+    "phone": "0820-2563956",
+    "altPhone": "+91 9449835256",
+    "contact": "https://www.maheshhospital.in/"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Hospital",
+    "location": "Ajjarkad, Udupi",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "General Surgery, Orthopaedics, OBG, Dialysis",
+    "phone": "0820-2593132",
+    "altPhone": "Main Lines",
+    "contact": "newcityhospital@rediffmail.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya",
+    "location": "Adi Udupi",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Ophthalmology, Cataract, LASIK, Retina, Glaucoma",
+    "phone": "0820-2593323",
+    "altPhone": "Main Line",
+    "contact": "prasadnetralayaudupi@yahoo.com"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "District Government Hospital",
+    "location": "Ajjarkad, Udupi",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Surgery, OBG, Orthopaedics, Trauma",
+    "phone": "+91 9449827833",
+    "altPhone": "+91 9449827833",
+    "contact": "https://udupi.nic.in/en/health-family-welfare/"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Government Taluk Hospital Kundapura",
+    "location": "Kundapura",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Surgery, Emergency Care",
+    "phone": "08254-232243",
+    "altPhone": "Main Lines",
+    "contact": "https://udupi.nic.in/en/health-family-welfare/"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Government Taluk Hospital Karkala",
+    "location": "Karkala",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Surgery, Emergency Care",
+    "phone": "08258-230204",
+    "altPhone": "Main Lines",
+    "contact": "https://udupi.nic.in/en/health-family-welfare/"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "location": "Harakere",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Oncology, Neurology, Orthopaedics, Nephrology",
+    "phone": "1800 309 0309",
+    "altPhone": "24/7 Emergency Dept.",
+    "contact": "info.shimoga@narayanahealth.org"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "location": "Durgigudi",
+    "hospitalType": "Private Specialized",
+    "specialties": "Obstetrics, Gynaecology, Paediatrics, Neonatology",
+    "phone": "08182-405505",
+    "altPhone": "24/7 Emergency Dept.",
+    "contact": "admin@sarjihospital.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Super Speciality Hospital",
+    "location": "Durgigudi",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Neurology, Cardiology, Urology, Dermatology",
+    "phone": "Available via directories",
+    "altPhone": "24/7 Emergency Dept.",
+    "contact": "http://sarjihospital.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital",
+    "location": "Kuvempu Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Gynaecology, Neurology, General Surgery",
+    "phone": "08182-268000",
+    "altPhone": "+91 94486 55000",
+    "contact": "info@nanjappalifecare.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Life Care",
+    "location": "Sagar Road",
+    "hospitalType": "Private Super-Specialty",
+    "specialties": "Cardiology, Oncology, Nephrology, Pulmonology",
+    "phone": "08182-267300",
+    "altPhone": "+91 94486 55000",
+    "contact": "https://www.nanjappahealthcare.com/"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "location": "Durgigudi",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Trauma Care, Cardiology, Neurology, Gynaecology",
+    "phone": "08182-269400",
+    "altPhone": "08182-269400",
+    "contact": "https://www.maaxangelshospital.com/"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "location": "Jayanagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurology",
+    "phone": "08182-270001",
+    "altPhone": "24/7 Emergency Dept.",
+    "contact": "info@metrounitedhealthcare.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "location": "Durgigudi",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Gastroenterology, Paediatrics, Gynaecology, General Surgery",
+    "phone": "08182-221432",
+    "altPhone": "08182-221432",
+    "contact": "Not Available"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital",
+    "location": "B.H. Road, Nidige",
+    "hospitalType": "Private Specialized (Oncology)",
+    "specialties": "Surgical, Medical & Radiation Oncology, Palliative Care",
+    "phone": "+91 63588 88807",
+    "altPhone": "24/7 Services",
+    "contact": "info@hcgel.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "location": "Machenahalli",
+    "hospitalType": "Private Specialized",
+    "specialties": "Nephrology, Urology, Kidney Transplant, Fertility (IVF)",
+    "phone": "+91 8495949494",
+    "altPhone": "24/7 Services",
+    "contact": "care.shivamogga@nuhospitals.com"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "McGann District Hospital (SIMS)",
+    "location": "Sagar Road",
+    "hospitalType": "Government Teaching",
+    "specialties": "General Medicine, General Surgery, Trauma, Gynaecology, Paediatrics",
+    "phone": "08182-271566",
+    "altPhone": "24/7 Casualty Dept.",
+    "contact": "http://www.sims-shimoga.com/"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Government Women & Children Hospital",
+    "location": "Vijayanagar/ Keshavanagar",
+    "hospitalType": "Government Specialized",
+    "specialties": "Obstetrics, Gynaecology, Paediatrics, Neonatology",
+    "phone": "Available via directories",
+    "altPhone": "24/7 Services",
+    "contact": "Not Available"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "location": "Gokul Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurosciences, Orthopaedics, Nephrology",
+    "phone": "7406499999",
+    "altPhone": "7022 424111",
+    "contact": "info.ao@hcgel.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "location": "Dollars Colony, Gokul Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiac Sciences, Neurosciences, Orthopaedics, Gynaecology",
+    "phone": "+91 96110 43233",
+    "altPhone": "+91 96110 43233",
+    "contact": "securehospital.in"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital",
+    "location": "Vidyanagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cancer Care, Cardiac Care, Trauma, Neurosurgery",
+    "phone": "+91 9989966980",
+    "altPhone": "+91 9989966980",
+    "contact": "hsshhospital@gmail.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital",
+    "location": "Vidya Nagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopedics, Neurology, Cardiology, Gynaecology",
+    "phone": "+91 836 2378600",
+    "altPhone": "+91 944-986-4820",
+    "contact": "helpsushrutahospital@gmail.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM Hospital",
+    "location": "Sattur, Dharwad",
+    "hospitalType": "Private Teaching",
+    "specialties": "Cardiology, General Surgery, Orthopaedics, Nephrology",
+    "phone": "0836-2477002",
+    "altPhone": "N/A",
+    "contact": "principal@sdmmedicalcollege.org"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS)",
+    "location": "Vidyanagar",
+    "hospitalType": "Government Teaching",
+    "specialties": "General Medicine, General Surgery, Paediatrics, Super-Specialties",
+    "phone": "0836-2372222",
+    "altPhone": "0836-2372222",
+    "contact": "principalkimshubli@gmail.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG NMR Cancer Centre",
+    "location": "Deshpande Nagar",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Medical, Surgical & Radiation Oncology",
+    "phone": "+91 74064 99999",
+    "altPhone": "N/A",
+    "contact": "info@hcgel.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "MM Joshi Eye Institute",
+    "location": "Hosur, Gokul Road",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Ophthalmology, Cataract, Retina, Glaucoma",
+    "phone": "N/A",
+    "altPhone": "N/A",
+    "contact": "mmjoshieyeinstitute.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "location": "Deshpande Nagar",
+    "hospitalType": "Private (Charitable)",
+    "specialties": "Cardiology, General Surgery, Neurology, Gynaecology",
+    "phone": "0836-2251002",
+    "altPhone": "0836-2251002",
+    "contact": "vivekanandgeneralhospital@rediff.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "KCTRI",
+    "location": "Navanagar",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Cancer Care, Surgical & Radiation Oncology",
+    "phone": "+91 6364882927",
+    "altPhone": "0836 2228217",
+    "contact": "kctrihubli@gmail.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Shri Balaji Institute of Neuro Sciences & Trauma",
+    "location": "Vidyanagar",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Neurosciences, Orthopaedics, Trauma, Cardiology",
+    "phone": "7760363306",
+    "altPhone": "0836-4250577",
+    "contact": "drskranthikiran@gmail.com"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Lifeline Hospital",
+    "location": "Gokul Road",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Trauma, Critical Care, Dialysis, General Medicine",
+    "phone": "+91-836-223 7777",
+    "altPhone": "+91-836-223 7777",
+    "contact": "help@lifelinehubli.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospital",
+    "location": "Kuvempunagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiac Sciences, Oncology, Neurosciences, Transplants",
+    "phone": "+91 80 6904 9759",
+    "altPhone": "1066",
+    "contact": "apollohospitals.com/mysore"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital",
+    "location": "Siddique Nagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Neurology, Orthopaedics, Organ Transplants",
+    "phone": "0821-350 3500",
+    "altPhone": "0821-350 3500",
+    "contact": "manipalhospitals.com/mysore"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital",
+    "location": "Devanur",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cancer Care, Cardiology, Nephrology, Neurology",
+    "phone": "180 0309 0309",
+    "altPhone": "24/7 Helpline",
+    "contact": "narayanahealth.org"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital",
+    "location": "M.G. Road",
+    "hospitalType": "Private Multi-Specialty (Teaching)",
+    "specialties": "Cardiology, Oncology, Neurology, Nephrology",
+    "phone": "0821-233 5555",
+    "altPhone": "14455",
+    "contact": "jsshospital.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "location": "Kuvempunagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Gynaecology, Urology, General Surgery",
+    "phone": "0821-254 5981",
+    "altPhone": "+91 98456 42981",
+    "contact": "kamakshihospital.org"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital",
+    "location": "Saraswathipuram",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Urology, Laparoscopic Surgery, Nephrology, Gynaecology",
+    "phone": "0821-426 6661",
+    "altPhone": "9108028661",
+    "contact": "sigmahospital.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Clearmedi Radiant Hospital",
+    "location": "Vijayanagar",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cancer Care, Gastroenterology, Nephrology, Orthopaedics",
+    "phone": "+91 7900900953",
+    "altPhone": "0821-233 6666",
+    "contact": "clearmedi.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital",
+    "location": "Vontikoppal",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Orthopaedics, Neurosurgery, Cardiology, Gastroenterology",
+    "phone": "+91 8105424247",
+    "altPhone": "24/7 Helpline",
+    "contact": "drmhospital.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital",
+    "location": "Lakshmipuram",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Orthopaedics, Neurology, Gynaecology",
+    "phone": "+91 96113 64968",
+    "altPhone": "+91 88840 55044",
+    "contact": "securehospital.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Cauvery Heart & Multi-Speciality Hospital",
+    "location": "Siddhartha Layout",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Cardiology, Orthopaedics, Gynaecology, Nephrology",
+    "phone": "+91 98446 98446",
+    "altPhone": "0821-247 2424",
+    "contact": "cauveryhospital.org"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Nirmala Hospital",
+    "location": "Alanahalli",
+    "hospitalType": "Private Multi-Specialty",
+    "specialties": "Gynaecology, Orthopaedics, Paediatrics, Critical Care",
+    "phone": "9620447044",
+    "altPhone": "24/7 Helpline",
+    "contact": "nirmalahospitalmysore.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "HCG Bharath Hospital & Institute of Oncology",
+    "location": "Hebbal",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Medical, Surgical & Radiation Oncology",
+    "phone": "Not Specified",
+    "altPhone": "24/7 Emergency",
+    "contact": "myupchar.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "St. Joseph's Hospital",
+    "location": "Bannimantap",
+    "hospitalType": "Private (Not-for-Profit)",
+    "specialties": "General Medicine, Gynaecology, Orthopaedics, Paediatrics",
+    "phone": "Not Specified",
+    "altPhone": "24/7 Emergency",
+    "contact": "sjhmysuru.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Krishna Rajendra (K.R.) Hospital",
+    "location": "Yadavagiri",
+    "hospitalType": "Government (Teaching)",
+    "specialties": "General Medicine, General Surgery, Orthopaedics, Trauma",
+    "phone": "0821-252 6202",
+    "altPhone": "0821-252 6202",
+    "contact": "mmcri.karnataka.gov.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Cheluvamba Hospital",
+    "location": "Yadavagiri",
+    "hospitalType": "Government (Teaching)",
+    "specialties": "Obstetrics, Gynaecology, Paediatrics, Neonatology",
+    "phone": "0821-252 0512",
+    "altPhone": "0821-252 0512",
+    "contact": "mmcri.karnataka.gov.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Mysuru District Hospital",
+    "location": "Kumbarakoppalu",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, General Surgery, Emergency Services",
+    "phone": "0821-251 7555",
+    "altPhone": "0821-251 7555",
+    "contact": "mysore.nic.in"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sri Jayadeva Institute of Cardiovascular Sciences",
+    "location": "Kumbarakoppalu",
+    "hospitalType": "Government (Specialized)",
+    "specialties": "Cardiology, Cardiothoracic Surgery, Interventional Cardiology",
+    "phone": "0821-242 1500",
+    "altPhone": "080 2297 7202",
+    "contact": "jayadevacardiology.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "P.K.T.B. Sanatorium",
+    "location": "Siddhartha Layout",
+    "hospitalType": "Government (Specialized)",
+    "specialties": "Tuberculosis, Pulmonary Diseases, Respiratory Medicine",
+    "phone": "0821-248 1494",
+    "altPhone": "0821-248 1494",
+    "contact": "prognohealth.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "ESI Hospital",
+    "location": "Krishnaraja Wadiyar Rd",
+    "hospitalType": "Government",
+    "specialties": "General Medicine, Cardiology, Oncology",
+    "phone": "0821-251 2298",
+    "altPhone": "0821-251 2298",
+    "contact": "prognohealth.com"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Govt. Ayurveda Hospital",
+    "location": "Agrahara",
+    "hospitalType": "Government (Specialized)",
+    "specialties": "Ayurveda, Panchakarma Therapy, Herbal Medicine",
+    "phone": "0821-244 0891",
+    "altPhone": "0821-244 0891",
+    "contact": "prognohealth.com"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Raichur Institute of Medical Sciences (RIMS)",
+    "location": "Hyderabad Road",
+    "hospitalType": "Government Teaching",
+    "specialties": "General Medicine & Surgery, OBG, Paediatrics, Orthopaedics, Cardiology, Urology, Gastroenterology",
+    "phone": "08532-238488",
+    "altPhone": "08532-238488",
+    "contact": "rimsraichur.karnataka.gov.in"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "location": "Navodaya Nagar",
+    "hospitalType": "Private Teaching",
+    "specialties": "General Medicine & Surgery, OBG, Orthopaedics, Paediatrics, Cardiology, Neurology, Oncology",
+    "phone": "+91-8532-223234",
+    "altPhone": "+91-8532-223234",
+    "contact": "navodayahospital.co.in"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Rajiv Gandhi Super Speciality Hospital (OPEC)",
+    "location": "Hyderabad Road",
+    "hospitalType": "Government",
+    "specialties": "Urology, Neurology, Obstetrics, General Medicine, Chest Pain Treatment",
+    "phone": "08532-299919",
+    "altPhone": "08532-299919",
+    "contact": "rgsshopec[at]gmail.com"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital",
+    "location": "Basavanagar",
+    "hospitalType": "Private (NABH)",
+    "specialties": "Orthopaedics, Cardiology, Gynaecology, Nephrology, Neurology, Paediatrics",
+    "phone": "+91 8861234414",
+    "altPhone": "+91 7353835414",
+    "contact": "info@balankuhospitals.com"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Hosamani Multispeciality Hospital",
+    "location": "Ram Raheem Colony",
+    "hospitalType": "Private",
+    "specialties": "Gynaecology (IVF), Laparoscopic Surgery, Cardiology, Neurology, Nephrology",
+    "phone": "09663556077",
+    "altPhone": "09663556077",
+    "contact": "hosamanimultispecialityhospital.com"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Bettadur Super Speciality Hospital",
+    "location": "Bangi Kunta",
+    "hospitalType": "Private",
+    "specialties": "Gynaecology, Laparoscopic Surgery, Paediatrics, Orthopaedics, Cardiology",
+    "phone": "09483099815",
+    "altPhone": "09483099815",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Sri Lakshmi Narayana Multi Speciality Hospital",
+    "location": "Tippu Sultan Road",
+    "hospitalType": "Private",
+    "specialties": "Cardiology, Nephrology, Dermatology, Laparoscopic Surgery, Obstetrics",
+    "phone": "N/A",
+    "altPhone": "N/A",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "V.V.R. Chaitanya Hospital",
+    "location": "Daddy Colony",
+    "hospitalType": "Private",
+    "specialties": "Gynaecology & Obstetrics, Paediatrics, General Surgery, General Medicine",
+    "phone": "09886102698",
+    "altPhone": "09886102698",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "New Amrutha Children Hospital",
+    "location": "Jawahar Nagar",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Paediatric Neurology, Epilepsy, Neuro-developmental Disabilities",
+    "phone": "N/A",
+    "altPhone": "N/A",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Drishti Eye Hospital",
+    "location": "Lingasugur Road",
+    "hospitalType": "Private (Specialized)",
+    "specialties": "Ophthalmology, Cataract & Retina Surgery, Glaucoma Treatment",
+    "phone": "+91-7483384769",
+    "altPhone": "+91-7483384769",
+    "contact": "raichur@drishticare.org"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Aditi Hospital",
+    "location": "I B Road",
+    "hospitalType": "Private",
+    "specialties": "Multi-specialty",
+    "phone": "N/A",
+    "altPhone": "N/A",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Ratnagarbha Hospital",
+    "location": "Bangi Kunta",
+    "hospitalType": "Private",
+    "specialties": "General Medicine, Multi-specialty",
+    "phone": "02048562555",
+    "altPhone": "02048562555",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Sanjeevini Hospital",
+    "location": "Azad Nagar",
+    "hospitalType": "Private",
+    "specialties": "Multi-specialty, Critical Care, Gynaecology",
+    "phone": "N/A",
+    "altPhone": "N/A",
+    "contact": "N/A"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Aradhana Multi Speciality Hospital",
+    "location": "Rajendra Gunj",
+    "hospitalType": "Private",
+    "specialties": "Multi-specialty",
+    "phone": "9902591062",
+    "altPhone": "9902591062",
+    "contact": "aradhanamsrcr@gmail.com"
+  }
+]

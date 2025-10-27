@@ -1,23 +1,21 @@
 package com.securedhealthrecords.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import jakarta.validation.constraints.NotBlank;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class HospitalDTO {
-    
-    private String id;
-    
-    @NotBlank(message = "Hospital name is required")
-    private String name;
-    
-    @NotBlank(message = "City is required")
-    private String city;
-    
-    private String address;
+
+    private String hospitalName;
+    private String district;
+    private String location;
+    private String type;
+    private List<String> specialties;
     private String phone;
+    private String altPhone;
+    private String contact;
 }

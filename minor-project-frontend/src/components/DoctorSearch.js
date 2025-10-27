@@ -1,285 +1,228 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Search, MapPin, Star, Calendar, Send, ArrowLeft } from 'lucide-react';
+// Correct icons are imported (Info icon is already included)
+import { Search, MapPin, Star, Building, Stethoscope, Info } from 'lucide-react';
 import './DoctorSearch.css';
 import { useToast } from './ToastContext';
 
-const DoctorSearch = ({ onBack, user }) => {
-  const [doctors, setDoctors] = useState([]);
-  const [filteredDoctors, setFilteredDoctors] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
-  const [selectedSpecialization, setSelectedSpecialization] = useState('');
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
-  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
-  const [showSendRecordsModal, setShowSendRecordsModal] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const { showToast } = useToast();
+const DoctorSearch = ({ user }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedDistrict, setSelectedDistrict] = useState('');
+    const [selectedSpecialization, setSelectedSpecialization] = useState('');
+    const [results, setResults] = useState([]);
+    const [searchType, setSearchType] = useState('doctor'); // 'doctor' or 'hospital'
+    const [loading, setLoading] = useState(true);
+    const { showToast } = useToast();
 
-  const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad','Karnataka','Kerala'];
-  const specializations = ['Cardiologist', 'Neurologist', 'Pediatrician', 'Dermatologist', 'Orthopedic', 'Gynecologist', 'ENT', 'General Medicine'];
-
-  const setSampleDoctors = useCallback(() => {
-    const sampleDoctors = [
-      {
-        id: '1',
-        fullName: 'Dr. Sarah Johnson',
-        specialization: 'Cardiologist',
-        qualification: 'MBBS, MD Cardiology',
-        experience: '15 years',
-        city: 'Mumbai',
-        rating: 4.8,
-        consultationFee: '₹800',
-        hospital: 'Apollo Hospital',
-        availableSlots: ['10:00 AM', '2:00 PM', '4:00 PM']
-      },
-      {
-        id: '2',
-        fullName: 'Dr. Rajesh Kumar',
-        specialization: 'Neurologist',
-        qualification: 'MBBS, DM Neurology',
-        experience: '12 years',
-        city: 'Delhi',
-        rating: 4.7,
-        consultationFee: '₹1000',
-        hospital: 'AIIMS Delhi',
-        availableSlots: ['9:00 AM', '11:00 AM', '3:00 PM']
-      },
-      {
-        id: '3',
-        fullName: 'Dr. Priya Sharma',
-        specialization: 'Pediatrician',
-        qualification: 'MBBS, MD Pediatrics',
-        experience: '10 years',
-        city: 'Bangalore',
-        rating: 4.9,
-        consultationFee: '₹600',
-        hospital: 'Manipal Hospital',
-        availableSlots: ['8:00 AM', '12:00 PM', '5:00 PM']
-      }
+    // Districts list matching your data and requirement
+    const districts = [
+        "Mysuru",
+        "Bengaluru",
+        "Udupi",
+        "Raichur",
+        "Davangere",
+        "Hubli",
+        "Shivamogga"
     ];
-    setDoctors(sampleDoctors);
-  }, []);
 
-  const fetchDoctors = useCallback(async () => {
-    try {
-      const response = await fetch('/api/v1/doctors');
-      if (response.ok) {
-        const data = await response.json();
-        setDoctors(data);
-      }
-    } catch (error) {
-      console.error('Failed to fetch doctors:', error);
-      showToast('Failed to fetch doctors, loading sample data.', 'warning');
-      setSampleDoctors();
-    } finally {
-      setLoading(false);
-    }
-  }, [showToast, setSampleDoctors]);
+    // Specialization list
+    const specializations = [
+       "Cardiology", "Neurology", "Nephrology", "Gastroenterology", "Pulmonology (Respiratory Medicine)",
+        "Endocrinology", "Oncology (Cancer Care)", "Urology", "Orthopedics", "General Surgery", "Plastic Surgery",
+        "Pediatric Surgery", "Neurosurgery", "Cardiothoracic Surgery", "Vascular Surgery", "ENT (Otorhinolaryngology)",
+        "Ophthalmology", "Dermatology", "Psychiatry", "Psychology", "Pediatrics", "Obstetrics and Gynecology",
+        "General Medicine", "Critical Care / Intensive Care", "Emergency Medicine", "Radiology", "Pathology",
+        "Dentistry", "Anesthesiology", "Physiotherapy", "Diabetology", "Rheumatology", "Hematology", "Nuclear Medicine",
+        "Transplant Medicine", "Infectious Diseases", "Pain Management", "Family Medicine", "Geriatrics",
+        "Occupational Therapy", "Speech Therapy", "Nutrition and Dietetics"
+    ];
 
-  const filterDoctors = useCallback(() => {
-    let filtered = doctors;
+    // Fetch initial data
+    const fetchInitialData = useCallback(async (type = 'doctor') => {
+        setLoading(true);
+        const endpoint = type === 'doctor' ? '/api/v1/search/doctors' : '/api/v1/search/hospitals';
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(endpoint, {
+                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+            });
 
-    if (searchTerm) {
-      filtered = filtered.filter(doctor =>
-        doctor.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        doctor.specialization.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
+            if (response.ok) {
+                const data = await response.json();
+                setResults(data);
+            } else if (response.status === 401 || response.status === 403) {
+                 showToast('Session expired. Please log in again.', 'error');
+                 setResults([]);
+            } else {
+                 showToast(`Failed to load ${type}s: Server error ${response.status}`, 'error');
+            }
+        } catch (error) {
+            showToast(`Failed to load ${type}s. Could not connect or parse response.`, 'error');
+            setResults([]);
+        } finally {
+            setLoading(false);
+        }
+    }, [showToast]);
 
-    if (selectedCity) {
-      filtered = filtered.filter(doctor => doctor.city === selectedCity);
-    }
+    useEffect(() => {
+        fetchInitialData('doctor');
+    }, [fetchInitialData]);
 
-    if (selectedSpecialization) {
-      filtered = filtered.filter(doctor => doctor.specialization === selectedSpecialization);
-    }
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setResults([]);
 
-    setFilteredDoctors(filtered);
-  }, [doctors, searchTerm, selectedCity, selectedSpecialization]);
+        const token = localStorage.getItem('token');
+        let query = new URLSearchParams();
 
-  useEffect(() => {
-    fetchDoctors();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        if (selectedDistrict) query.append('district', selectedDistrict);
 
-  useEffect(() => {
-    filterDoctors();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [doctors, searchTerm, selectedCity, selectedSpecialization]);
+        let urlBase = '';
+        if (searchType === 'doctor') {
+            if (selectedSpecialization) query.append('specialization', selectedSpecialization);
+            if (searchTerm) query.append('fullName', searchTerm);
+            urlBase = '/api/v1/search/doctors';
+        } else {
+            if (selectedSpecialization) query.append('specialty', selectedSpecialization);
+            if (searchTerm) query.append('name', searchTerm);
+            urlBase = '/api/v1/search/hospitals';
+        }
+        const url = `${urlBase}?${query.toString()}`;
 
-  const handleDoctorSelect = (doctor) => {
-    setSelectedDoctor(doctor);
-  };
+        try {
+            const response = await fetch(url, {
+                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+            });
 
-  const handleBookAppointment = () => {
-    setShowAppointmentModal(true);
-  };
+            if (response.ok) {
+                const data = await response.json();
+                setResults(data);
+                if (data.length === 0) {
+                    showToast('No results found for your search criteria.', 'info');
+                }
+            } else if (response.status === 401 || response.status === 403) {
+                 showToast('Session expired. Please log in again.', 'error');
+            } else {
+                 showToast(`Search failed: Server error ${response.status}`, 'error');
+            }
+        } catch (error) {
+            showToast('Search failed. Could not connect to the server.', 'error');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  const handleSendRecords = () => {
-    setShowSendRecordsModal(true);
-  };
+    const handleTabChange = (type) => {
+        setSearchType(type);
+        setSearchTerm('');
+        setSelectedDistrict('');
+        setSelectedSpecialization('');
+        fetchInitialData(type);
+    };
 
-  if (loading) {
-    return (
-      <div className="doctor-search">
-        <div className="loading">Loading doctors...</div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="doctor-search">
-      <div className="search-header">
-        <button onClick={onBack} className="back-btn">
-          <ArrowLeft /> Back
-        </button>
-        <h1>Find Doctors</h1>
-      </div>
-
-      <div className="search-filters">
-        <div className="search-box">
-          <Search />
-          <input
-            type="text"
-            placeholder="Search doctors or specializations..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-
-        <select
-          value={selectedCity}
-          onChange={(e) => setSelectedCity(e.target.value)}
-          className="filter-select"
-        >
-          <option value="">All Cities</option>
-          {cities.map(city => (
-            <option key={city} value={city}>{city}</option>
-          ))}
-        </select>
-
-        <select
-          value={selectedSpecialization}
-          onChange={(e) => setSelectedSpecialization(e.target.value)}
-          className="filter-select"
-        >
-          <option value="">All Specializations</option>
-          {specializations.map(spec => (
-            <option key={spec} value={spec}>{spec}</option>
-          ))}
-        </select>
-      </div>
-
-      <div className="doctors-grid">
-        {filteredDoctors.map(doctor => (
-          <div
-            key={doctor.id}
-            className={`doctor-card ${selectedDoctor?.id === doctor.id ? 'selected' : ''}`}
-            onClick={() => handleDoctorSelect(doctor)}
-          >
+    const ResultCard = ({ item, type }) => (
+        <div className="doctor-card">
             <div className="doctor-avatar">
-              <div className="avatar-placeholder">
-                {doctor.fullName.split(' ').map(n => n[0]).join('')}
-              </div>
+                <div className="avatar-placeholder">
+                    {type === 'doctor' ? <Stethoscope size={40} /> : <Building size={40} />}
+                </div>
             </div>
-            <div className="doctor-info">
-              <h3>{doctor.fullName}</h3>
-              <p className="specialization">{doctor.specialization}</p>
-              <p className="qualification">{doctor.qualification}</p>
-              <div className="doctor-location">
-                <MapPin size={16} />
-                <span>{doctor.hospital}, {doctor.city}</span>
-              </div>
-              <div className="doctor-rating">
-                <Star size={16} fill="currentColor" />
-                <span>{doctor.rating}</span>
-              </div>
-              <p className="consultation-fee">{doctor.consultationFee}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedDoctor && (
-        <div className="selected-doctor-actions">
-          <h3>Selected: {selectedDoctor.fullName}</h3>
-          <div className="action-buttons">
-            <button onClick={handleBookAppointment} className="btn btn-primary">
-              <Calendar size={16} />
-              Book Appointment
-            </button>
-            <button onClick={handleSendRecords} className="btn btn-secondary">
-              <Send size={16} />
-              Send Records
-            </button>
-          </div>
+            {type === 'doctor' ? (
+                <div className="doctor-info">
+                    <h3>{item.fullName || 'N/A'}</h3>
+                    <p className="specialization">{item.specialization || 'N/A'}</p>
+                    <div className="doctor-location"><MapPin size={16} /> <span>{item.hospitalName || 'N/A'}, {item.district || 'N/A'}</span></div>
+                    {item.rating != null && <div className="doctor-rating"><Star size={16} fill="currentColor" /> <span>{item.rating} ({item.totalReviews || 0} reviews)</span></div>}
+                    {item.consultationFee && <p className="consultation-fee">{item.consultationFee}</p>}
+                </div>
+            ) : (
+                 <div className="doctor-info">
+                    <h3>{item.name || 'N/A'}</h3>
+                    <p className="hospital-type"><Info size={16} /> Type: {item.c || 'N/A'}</p>
+                    <p className="specialization">
+                      Specialties: {
+                        Array.isArray(item.specialties)
+                          ? item.specialties.join(', ')
+                          : (item.specialties || 'N/A')
+                      }
+                    </p>
+                    <div className="doctor-location"><MapPin size={16} /> <span>{item.address || 'N/A'}, {item.district || 'N/A'}</span></div>
+                    {(item.phone1 || item.phone2) && <p className="phone">Phone: {item.phone1}{item.phone2 && item.phone2 !== 'N/A' ? ` / ${item.phone2}` : ''}</p>}
+                    {item.email && item.email !== 'N/A' && <p className="email">Email: {item.email}</p>}
+                </div>
+            )}
         </div>
-      )}
+    );
 
-      {/* Appointment Modal */}
-      {showAppointmentModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <h3>Book Appointment with {selectedDoctor?.fullName}</h3>
-            <div className="available-slots">
-              <h4>Available Slots:</h4>
-              {selectedDoctor?.availableSlots?.map(slot => (
-                <button key={slot} className="slot-btn">
-                  {slot}
+    return (
+         <div className="doctor-search">
+            <div className="search-header">
+                <h1>Find Doctors & Hospitals</h1>
+            </div>
+
+            <div className="search-tabs">
+                 <button
+                    className={`tab-btn ${searchType === 'doctor' ? 'active' : ''}`}
+                    onClick={() => handleTabChange('doctor')}
+                >
+                    Doctors
                 </button>
-              ))}
+                <button
+                    className={`tab-btn ${searchType === 'hospital' ? 'active' : ''}`}
+                    onClick={() => handleTabChange('hospital')}
+                >
+                    Hospitals
+                </button>
             </div>
-            <div className="modal-actions">
-              <button onClick={() => setShowAppointmentModal(false)} className="btn btn-secondary">
-                Cancel
-              </button>
-              <button onClick={() => {
-                showToast('Appointment booked successfully!', 'success');
-                setShowAppointmentModal(false);
-              }} className="btn btn-primary">
-                Confirm Booking
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
-      {/* Send Records Modal */}
-      {showSendRecordsModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <h3>Send Records to {selectedDoctor?.fullName}</h3>
-            <p>Select the medical records you want to share:</p>
-            <div className="records-list">
-              <label>
-                <input type="checkbox" />
-                Blood Test Results (Jan 2024)
-              </label>
-              <label>
-                <input type="checkbox" />
-                X-Ray Report (Dec 2023)
-              </label>
-              <label>
-                <input type="checkbox" />
-                Prescription History
-              </label>
+            <form className="search-filters" onSubmit={handleSearch}>
+                <div className="search-box">
+                    <Search />
+                    <input
+                        type="text"
+                        placeholder={searchType === 'doctor' ? "Search by doctor name..." : "Search by hospital name..."}
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+                <select
+                    value={selectedDistrict}
+                    onChange={(e) => setSelectedDistrict(e.target.value)}
+                    className="filter-select"
+                >
+                    <option value="">All Districts</option>
+                    {districts.map(d => (
+                        <option key={d} value={d}>{d}</option>
+                    ))}
+                </select>
+                <select
+                    value={selectedSpecialization}
+                    onChange={(e) => setSelectedSpecialization(e.target.value)}
+                    className="filter-select"
+                >
+                    <option value="">All Specializations</option>
+                    {specializations.map(spec => (
+                        <option key={spec} value={spec}>{spec}</option>
+                    ))}
+                </select>
+                <button type="submit" className="btn btn-primary search-submit-btn" disabled={loading}>
+                    {loading ? 'Searching...' : 'Search'}
+                </button>
+            </form>
+
+            <div className="doctors-grid">
+                {loading ? (
+                    <div className="loading">Loading results...</div>
+                ) : results.length > 0 ? (
+                    results.map((item, index) => (
+                        <ResultCard key={item.id || `${searchType}-${index}-${item.name || item.fullName || item.district}`} item={item} type={searchType} />
+                    ))
+                ) : (
+                    <p>No {searchType === 'doctor' ? 'doctors' : 'hospitals'} found matching your criteria.</p>
+                )}
             </div>
-            <div className="modal-actions">
-              <button onClick={() => setShowSendRecordsModal(false)} className="btn btn-secondary">
-                Cancel
-              </button>
-              <button onClick={() => {
-                showToast('Records sent successfully!', 'success');
-                setShowSendRecordsModal(false);
-              }} className="btn btn-primary">
-                Send Records
-              </button>
-            </div>
-          </div>
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default DoctorSearch;

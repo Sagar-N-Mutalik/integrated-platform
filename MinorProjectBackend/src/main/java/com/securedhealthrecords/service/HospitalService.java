@@ -12,40 +12,52 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class HospitalService {
-    
+
     private final HospitalRepository hospitalRepository;
-    
-    public List<HospitalDTO> searchHospitals(String name, String city) {
-        List<Hospital> hospitals;
-        
-        if (name != null && city != null) {
-            hospitals = hospitalRepository.findByNameOrCity(name, city);
-        } else if (name != null) {
-            hospitals = hospitalRepository.findByNameContainingIgnoreCase(name);
-        } else if (city != null) {
-            hospitals = hospitalRepository.findByCityIgnoreCase(city);
-        } else {
-            hospitals = hospitalRepository.findAll();
-        }
-        
-        return hospitals.stream()
-            .map(this::convertToDTO)
-            .collect(Collectors.toList());
-    }
-    
+
+    // Fetch all hospitals
     public List<HospitalDTO> getAllHospitals() {
-        return hospitalRepository.findAll().stream()
-            .map(this::convertToDTO)
-            .collect(Collectors.toList());
+        return hospitalRepository.findAll()
+                .stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
-    
-    private HospitalDTO convertToDTO(Hospital hospital) {
+
+    // Search by name or district
+    public List<HospitalDTO> searchHospitals(String hospitalName, String district) {
+        List<Hospital> results;
+
+        boolean hasName = hospitalName != null && !hospitalName.isEmpty();
+        boolean hasDistrict = district != null && !district.isEmpty();
+
+        if (hasName && hasDistrict) {
+            results = hospitalRepository.findByHospitalNameContainingIgnoreCase(hospitalName)
+                    .stream()
+                    .filter(h -> h.getDistrict() != null && h.getDistrict().equalsIgnoreCase(district))
+                    .collect(Collectors.toList());
+        } else if (hasName) {
+            results = hospitalRepository.findByHospitalNameContainingIgnoreCase(hospitalName);
+        } else if (hasDistrict) {
+            // ✅ change here — make sure you use the correct repo method
+            results = hospitalRepository.findByDistrictContainingIgnoreCase(district);
+        } else {
+            results = hospitalRepository.findAll();
+        }
+
+        return results.stream().map(this::convertToDTO).collect(Collectors.toList());
+    }
+
+    // Convert MongoDB model → frontend DTO
+    private HospitalDTO convertToDTO(Hospital h) {
         return new HospitalDTO(
-            hospital.getId(),
-            hospital.getName(),
-            hospital.getCity(),
-            hospital.getAddress(),
-            hospital.getPhone()
+                h.getHospitalName(),
+                h.getDistrict(),
+                h.getLocation(),
+                h.getHospitalType(),
+                h.getSpecialties(),
+                h.getPhone(),
+                h.getAltPhone(),
+                h.getContact()
         );
     }
 }
