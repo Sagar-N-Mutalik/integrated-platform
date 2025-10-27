@@ -1,69 +1,43 @@
 package com.securedhealthrecords.controller;
 
-import com.securedhealthrecords.model.Doctor;
-import com.securedhealthrecords.repository.DoctorRepository;
+import com.securedhealthrecords.dto.DoctorDTO;
+import com.securedhealthrecords.service.DoctorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/doctors")
+// Base path → /api/v1/doctors because of server.servlet.context-path=/api/v1
+@RequestMapping("/doctors")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class DoctorController {
 
-    private final DoctorRepository doctorRepository;
+    private final DoctorService doctorService;
 
+    /**
+     * GET /api/v1/doctors
+     * → Returns all doctors
+     */
     @GetMapping
-    public ResponseEntity<List<Doctor>> getAllDoctors() {
-        List<Doctor> doctors = doctorRepository.findByIsAvailable(true);
+    public ResponseEntity<List<DoctorDTO>> getAllDoctors() {
+        List<DoctorDTO> doctors = doctorService.getAllDoctors();
         return ResponseEntity.ok(doctors);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Doctor> getDoctorById(@PathVariable String id) {
-        Optional<Doctor> doctor = doctorRepository.findById(id);
-        return doctor.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/city/{city}")
-    public ResponseEntity<List<Doctor>> getDoctorsByCity(@PathVariable String city) {
-        List<Doctor> doctors = doctorRepository.findByCity(city);
-        return ResponseEntity.ok(doctors);
-    }
-
-    @GetMapping("/specialization/{specialization}")
-    public ResponseEntity<List<Doctor>> getDoctorsBySpecialization(@PathVariable String specialization) {
-        List<Doctor> doctors = doctorRepository.findBySpecialization(specialization);
-        return ResponseEntity.ok(doctors);
-    }
-
+    /**
+     * GET /api/v1/doctors/search?fullName=&district=&specialization=
+     * → Search doctors by name, district, or specialization
+     */
     @GetMapping("/search")
-    public ResponseEntity<List<Doctor>> searchDoctors(
-            @RequestParam(required = false) String city,
+    public ResponseEntity<List<DoctorDTO>> searchDoctors(
+            @RequestParam(required = false) String fullName,
+            @RequestParam(required = false) String district,
             @RequestParam(required = false) String specialization) {
-        
-        List<Doctor> doctors;
-        if (city != null && specialization != null) {
-            doctors = doctorRepository.findByCityAndSpecialization(city, specialization);
-        } else if (city != null) {
-            doctors = doctorRepository.findByCity(city);
-        } else if (specialization != null) {
-            doctors = doctorRepository.findBySpecialization(specialization);
-        } else {
-            doctors = doctorRepository.findByIsAvailable(true);
-        }
-        
-        return ResponseEntity.ok(doctors);
-    }
 
-    @GetMapping("/hospital/{hospitalId}")
-    public ResponseEntity<List<Doctor>> getDoctorsByHospital(@PathVariable String hospitalId) {
-        List<Doctor> doctors = doctorRepository.findByHospitalId(hospitalId);
-        return ResponseEntity.ok(doctors);
+        List<DoctorDTO> results = doctorService.searchDoctors(fullName, district, specialization);
+        return ResponseEntity.ok(results);
     }
 }

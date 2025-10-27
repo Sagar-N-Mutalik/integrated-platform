@@ -15,51 +15,49 @@ public class HospitalService {
 
     private final HospitalRepository hospitalRepository;
 
-    // Search logic uses 'district' and 'name' which match the updated model/repo
-    public List<HospitalDTO> searchHospitals(String name, String district) {
-        List<Hospital> hospitals;
-
-        if (name != null && !name.isEmpty() && district != null && !district.isEmpty()) {
-            // Filter by district first (indexed), then by name in memory
-            hospitals = hospitalRepository.findByDistrictIgnoreCase(district).stream()
-                .filter(h -> h.getName() != null && h.getName().toLowerCase().contains(name.toLowerCase()))
+    // Fetch all hospitals
+    public List<HospitalDTO> getAllHospitals() {
+        return hospitalRepository.findAll()
+                .stream()
+                .map(this::convertToDTO)
                 .collect(Collectors.toList());
-        } else if (name != null && !name.isEmpty()) {
-            hospitals = hospitalRepository.findByNameContainingIgnoreCase(name);
-        } else if (district != null && !district.isEmpty()) {
-            hospitals = hospitalRepository.findByDistrictIgnoreCase(district);
+    }
+
+    // Search by name or district
+    public List<HospitalDTO> searchHospitals(String hospitalName, String district) {
+        List<Hospital> results;
+
+        boolean hasName = hospitalName != null && !hospitalName.isEmpty();
+        boolean hasDistrict = district != null && !district.isEmpty();
+
+        if (hasName && hasDistrict) {
+            results = hospitalRepository.findByHospitalNameContainingIgnoreCase(hospitalName)
+                    .stream()
+                    .filter(h -> h.getDistrict() != null && h.getDistrict().equalsIgnoreCase(district))
+                    .collect(Collectors.toList());
+        } else if (hasName) {
+            results = hospitalRepository.findByHospitalNameContainingIgnoreCase(hospitalName);
+        } else if (hasDistrict) {
+            // ✅ change here — make sure you use the correct repo method
+            results = hospitalRepository.findByDistrictContainingIgnoreCase(district);
         } else {
-            hospitals = hospitalRepository.findAll();
+            results = hospitalRepository.findAll();
         }
 
-        // Convert the found Hospital entities to HospitalDTOs
-        return hospitals.stream()
-            .map(this::convertToDTO)
-            .collect(Collectors.toList());
+        return results.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
-    // Gets all hospitals and converts them to DTOs
-    public List<HospitalDTO> getAllHospitals() {
-        return hospitalRepository.findAll().stream()
-            .map(this::convertToDTO)
-            .collect(Collectors.toList());
-    }
-
-    // *** CRITICAL UPDATE HERE ***
-    // This method now correctly maps ALL fields from the Hospital model
-    // (including 'c') to the HospitalDTO object.
-    private HospitalDTO convertToDTO(Hospital hospital) {
+    // Convert MongoDB model → frontend DTO
+    private HospitalDTO convertToDTO(Hospital h) {
         return new HospitalDTO(
-            hospital.getId(),
-            hospital.getName(),
-            hospital.getDistrict(),
-            hospital.getAddress(),
-            hospital.getC(), // Added 'c' field mapping
-            hospital.getSpecialties(),
-            hospital.getPhone1(),
-            hospital.getPhone2(),
-            hospital.getEmail()
+                h.getHospitalName(),
+                h.getDistrict(),
+                h.getLocation(),
+                h.getHospitalType(),
+                h.getSpecialties(),
+                h.getPhone(),
+                h.getAltPhone(),
+                h.getContact()
         );
     }
 }
-

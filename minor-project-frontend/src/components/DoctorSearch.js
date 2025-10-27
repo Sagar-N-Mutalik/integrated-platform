@@ -15,8 +15,8 @@ const DoctorSearch = ({ user }) => {
 
     // Districts list matching your data and requirement
     const districts = [
-        "Mysuru", // Correct spelling based on JSON
-        "Bengaluru", // Assuming correct, double-check your JSON if issues arise
+        "Mysuru",
+        "Bengaluru",
         "Udupi",
         "Raichur",
         "Davangere",
@@ -24,7 +24,7 @@ const DoctorSearch = ({ user }) => {
         "Shivamogga"
     ];
 
-    // Your specific specialization list
+    // Specialization list
     const specializations = [
        "Cardiology", "Neurology", "Nephrology", "Gastroenterology", "Pulmonology (Respiratory Medicine)",
         "Endocrinology", "Oncology (Cancer Care)", "Urology", "Orthopedics", "General Surgery", "Plastic Surgery",
@@ -36,113 +36,90 @@ const DoctorSearch = ({ user }) => {
         "Occupational Therapy", "Speech Therapy", "Nutrition and Dietetics"
     ];
 
-    // Fetch initial data (doctors by default) or data for the selected type
+    // Fetch initial data
     const fetchInitialData = useCallback(async (type = 'doctor') => {
         setLoading(true);
-        // *** FIXED: Endpoint MUST start with /api/v1 to match backend ***
         const endpoint = type === 'doctor' ? '/api/v1/search/doctors' : '/api/v1/search/hospitals';
-        console.log("Fetching initial data from:", endpoint); // Log the endpoint
         try {
-            const token = localStorage.getItem('token'); // Assuming JWT token is needed
-            const response = await fetch(endpoint, { // FIXED: Now using correct /api/v1 endpoints
-                headers: token ? { 'Authorization': `Bearer ${token}` } : {} // Add token if available
+            const token = localStorage.getItem('token');
+            const response = await fetch(endpoint, {
+                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
             });
-            console.log("Initial fetch response status:", response.status); // Log status
 
             if (response.ok) {
                 const data = await response.json();
-                console.log("Initial data received:", data); // Log received data
                 setResults(data);
             } else if (response.status === 401 || response.status === 403) {
-                 console.error("Auth error fetching initial data");
                  showToast('Session expired. Please log in again.', 'error');
-                 setResults([]); // Clear results on auth error
+                 setResults([]);
             } else {
-                 console.error(`Server error fetching initial data: ${response.status}`);
                  showToast(`Failed to load ${type}s: Server error ${response.status}`, 'error');
-                throw new Error(`Server responded with ${response.status}`);
             }
         } catch (error) {
-            console.error(`Failed to fetch initial ${type}s:`, error);
             showToast(`Failed to load ${type}s. Could not connect or parse response.`, 'error');
-            setResults([]); // Clear results on error
+            setResults([]);
         } finally {
             setLoading(false);
         }
-    }, [showToast]); // Dependency array includes showToast
+    }, [showToast]);
 
-    // Fetch initial doctors when the component mounts
     useEffect(() => {
         fetchInitialData('doctor');
-    }, [fetchInitialData]); // Correct dependency
+    }, [fetchInitialData]);
 
-    // Handle search button click
     const handleSearch = async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
         setLoading(true);
-        setResults([]); // Clear previous results
+        setResults([]);
 
         const token = localStorage.getItem('token');
         let query = new URLSearchParams();
 
-        // Add parameters based on selections
         if (selectedDistrict) query.append('district', selectedDistrict);
 
         let urlBase = '';
         if (searchType === 'doctor') {
             if (selectedSpecialization) query.append('specialization', selectedSpecialization);
-            if (searchTerm) query.append('fullName', searchTerm); // Use fullName for doctors
-             // *** FIXED: Endpoint MUST start with /api/v1 to match backend ***
+            if (searchTerm) query.append('fullName', searchTerm);
             urlBase = '/api/v1/search/doctors';
-        } else { // searchType === 'hospital'
-            // Use 'specialty' for hospital specialty search parameter
+        } else {
             if (selectedSpecialization) query.append('specialty', selectedSpecialization);
-             if (searchTerm) query.append('name', searchTerm); // Use name for hospitals
-             // *** FIXED: Endpoint MUST start with /api/v1 to match backend ***
+            if (searchTerm) query.append('name', searchTerm);
             urlBase = '/api/v1/search/hospitals';
         }
         const url = `${urlBase}?${query.toString()}`;
-        console.log("Performing search with URL:", url); // Log the search URL
 
         try {
-            const response = await fetch(url, { // FIXED: Now using correct /api/v1 endpoints
-                headers: token ? { 'Authorization': `Bearer ${token}` } : {} // Add token if available
+            const response = await fetch(url, {
+                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
             });
-             console.log("Search response status:", response.status); // Log status
 
             if (response.ok) {
                 const data = await response.json();
-                 console.log("Search results received:", data); // Log results
                 setResults(data);
                 if (data.length === 0) {
                     showToast('No results found for your search criteria.', 'info');
                 }
             } else if (response.status === 401 || response.status === 403) {
-                 console.error("Auth error during search");
                  showToast('Session expired. Please log in again.', 'error');
             } else {
-                 console.error(`Search failed: Server responded with ${response.status}`);
                  showToast(`Search failed: Server error ${response.status}`, 'error');
-                // Don't throw error here to avoid uncaught promise rejection
             }
         } catch (error) {
-            console.error('Search fetch failed:', error);
             showToast('Search failed. Could not connect to the server.', 'error');
         } finally {
             setLoading(false);
         }
     };
 
-    // Handle tab switching
     const handleTabChange = (type) => {
         setSearchType(type);
-        setSearchTerm(''); // Clear search term on tab change
+        setSearchTerm('');
         setSelectedDistrict('');
         setSelectedSpecialization('');
-        fetchInitialData(type); // Fetch initial data for the new type
+        fetchInitialData(type);
     };
 
-    // Component to render individual result cards (No changes needed here from last version)
     const ResultCard = ({ item, type }) => (
         <div className="doctor-card">
             <div className="doctor-avatar">
@@ -162,7 +139,13 @@ const DoctorSearch = ({ user }) => {
                  <div className="doctor-info">
                     <h3>{item.name || 'N/A'}</h3>
                     <p className="hospital-type"><Info size={16} /> Type: {item.c || 'N/A'}</p>
-                    <p className="specialization">Specialties: {item.specialties || 'N/A'}</p>
+                    <p className="specialization">
+                      Specialties: {
+                        Array.isArray(item.specialties)
+                          ? item.specialties.join(', ')
+                          : (item.specialties || 'N/A')
+                      }
+                    </p>
                     <div className="doctor-location"><MapPin size={16} /> <span>{item.address || 'N/A'}, {item.district || 'N/A'}</span></div>
                     {(item.phone1 || item.phone2) && <p className="phone">Phone: {item.phone1}{item.phone2 && item.phone2 !== 'N/A' ? ` / ${item.phone2}` : ''}</p>}
                     {item.email && item.email !== 'N/A' && <p className="email">Email: {item.email}</p>}
@@ -172,7 +155,6 @@ const DoctorSearch = ({ user }) => {
     );
 
     return (
-        // JSX structure remains the same
          <div className="doctor-search">
             <div className="search-header">
                 <h1>Find Doctors & Hospitals</h1>
@@ -244,8 +226,3 @@ const DoctorSearch = ({ user }) => {
 };
 
 export default DoctorSearch;
-
-
-
-
-

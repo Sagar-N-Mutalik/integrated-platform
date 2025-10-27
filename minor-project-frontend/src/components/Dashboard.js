@@ -6,7 +6,7 @@ import FileManager from './FileManager';
 import './Dashboard.css';
 import { useToast } from './ToastContext';
 
-const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
+const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccountDeleted }) => {
   const [currentView, setCurrentView] = useState('overview');
   const [stats, setStats] = useState({
     totalFiles: 0,
@@ -28,6 +28,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
   useEffect(() => {
     fetchUserStats();
     fetchProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchUserStats = async () => {
@@ -106,7 +107,6 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
       });
       if (response.ok) {
-        // Clear local storage and navigate to landing via parent callback
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         showToast('Account deleted successfully', 'success');
@@ -175,6 +175,14 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onAccountDeleted }) => {
               <Users size={32} />
               <h3>Find Doctors</h3>
               <p>Search for doctors and book appointments</p>
+            </button>
+            <button 
+              className="action-card"
+              onClick={() => onViewHospitals && onViewHospitals()}
+            >
+              <Users size={32} />
+              <h3>Browse Hospitals</h3>
+              <p>Explore hospitals by district and specialties</p>
             </button>
           </div>
         </div>

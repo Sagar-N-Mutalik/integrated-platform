@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { Search, MapPin, Phone, Building2 } from 'lucide-react';
+import { Search, MapPin, Phone, Building2, Info } from 'lucide-react';
 import './HospitalDirectory.css';
 
 const HospitalDirectory = () => {
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [cityFilter, setCityFilter] = useState('');
+  const [districtFilter, setDistrictFilter] = useState('');
 
   useEffect(() => {
     fetchHospitals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchHospitals = async () => {
     try {
       const params = new URLSearchParams();
       if (searchTerm) params.append('name', searchTerm);
-      if (cityFilter) params.append('city', cityFilter);
+      if (districtFilter) params.append('district', districtFilter);
 
-      const response = await fetch(`/api/v1/hospitals/search?${params}`);
-      
+      const response = await fetch(`/api/v1/search/hospitals?${params}`);
+
       if (response.ok) {
         const data = await response.json();
         setHospitals(data);
@@ -41,7 +42,7 @@ const HospitalDirectory = () => {
 
   const clearFilters = () => {
     setSearchTerm('');
-    setCityFilter('');
+    setDistrictFilter('');
     setLoading(true);
     fetchHospitals();
   };
@@ -52,7 +53,7 @@ const HospitalDirectory = () => {
         <Building2 className="hospital-icon" />
         <h3>{hospital.name}</h3>
       </div>
-      
+
       <div className="hospital-details">
         <div className="detail-item">
           <MapPin />
@@ -61,21 +62,46 @@ const HospitalDirectory = () => {
             <p>{hospital.address}</p>
           </div>
         </div>
-        
+
         <div className="detail-item">
           <MapPin />
           <div>
-            <p className="label">City</p>
-            <p>{hospital.city}</p>
+            <p className="label">District</p>
+            <p>{hospital.district}</p>
           </div>
         </div>
-        
-        {hospital.phone && (
+
+        <div className="detail-item">
+          <Info />
+          <div>
+            <p className="label">Type</p>
+            <p>{hospital.c || 'N/A'}</p>
+          </div>
+        </div>
+
+        {(hospital.phone1 || hospital.phone2) && (
           <div className="detail-item">
             <Phone />
             <div>
               <p className="label">Phone</p>
-              <p>{hospital.phone}</p>
+              <p>
+                {hospital.phone1}
+                {hospital.phone2 && hospital.phone2 !== 'N/A' ? ` / ${hospital.phone2}` : ''}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {hospital.specialties && (
+          <div className="detail-item">
+            <Info />
+            <div>
+              <p className="label">Specialties</p>
+              <p>
+                {Array.isArray(hospital.specialties)
+                  ? hospital.specialties.join(', ')
+                  : (hospital.specialties || 'N/A')}
+              </p>
             </div>
           </div>
         )}
@@ -104,18 +130,18 @@ const HospitalDirectory = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            
+
             <div className="input-group">
               <MapPin />
               <input
                 type="text"
-                placeholder="Filter by city..."
-                value={cityFilter}
-                onChange={(e) => setCityFilter(e.target.value)}
+                placeholder="Filter by district..."
+                value={districtFilter}
+                onChange={(e) => setDistrictFilter(e.target.value)}
               />
             </div>
           </div>
-          
+
           <div className="search-actions">
             <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? 'Searching...' : 'Search'}

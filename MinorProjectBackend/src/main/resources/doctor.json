@@ -1,99 +1,3086 @@
 [
   {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
     "fullName": "Dr. Anish Behl",
-    "specialization": "Endocrinology & Diabetes Care",
-    "district": "Mysuru",
-    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+    "specialization": "Endocrinology & Diabetes Care"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
     "fullName": "Dr. RamaKrishna M N",
-    "specialization": "General Medicine",
-    "district": "Mysuru",
-    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+    "specialization": "General Medicine"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
     "fullName": "Dr. Arti Behl",
-    "specialization": "Psychiatry & Psychology",
-    "district": "Mysuru",
-    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar"
+    "specialization": "Psychiatry & Psychology"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
+    "fullName": "Dr. Prakash H.K.",
+    "specialization": "Anesthesiology"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
+    "fullName": "Dr. Aathira Ravindranath",
+    "specialization": "Gastroenterology & Hepatology"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Apollo BGS Hospitals, Kuvempunagar",
+    "fullName": "Dr. Sandeep B S",
+    "specialization": "Radiology"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
     "fullName": "Dr. Upendra Shenoy",
-    "specialization": "Cardiothoracic Vascular Surgeon",
-    "district": "Mysuru",
-    "hospitalName": "Manipal Hospital, Siddique Nagar"
+    "specialization": "Cardiothoracic Vascular Surgeon"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
     "fullName": "Dr. Jayaram B N",
-    "specialization": "Aesthetic and Reconstructive Surgeon",
-    "district": "Mysuru",
-    "hospitalName": "Manipal Hospital, Siddique Nagar"
+    "specialization": "Aesthetic and Reconstructive Surgeon"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Satish Kumar M G",
+    "specialization": "Internal Medicine Specialist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Nivedita Vishwanath Adapa",
+    "specialization": "Gynecologist / Obstetrician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Vasudeva Pai H",
+    "specialization": "Surgical Gastroenterologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Rekha V Bhat",
+    "specialization": "Endocrinologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Maqsood Ahmed Abdul Rahman",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Manipal Hospital, Siddique Nagar",
+    "fullName": "Dr. Ajay Hegde",
+    "specialization": "Orthopedist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Dilip P Patil",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Sharat Damodar",
+    "specialization": "Haematologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
     "fullName": "Dr. Keshava Murthy",
-    "specialization": "Cardiologist",
-    "district": "Mysuru",
-    "hospitalName": "Narayana Multispeciality Hospital, Devanur"
+    "specialization": "Cardiologist"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Nandakumar Rajan",
+    "specialization": "ENT Specialist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Pranav Subbaya Kandachar",
+    "specialization": "Cardiothoracic & Vascular Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Satheesh Rao A K",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Anand Lingan",
+    "specialization": "Interventional & Paediatric Cardiologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Narayana Multispeciality Hospital, Devanur",
+    "fullName": "Dr. Suhas K R",
+    "specialization": "Oncologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Ravi M D",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Madhu C P",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Narayanappa D",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Harsha S",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Anilkumar M G",
+    "specialization": "Paediatric Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Amruthraj G Gowda",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
     "fullName": "Dr. Sunil Kumar S",
-    "specialization": "Cardiologist",
-    "district": "Mysuru",
-    "hospitalName": "JSS Hospital, M.G. Road"
+    "specialization": "Cardiologist"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Mahesh P A",
+    "specialization": "Pulmonology (HOD)"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "JSS Hospital, M.G. Road",
+    "fullName": "Dr. Manjunath S Shetty",
+    "specialization": "Nephrology (HOD)"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
     "fullName": "Dr. Arun Srinivasa",
-    "specialization": "Cardiologist",
-    "district": "Mysuru",
-    "hospitalName": "Kamakshi Hospital"
+    "specialization": "Cardiologist"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. H Nagesh Kamath",
+    "specialization": "General Surgeon, FRCS"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. Anil Kamath",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. K R Nagabhushana",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. Prakash K Prabhu",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. Nagalakshmi Bhattacharya",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. U G Shenoy",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Kamakshi Hospital",
+    "fullName": "Dr. P Pundaleeka Herle",
+    "specialization": "Plastic Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. G Siddesh",
+    "specialization": "Surgeon, Endoscopist & Laparoscopic Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. B S Keshava",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. Anilkumar M G",
+    "specialization": "Paediatric Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. K M Madappa",
+    "specialization": "Chief Urologist & Transplant Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. B. J. Sharath Chandra",
+    "specialization": "General & Laparoscopic Surgery"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
+    "fullName": "Dr. Rajeswari Madappa",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Sigma Hospital, Saraswathipuram",
     "fullName": "Dr. Hema Raveesh",
-    "specialization": "Interventional Cardiologist",
+    "specialization": "Interventional Cardiologist"
+  },
+  {
     "district": "Mysuru",
-    "hospitalName": "Sigma Hospital, Saraswathipuram"
+    "hospitalName": "Clearmedi Radiant Hospital, Vijayanagar",
+    "fullName": "Dr. Naveen S",
+    "specialization": "Surgical Oncology"
   },
   {
-    "fullName": "Dr. Anil K Bhat",
-    "specialization": "Anaesthesiology",
-    "district": "Udupi",
-    "hospitalName": "Kasturba Hospital, Manipal"
+    "district": "Mysuru",
+    "hospitalName": "Clearmedi Radiant Hospital, Vijayanagar",
+    "fullName": "Dr. Avinash C.B",
+    "specialization": "Medical Oncology"
   },
   {
-    "fullName": "Dr. Narasimha Pai D",
-    "specialization": "Cardiology",
-    "district": "Udupi",
-    "hospitalName": "Kasturba Hospital, Manipal"
+    "district": "Mysuru",
+    "hospitalName": "Clearmedi Radiant Hospital, Vijayanagar",
+    "fullName": "Dr. Kartik Herkal",
+    "specialization": "ENT"
   },
   {
-    "fullName": "Dr. G. S. Chandrashekar",
-    "specialization": "Managing Director & Chief Surgeon",
-    "district": "Udupi",
-    "hospitalName": "Adarsha Hospital, Udupi"
+    "district": "Mysuru",
+    "hospitalName": "Clearmedi Radiant Hospital, Vijayanagar",
+    "fullName": "Dr. Chaitra Katakol",
+    "specialization": "Radiation Oncology"
   },
   {
-    "fullName": "Dr. Mallesh P",
-    "specialization": "Cardiologist",
-    "district": "Davangere",
-    "hospitalName": "SS Narayana Health Super Specialty Center"
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Manjunath B H",
+    "specialization": "Orthopaedic Surgeon (Fellowship in Joint Replacement & Arthroscopy)"
   },
   {
-    "fullName": "Dr. Murali Babu",
-    "specialization": "Cardiothoracic and Vascular Surgeon",
-    "district": "Davangere",
-    "hospitalName": "SS Narayana Health Super Specialty Center"
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Abid Sattar",
+    "specialization": "Medical Gastroenterologist"
   },
   {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Goutham Cugati",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. S Kumar Raj Urs",
+    "specialization": "Urologist & Kidney Transplant Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Ravi H S",
+    "specialization": "Plastic & Cosmetic Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Hema Raveesh",
+    "specialization": "Interventional Cardiologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Vijay R M",
+    "specialization": "Nephrologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "DRM Multi Speciality Hospital, Vontikoppal",
+    "fullName": "Dr. Bindu Balasubramaniam",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Ajay Hegde",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Amruth Raj Gowda",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Devika Janardhan",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Balaji M D",
+    "specialization": "Neonatology & Paediatrics"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Sridhar R.",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Ganesh",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Mysuru",
+    "hospitalName": "Secure Hospital, Lakshmipuram",
+    "fullName": "Dr. Guruprasad",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Jayalaxmi",
+    "specialization": "Anaesthesiology - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Kaleem Siddiqui",
+    "specialization": "Anaesthesiology - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Kiran K.N.",
+    "specialization": "Anaesthesiology - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Hosamani Multispeciality Hospital",
+    "fullName": "Dr. Myakala Siddartha",
+    "specialization": "Anaesthesiology - Anaesthesiologist"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Nandan Padashetty",
+    "specialization": "Anaesthesiology - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Aditi Multi-Specialty Hospital (Tumakur)",
+    "fullName": "Dr. Rajesh S R",
+    "specialization": "Anesthesia, Critical Care & Pain Physician"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. Velayuda Reddy",
+    "specialization": "Anaesthesiology - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. B. Vijayachandra",
+    "specialization": "Anatomy - Principal & Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. N.S. Naveen",
+    "specialization": "Anatomy - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Ravishankar G",
+    "specialization": "Anatomy - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. Vishal Salve",
+    "specialization": "Anatomy - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Sreekantha",
+    "specialization": "Biochemistry - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. V.M. Pujari",
+    "specialization": "Biochemistry - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. Vishal H. Kalaskar",
+    "specialization": "Biochemistry - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Vijay Poly Clinic",
     "fullName": "Dr. Ajit V Kulkarni",
-    "specialization": "Cardiology - Interventional Cardiologist",
-    "district": "Raichur",
-    "hospitalName": "Vijay Poly Clinic"
+    "specialization": "Cardiology - Interventional Cardiologist"
   },
   {
-    "fullName": "Dr. Gopinath",
-    "specialization": "Cardiology - Cardiologist",
     "district": "Raichur",
-    "hospitalName": "Balanku Hospital"
+    "hospitalName": "Balanku Hospital",
+    "fullName": "Dr. Gopinath",
+    "specialization": "Cardiology - Cardiologist"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Din Prakash Ranjan",
+    "specialization": "Community Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Rahul Kirte",
+    "specialization": "Community Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Shivappa H.",
+    "specialization": "Community Medicine - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. Kallappa C H",
+    "specialization": "Dermatology - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Shankar Gouda Ireddy",
+    "specialization": "Dermatology - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Aravindkumar B.S.",
+    "specialization": "ENT (Otorhinolaryngology) - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. N.H. Kulkarni",
+    "specialization": "ENT (Otorhinolaryngology) - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Suhas Y Chaudhari",
+    "specialization": "ENT (Otorhinolaryngology) - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital",
+    "fullName": "Dr. Veerabhadra Gadwal",
+    "specialization": "ENT (Otorhinolaryngology) - ENT Specialist"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Venkatesh U.",
+    "specialization": "ENT (Otorhinolaryngology) - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Basavaraj Patil",
+    "specialization": "Forensic Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Sharanabasavappa Karaddi",
+    "specialization": "Forensic Medicine - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital",
+    "fullName": "Dr. Santosh",
+    "specialization": "Gastroenterology - Gastro Surgeon"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Hosamani Multispeciality Hospital",
+    "fullName": "Dr. Santosh Kumar",
+    "specialization": "Gastroenterology - Surgical Gastroenterologist"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Arun M.",
+    "specialization": "General Medicine - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Basavaraj M. Patil",
+    "specialization": "General Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Basavaraj Machanur",
+    "specialization": "General Medicine - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital",
+    "fullName": "Dr. Chaitanya Kumar S",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Hariprasad",
+    "specialization": "General Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Navodaya Medical College Hospital",
+    "fullName": "Dr. Krishna Prasad Kota",
+    "specialization": "General Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Hosamani Multispeciality Hospital",
+    "fullName": "Dr. Navyashree Kattimani",
+    "specialization": "General Medicine - Physician"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Rajashekhar",
+    "specialization": "General Medicine - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Rajiv Gandhi Super Speciality Hospital (OPEC)",
+    "fullName": "Dr. Suresh Veerabhadrappa Sagarad",
+    "specialization": "General Medicine - General Physician"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Balanku Hospital",
+    "fullName": "Dr. Venkata Ramana",
+    "specialization": "General Medicine - General Physician"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Azeem",
+    "specialization": "General Surgery - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Hosamani Multispeciality Hospital",
+    "fullName": "Dr. Guru Hosamani",
+    "specialization": "General Surgery - Advanced Gynaecology Laparoscopic & Pelvic Surgeon"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Nagaraj Gadwal",
+    "specialization": "General Surgery - Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Prabhuraj Gaddikere",
+    "specialization": "General Surgery - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "RIMS Teaching Hospital",
+    "fullName": "Dr. Ramesh",
+    "specialization": "General Surgery - Associate Professor"
+  },
+  {
+    "district": "Raichur",
+    "hospitalName": "Sri Lakshmi Narayana Multi Speciality Hospital",
+    "fullName": "Dr. Ramesh C Sagar",
+    "specialization": "General Surgery - Laparoscopic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Mallesh P",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Murali Babu",
+    "specialization": "Cardiothoracic and Vascular Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Vikram Huded",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Dhananjay R S",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Sathyanarayana M V V",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Guruprasad S Pujar",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Sreenivasa B",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SS Narayana Health Super Specialty Center",
+    "fullName": "Dr. Naveen H N",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Bapuji Hospital",
+    "fullName": "Dr. D.S. Kumar",
+    "specialization": "Medical Superintendent, M.D. (General Medicine)"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "City Central Hospital Pvt Ltd",
+    "fullName": "Dr. H L Subba Rao",
+    "specialization": "Cardiothoracic and Vascular Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "City Central Hospital Pvt Ltd",
+    "fullName": "Dr. Raghavendra M Doddamani",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "City Central Hospital Pvt Ltd",
+    "fullName": "Dr. Venkatesh B P",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "City Central Hospital Pvt Ltd",
+    "fullName": "Dr. Poornima",
+    "specialization": "Obstetrician / Gynaecologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Aaraike Super Speciality Hospital",
+    "fullName": null,
+    "specialization": null
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Avinash S. Patil",
+    "specialization": "Obstetrician & Gynecologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Anil S Nelivigi",
+    "specialization": "Orthopedic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. H B Shiva Kumar",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Anup Kumar MC",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Amaresh D G",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Manjunath H A",
+    "specialization": "ENT Specialist, Head and Neck Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Gururaj C",
+    "specialization": "Consultant - Paediatrics"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Soukhyada Hospital",
+    "fullName": "Dr. Siddarth E S",
+    "specialization": "Consultant - Paediatrics"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SSIMS–SPARSH Hospital",
+    "fullName": "Dr. Ravikumar Mukartihal",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "SSIMS–SPARSH Hospital",
+    "fullName": "Dr. Girishchandra B G",
+    "specialization": "Psychiatrist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Ganeshgouda Majigoudra",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Nischal N",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Shivaraj Afzalpurkar",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Irappa Madabhavi",
+    "specialization": "Medical Oncologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Harish K.R.",
+    "specialization": "Nephrologist and Transplant Physician"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Vincent McMohan",
+    "specialization": "Orthopedic, Joint Replacement & Arthroscopy Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. J Narendra",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Nanjappa Hospital",
+    "fullName": "Dr. Shanthala R",
+    "specialization": "Obstetrician & Gynecologist, Infertility Specialist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Srushti Speciality Hospital",
+    "fullName": "Dr. Vijaykumar M.M.",
+    "specialization": "Obstetrician & Gynaecologist, Urogynecologist & Pelvic Reconstructive Surgeon, Infertility Specialist, Laparoscopic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Tawakkul Hospital",
+    "fullName": "Dr. Zameer Ulla T",
+    "specialization": "Laparoscopic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Sri Durga Hospital",
+    "fullName": "Dr. Ramesh Pujar",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "fullName": "Dr. Onkarappa",
+    "specialization": "Rtd. District Health & Family Welfare Officer"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "fullName": "Dr. B.R Sumitra Devi",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "fullName": "Dr. Vinay Kumar Rajendra",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "fullName": "Dr. Darshan Kumar H.S",
+    "specialization": "Physician & Diabetologist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Suchethana Hospital",
+    "fullName": "Dr. Mahendra Kumar B.",
+    "specialization": "Child Specialist"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Vishwas Super Speciality Hospital",
+    "fullName": "Dr. Anil S Nelivigi",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Vishwas Super Speciality Hospital",
+    "fullName": "Dr. Gururaj C",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Vishwas Super Speciality Hospital",
+    "fullName": "Dr. Yallappa Reddy H M",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Davangere",
+    "hospitalName": "Vishwas Super Speciality Hospital",
+    "fullName": "Dr. Kiran D.N.",
+    "specialization": "Dentist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Avinash Shetty",
+    "specialization": "Medical Superintendent"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Anil K Bhat",
+    "specialization": "Anaesthesiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Sumesh T Rao",
+    "specialization": "Anaesthesiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Latha V Prabhu",
+    "specialization": "Anatomy"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Narasimha Pai D",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Padmanabha Kamath K",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Animesh Jain",
+    "specialization": "Community Medicine"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Gabriel Rodrigues",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Mukhyaprana Prabhu",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Raviraj Acharya",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Shamee Shastry C",
+    "specialization": "Immunohematology & Blood Transfusion"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Kasturba Hospital, Manipal",
+    "fullName": "Dr. Ranjan Ramakrishna K",
+    "specialization": "Anaesthesiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. G. S. Chandrashekar",
+    "specialization": "Managing Director & Chief Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Sudheer Shetty",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Satish K Nayak",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Suresh Shenoy",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Prashanth Shetty",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Mahesh Gopal Shetty",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Arathi Hebbar",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Damayanti Krishnamohan",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Adarsha Hospital, Udupi",
+    "fullName": "Dr. Ranjitha S Nayak",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. S N Rao",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Vinod Kumar",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Roshan Shetty",
+    "specialization": "Surgical Gastroenterologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Sathish Nayak",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Nalini Bhaskaranand",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Janardhan Prabhu",
+    "specialization": "Paediatrician & Neonatologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Janavi Rao",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Sharathchandra Rao",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Umesh Prabhu",
+    "specialization": "Orthopaedician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. S P Mohanthanty",
+    "specialization": "Spine & Hip Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Raghuram Nayak",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Ashok Kumar Y G",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. TS Rao",
+    "specialization": "General & Laparoscopic Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Althaf Khan",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Hemanth Hegde",
+    "specialization": "Medical Oncologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Hitech Medicare Hospital & Research Centre, Udupi",
+    "fullName": "Dr. Vyshak",
+    "specialization": "Pulmonologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Dinesh Nayak",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Prasad S S",
+    "specialization": "Surgery"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Rajaram Pai",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Ramya Nayak",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Ashish Gupta",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Shiran Shetty",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Shashikala Bhat",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Mohan V B",
+    "specialization": "Nephrologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Kailesh Pujary",
+    "specialization": "ENT Specialist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Satish Pai",
+    "specialization": "Dermatologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Dr. T.M.A. Pai Hospital, Udupi",
+    "fullName": "Dr. Suresh Pillai",
+    "specialization": "ENT Specialist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Sushil Jathanna",
+    "specialization": "Director"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Ganesh Kamath",
+    "specialization": "Senior Medical Officer"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. R Sripathi",
+    "specialization": "Chest Specialist & Ayurvedic Consultant"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Vishu Kumara",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Keerthan Upadhya",
+    "specialization": "Laparoscopic & Laser Surgery"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Deepa Y Rao",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Manohar Boloor",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Guruprasad Shetty",
+    "specialization": "Neonatology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Harsha Acharya",
+    "specialization": "Paediatric Surgery"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Vinod",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Arjun Ballal",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Megha Pai",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Narendra Shenoy",
+    "specialization": "Ophthalmology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "CSI Lombard Memorial Hospital, Udupi",
+    "fullName": "Dr. Arthur Rodrigues",
+    "specialization": "Ophthalmology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mitra Hospital, Udupi",
+    "fullName": "Dr. Shreedhar Holla N.",
+    "specialization": "Medical Director"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mitra Hospital, Udupi",
+    "fullName": "Dr. Savithri Daithota",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mitra Hospital, Udupi",
+    "fullName": "Dr. Sudarshan Rao Y",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mitra Hospital, Udupi",
+    "fullName": "Dr. Haridas K",
+    "specialization": "Psychiatrist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Rakesh Adiga B",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Sharath Madhyastha P",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Archana Adiga B",
+    "specialization": "Radiologist & Sonologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Veena Umesh",
+    "specialization": "Ophthalmic Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Malcom Noronha",
+    "specialization": "Dermatologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Rajesh Bhat",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Dr. Rohan Shetty",
+    "specialization": "Laparoscopic Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Mahesh Hospital, Brahmavar",
+    "fullName": "Rachana S",
+    "specialization": "Paediatric & Preventive Dentistry"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Ramesh Naik",
+    "specialization": "Medical Director & Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Sadhana R Naik",
+    "specialization": "Obstetrician & Gynaecologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Bhaskar Palan",
+    "specialization": "Physician"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Sanketh R. Naik",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Rithika Salian",
+    "specialization": "Psychiatrist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Suraj Hegde P",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Vinod Kumar K",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "New City Multispeciality Hospital, Udupi",
+    "fullName": "Dr. Sathish K Nayak",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Krishna Prasad Kudlu",
+    "specialization": "Cataract & Refractive Services"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Vikram Jain",
+    "specialization": "Cataract & Glaucoma Services"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Harish Shetty",
+    "specialization": "Medical Retina Services"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Jacob Chacko",
+    "specialization": "Vitreo Retina Services"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Aparna Nayak",
+    "specialization": "Cornea & Refractive Services"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "Prasad Netralaya Super Specialty Eye Hospital, Udupi",
+    "fullName": "Dr. Chinappa A.G.",
+    "specialization": "Oculoplasty & Paediatric Ophthalmology"
+  },
+  {
+    "district": "Udupi",
+    "hospitalName": "District Government Hospital, Udupi",
+    "fullName": null,
+    "specialization": null
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. K. S. S. Bhat",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. Davinder Singh Chadha",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. Shabber Zaveri",
+    "specialization": "Surgical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. Poonam Patil",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. Nagaraj B.",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Manipal Hospital (Old Airport Road)",
+    "fullName": "Dr. B. C. Kumar",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. Sathish Kumar S. M.",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. B. S. Amit",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. Ramesh Reddy K.",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. Manjunath H. S.",
+    "specialization": "Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. Suma Chandrashekar",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Apollo Hospitals (Bannerghatta Road)",
+    "fullName": "Dr. V. S. Raghunathan",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital (Bannerghatta Road)",
+    "fullName": "Dr. Vijayalakshmi S. K.",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital (Bannerghatta Road)",
+    "fullName": "Dr. Prakash N. H.",
+    "specialization": "Gastroenterology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital (Bannerghatta Road)",
+    "fullName": "Dr. Kumar Prabhu",
+    "specialization": "Urology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital (Bannerghatta Road)",
+    "fullName": "Dr. Meera Rao",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Fortis Hospital (Bannerghatta Road)",
+    "fullName": "Dr. Suresh Babu M. N.",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Deepak Krishnamurthy",
+    "specialization": "Interventional Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Sreekanth Shetty",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Sudheer K. N.",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Rohit Bhat",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Anita S. K.",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sakra World Hospital (Bellandur)",
+    "fullName": "Dr. Arun Kumar S. P.",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital (Hebbal)",
+    "fullName": "Dr. N. R. Ramesh",
+    "specialization": "Cardiothoracic Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital (Hebbal)",
+    "fullName": "Dr. Satish Chandra",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital (Hebbal)",
+    "fullName": "Dr. Ravindra Reddy",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital (Hebbal)",
+    "fullName": "Dr. Meena Nataraj",
+    "specialization": "Endocrinology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Aster CMI Hospital (Hebbal)",
+    "fullName": "Dr. Vijay Kumar C.",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Devi Shetty",
+    "specialization": "Cardiac Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Vivek Jawali",
+    "specialization": "Cardiothoracic Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Mahesh Bhupathi",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Anoop Nambiar",
+    "specialization": "Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Shashidhar K. N.",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Narayana Health City (Hosur Road)",
+    "fullName": "Dr. Suresh Rao",
+    "specialization": "Paediatric Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Anil Kumar B. T.",
+    "specialization": "Gastroenterology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Rajiv Lochan J.",
+    "specialization": "Liver Transplant Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Ravindra B. K.",
+    "specialization": "Hepatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Anantheshwar Y. N.",
+    "specialization": "Plastic Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Mahesh K. Reddy",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "BGS Gleneagles Global Hospital (Kengeri)",
+    "fullName": "Dr. Subramanya C. K.",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. Girish B. S.",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. Seema S.",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. S. Venkatesh",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. Rajeshwari S.",
+    "specialization": "Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. Arvind Kumar",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Ramaiah Memorial Hospital (M S Ramaiah Nagar)",
+    "fullName": "Dr. Pradeep R.",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals (Jayanagar)",
+    "fullName": "Dr. Kiran Kumar",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals (Jayanagar)",
+    "fullName": "Dr. P. S. Shashikiran",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals (Jayanagar)",
+    "fullName": "Dr. Soumya B.",
+    "specialization": "Psychiatry"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals (Jayanagar)",
+    "fullName": "Dr. Mohan K. R.",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sagar Hospitals (Jayanagar)",
+    "fullName": "Dr. Ramesh S.",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital (Yeshwanthpur)",
+    "fullName": "Dr. Sharan Patil",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital (Yeshwanthpur)",
+    "fullName": "Dr. Ranjan Shetty",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital (Yeshwanthpur)",
+    "fullName": "Dr. Rekha S.",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital (Yeshwanthpur)",
+    "fullName": "Dr. Srinivas B.",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "SPARSH Hospital (Yeshwanthpur)",
+    "fullName": "Dr. Usha N.",
+    "specialization": "Dermatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre (Sampangi Ram Nagar)",
+    "fullName": "Dr. B. S. Ajaikumar",
+    "specialization": "Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre (Sampangi Ram Nagar)",
+    "fullName": "Dr. Rajendra A. Badwe",
+    "specialization": "Surgical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre (Sampangi Ram Nagar)",
+    "fullName": "Dr. Shilpa Rao",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre (Sampangi Ram Nagar)",
+    "fullName": "Dr. Vishwanath S.",
+    "specialization": "Radiation Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "HCG Cancer Centre (Sampangi Ram Nagar)",
+    "fullName": "Dr. Geetha G.",
+    "specialization": "Paediatric Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital (Hebbal)",
+    "fullName": "Dr. George Thomas",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital (Hebbal)",
+    "fullName": "Dr. Grace Chandran",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital (Hebbal)",
+    "fullName": "Dr. Stephen Raj",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital (Hebbal)",
+    "fullName": "Dr. Lydia Samuel",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bangalore Baptist Hospital (Hebbal)",
+    "fullName": "Dr. David Prasad",
+    "specialization": "ENT"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital (Ramamurthy Nagar)",
+    "fullName": "Dr. Binu George",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital (Ramamurthy Nagar)",
+    "fullName": "Dr. Praveen Reddy",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital (Ramamurthy Nagar)",
+    "fullName": "Dr. Rekha Menon",
+    "specialization": "Dermatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital (Ramamurthy Nagar)",
+    "fullName": "Dr. Ajith Thomas",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Koshys Hospital (Ramamurthy Nagar)",
+    "fullName": "Dr. Suma Suresh",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital (Yelahanka)",
+    "fullName": "Dr. Anil Kumar Shetty",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital (Yelahanka)",
+    "fullName": "Dr. Kavitha S.",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital (Yelahanka)",
+    "fullName": "Dr. Naveen Kumar",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital (Yelahanka)",
+    "fullName": "Dr. S. Ramesh",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Navachethana Hospital (Yelahanka)",
+    "fullName": "Dr. Asha Rao",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha’s Hospital (Nrupathunga Road)",
+    "fullName": "Dr. Sheila Pinto",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha’s Hospital (Nrupathunga Road)",
+    "fullName": "Dr. Rachel D’Souza",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha’s Hospital (Nrupathunga Road)",
+    "fullName": "Dr. Joseph Pereira",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha’s Hospital (Nrupathunga Road)",
+    "fullName": "Dr. Lata Benjamin",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. Martha’s Hospital (Nrupathunga Road)",
+    "fullName": "Dr. Anthony Menezes",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital (Mahalakshmi Layout)",
+    "fullName": "Dr. Ravindra Kumar",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital (Mahalakshmi Layout)",
+    "fullName": "Dr. Madhuri Shetty",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital (Mahalakshmi Layout)",
+    "fullName": "Dr. Lokesh N. R.",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital (Mahalakshmi Layout)",
+    "fullName": "Dr. Sanjay K.",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sanjeevini Hospital (Mahalakshmi Layout)",
+    "fullName": "Dr. P. K. Raj",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Mathew Kurien",
+    "specialization": "Gastroenterology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Anil Abraham",
+    "specialization": "Dermatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Rita George",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Jacob Chacko",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Leena Michael",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "St. John’s Medical College Hospital (Sarjapur Road)",
+    "fullName": "Dr. Suresh Babu Thomas",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS (Lakkasandra)",
+    "fullName": "Dr. Pratima Murthy",
+    "specialization": "Psychiatry"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS (Lakkasandra)",
+    "fullName": "Dr. Ravi Yadav",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS (Lakkasandra)",
+    "fullName": "Dr. Shankar Narayana",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS (Lakkasandra)",
+    "fullName": "Dr. Poornima Bhattacharya",
+    "specialization": "Clinical Psychology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "NIMHANS (Lakkasandra)",
+    "fullName": "Dr. S. K. Ramesh",
+    "specialization": "Neuro-Rehabilitation"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute of Oncology (Hombegowda Nagar)",
+    "fullName": "Dr. S. C. Nagendra",
+    "specialization": "Surgical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute of Oncology (Hombegowda Nagar)",
+    "fullName": "Dr. Usha Rani",
+    "specialization": "Radiation Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute of Oncology (Hombegowda Nagar)",
+    "fullName": "Dr. A. K. Kumar",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute of Oncology (Hombegowda Nagar)",
+    "fullName": "Dr. Bhavana S.",
+    "specialization": "Paediatric Oncology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Kidwai Memorial Institute of Oncology (Hombegowda Nagar)",
+    "fullName": "Dr. Ananth C. Rao",
+    "specialization": "Haematology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sri Jayadeva Institute of Cardiovascular Sciences & Research (Jayanagar)",
+    "fullName": "Dr. C. N. Manjunath",
+    "specialization": "Cardiology (HOD)"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sri Jayadeva Institute of Cardiovascular Sciences & Research (Jayanagar)",
+    "fullName": "Dr. R. G. Manjunatha",
+    "specialization": "Cardiothoracic Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sri Jayadeva Institute of Cardiovascular Sciences & Research (Jayanagar)",
+    "fullName": "Dr. Asha S. Kumar",
+    "specialization": "Paediatric Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Sri Jayadeva Institute of Cardiovascular Sciences & Research (Jayanagar)",
+    "fullName": "Dr. Sandeep K. N.",
+    "specialization": "Interventional Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital (K.R. Market)",
+    "fullName": "Dr. Udaya Kumar R.",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital (K.R. Market)",
+    "fullName": "Dr. Ramesh P. S.",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital (K.R. Market)",
+    "fullName": "Dr. Kavitha Gowda",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital (K.R. Market)",
+    "fullName": "Dr. N. K. Vasudev",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Victoria Hospital (K.R. Market)",
+    "fullName": "Dr. Lalitha S. N.",
+    "specialization": "Anaesthesiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon Hospital (Shivaji Nagar)",
+    "fullName": "Dr. Mohammed Faisal",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon Hospital (Shivaji Nagar)",
+    "fullName": "Dr. Padma V. N.",
+    "specialization": "Dermatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon Hospital (Shivaji Nagar)",
+    "fullName": "Dr. Harsha R. S.",
+    "specialization": "ENT"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon Hospital (Shivaji Nagar)",
+    "fullName": "Dr. Shobha N.",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Bowring & Lady Curzon Hospital (Shivaji Nagar)",
+    "fullName": "Dr. Suresh K.",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital (Malleshwaram)",
+    "fullName": "Dr. Rekha S. K.",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital (Malleshwaram)",
+    "fullName": "Dr. Pramod Shetty",
+    "specialization": "General Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital (Malleshwaram)",
+    "fullName": "Dr. Megha Bhat",
+    "specialization": "Gynaecology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital (Malleshwaram)",
+    "fullName": "Dr. Rajendra Naik",
+    "specialization": "Paediatrics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "KC General Hospital (Malleshwaram)",
+    "fullName": "Dr. Aruna Devi",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "ESI Hospital (Rajajinagar)",
+    "fullName": "Dr. R. Balakrishna",
+    "specialization": "Orthopaedics"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "ESI Hospital (Rajajinagar)",
+    "fullName": "Dr. Hema Naik",
+    "specialization": "Dermatology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "ESI Hospital (Rajajinagar)",
+    "fullName": "Dr. S. L. Gowri",
+    "specialization": "ENT"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "ESI Hospital (Rajajinagar)",
+    "fullName": "Dr. Vinod K. R.",
+    "specialization": "General Medicine"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Rajiv Gandhi Institute of Chest Diseases (Hombegowda Nagar)",
+    "fullName": "Dr. Basavaraj C.",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Rajiv Gandhi Institute of Chest Diseases (Hombegowda Nagar)",
+    "fullName": "Dr. S. Manjunath",
+    "specialization": "Thoracic Surgery"
+  },
+  {
+    "district": "Bengaluru",
+    "hospitalName": "Rajiv Gandhi Institute of Chest Diseases (Hombegowda Nagar)",
+    "fullName": "Dr. Latha M.",
+    "specialization": "Respiratory Medicine"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Ashwal A J",
+    "specialization": "Interventional Cardiology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Balasubramani R",
+    "specialization": "Cardiothoracic & Vascular Surgery"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Aparna Sreevatsa",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Deepak C Kittur",
+    "specialization": "Surgical & Head and Neck Oncology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Abhishek M B",
+    "specialization": "Orthopaedics, Arthroscopy & Sports Medicine"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Anil Kumar M S",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Hamsa K M",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Ravi K R",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Avinash U K",
+    "specialization": "Urology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Raghavendra Bhat",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sahyadri Narayana Multispeciality Hospital",
+    "fullName": "Dr. Ajaykumar B",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Dhananjaya Sarji",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Sandhya S.S.",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Drakshayani",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Aparna J",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Pradeep S H",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Sudheendra Kulkarni",
+    "specialization": "Paediatrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Deepak J. Prabhu",
+    "specialization": "Dentist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Sarji Hospital (Mother & Child)",
+    "fullName": "Dr. Prasad S S",
+    "specialization": "Senior Consultant (Specialty varies)"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. B. Dhanyakumar",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. J. Narendra",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Prashanth G.S.",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Deepak C L",
+    "specialization": "Rheumatologist & Internal Medicine"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Umesh Kamath",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Anupama Y.J.",
+    "specialization": "Nephrologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Vani Kori",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. H.N. Vishwanath",
+    "specialization": "Paediatrician & Paediatric Intensivist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Madhu Sudhan Y",
+    "specialization": "Pulmonologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Nanjappa Multi-Speciality Hospital & Nanjappa Life Care",
+    "fullName": "Dr. Namratha Udupa M S",
+    "specialization": "Medical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Lohith S",
+    "specialization": "ENT Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Manjunath",
+    "specialization": "Senior Consultant"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Prasanna Basavarajappa",
+    "specialization": "Senior Consultant"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Raghavendra Vailaya",
+    "specialization": "Senior Consultant"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Shonali Mayekar",
+    "specialization": "Senior Consultant"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Nithin S. Shagale",
+    "specialization": "Paediatrician (MaAx Angels)"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "MaAx Super Speciality Hospital",
+    "fullName": "Dr. Geetha Ravi",
+    "specialization": "Obstetrician & Gynaecologist (MaAx Angels)"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Shivashankar T H",
+    "specialization": "Interventional Cardiologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Madhusudhan N",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Basavesh M Gaddikeri",
+    "specialization": "Orthopaedician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Pruthvi B C",
+    "specialization": "Physician and Intensivist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Jagadeesh T.S.",
+    "specialization": "Urology & Andrologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Nagamani M C",
+    "specialization": "Obstetrician & Gynaecologist, Laparoscopic Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Ramesh N",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Lakshmi Narayan Bhagawat",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Metrounited Healthcare",
+    "fullName": "Dr. Abdul Azeem",
+    "specialization": "Radiologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Suvarna Kotturesh",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Nanda Kishore",
+    "specialization": "Orthopaedic Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Ravikumar S",
+    "specialization": "General Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Swathi Kishore",
+    "specialization": "Gynaecologist & Obstetrician"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Dananjaya Kumar B R",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "Kottureshwara Hospital & Research Centre",
+    "fullName": "Dr. Ashwin Habbar K",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Roshan B A Rao",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Sachin S Kotur",
+    "specialization": "Radiation Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Amrith B.P.",
+    "specialization": "Medical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Deepak H.L.",
+    "specialization": "Surgical Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Amithraj",
+    "specialization": "Radiation Oncologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "HCG - Malnad Hospital and Institute of Oncology",
+    "fullName": "Dr. Sandesh K R",
+    "specialization": "General & Laparoscopic Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "fullName": "Dr. Praveen Malavade",
+    "specialization": "Nephrologist"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "fullName": "Dr. Pradeepa M. G.",
+    "specialization": "Urologist, Transplant & Robotic Surgeon"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "fullName": "Dr. Karthik S. L.",
+    "specialization": "Anaesthesiologist & Associate Medical Director"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "fullName": "Dr. Nandish A L",
+    "specialization": "Radiodiagnosis"
+  },
+  {
+    "district": "Shivamogga",
+    "hospitalName": "NU Hospitals",
+    "fullName": "Dr. Akash JS",
+    "specialization": "Anaesthesiologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Narendra Hiregoudar",
+    "specialization": "Interventional Cardiology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Sharan Hallad",
+    "specialization": "Cardiothoracic and Vascular Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Rajendra I. Dugani",
+    "specialization": "Neurology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Sunil Malagi",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Raju S Kadam",
+    "specialization": "Neurosurgeon (Brain & Spine Surgeries)"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Suresh Korlhalli",
+    "specialization": "Orthopaedic Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Bhuvanesh N. Aradhya",
+    "specialization": "Urology & Chief Transplant Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Seeta Mutalik",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Sandeep V Kumbar",
+    "specialization": "Medical Gastroenterology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Shylendra D S",
+    "specialization": "Pulmonology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Sadashivayya Soppimath",
+    "specialization": "General and Laparoscopic Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG Suchirayu Hospital",
+    "fullName": "Dr. Rashmi Hiremath",
+    "specialization": "Obstetrics & Gynaecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "HCG NMR Cancer Centre",
+    "fullName": null,
+    "specialization": null
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Shrishail Chiniwalar",
+    "specialization": "Gastroenterology Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Manojkumar Bhutte",
+    "specialization": "Neuro & Spine Surgeon, Neuro Endovascular Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Praveenkumar Saligoudar",
+    "specialization": "Neurosurgery Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Dattatreya Jalde",
+    "specialization": "Obstetrics & Gynecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Rashmi Patil",
+    "specialization": "Obstetrics & Gynecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Pavan M",
+    "specialization": "Nephrology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Muralidhar Doddamani",
+    "specialization": "Surgical Oncology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Secure Hospital",
+    "fullName": "Dr. Gautam Jayade",
+    "specialization": "Oral & Maxillofacial Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Jagadish Tubachi",
+    "specialization": "Surgical Oncology (Head & Neck)"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Meher Kumar",
+    "specialization": "Medical Oncology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Mahantesh A C",
+    "specialization": "Radiation Oncology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Mahesh Honnalli",
+    "specialization": "Cardiology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Sharan Hallad",
+    "specialization": "Cardiothoracic Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Gurupadappa C P",
+    "specialization": "Neurosurgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Vishwanath Hulsogi",
+    "specialization": "Orthopedics"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Hubli Super Speciality Hospital (HSSH)",
+    "fullName": "Dr. Sahaja Kittur",
+    "specialization": "Obstetrics & Gynecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Anirudh Kulkarni",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Ameet Sattur",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Vinod J Makannavar",
+    "specialization": "Orthopedist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. S S Shirol",
+    "specialization": "Cosmetic/Plastic Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Sangeeta Kalabhairava",
+    "specialization": "Diabetic Foot Surgeon, Obstetrics & Gynecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Aravind K",
+    "specialization": "Gastrointestinal Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Sreekant Meherwade",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Sushruta Multispeciality Hospital & Research Centre",
+    "fullName": "Dr. Pavan Katti",
+    "specialization": "Urologist, Andrologist & Laparoscopic Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Vivekanand S Gajapati",
+    "specialization": "Cardiologist (SDM Narayana Heart Centre)"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Ravi Varma G Patil",
+    "specialization": "Cardiothoracic and Vascular Surgeon (SDM Narayana Heart Centre)"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Raghu Prasad S",
+    "specialization": "Cardiologist (SDM Narayana Heart Centre)"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Kiran Aithal",
+    "specialization": "HOD & Senior Consultant, General Medicine"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. B. Srinivas Pai",
+    "specialization": "Senior Consultant, General Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Basavaraj F. Bankar",
+    "specialization": "Neurologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Pradeep Kumar Jain N",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Arvind D. Patil",
+    "specialization": "Orthopaedist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Prasad Gunari",
+    "specialization": "Oncologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Srinivas K. Kalbhavi",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Mahesh Bennikal",
+    "specialization": "Nephrologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "SDM College of Medical Sciences & Hospital / SDM Narayana Heart Centre",
+    "fullName": "Dr. Preetham S Hurkadli",
+    "specialization": "Gastroenterologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "M M Joshi Eye Institute",
+    "fullName": "Dr. R. Krishnaprasad",
+    "specialization": "Ophthalmologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "M M Joshi Eye Institute",
+    "fullName": "Dr. Deepti S. Joshi",
+    "specialization": "Paediatric Ophthalmologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "M M Joshi Eye Institute",
+    "fullName": "Dr. Shrinivas M. Joshi",
+    "specialization": "Vitreoretinal Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "M M Joshi Eye Institute",
+    "fullName": "Dr. A. S. Guruprasad",
+    "specialization": "Vitreoretinal Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "M M Joshi Eye Institute",
+    "fullName": "Dr. Aniket Shastri",
+    "specialization": "Corneal Surgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "fullName": "Dr. N.S. Hiregoudar",
+    "specialization": "Cardiologist"
+  },
+  {
+    "district":"Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "fullName": "Dr. R.I. Dugani",
+    "specialization": "Neuro Physician"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "fullName": "Dr. S.P. Baligar",
+    "specialization": "Neurosurgeon"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "fullName": "Dr. Pralhad Murthy",
+    "specialization": "Radiation Oncologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Vivekanand General Hospital",
+    "fullName": "Dr. Bharat Kshatri",
+    "specialization": "Urologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "KCTRI (Karnataka Cancer Therapy & Research Institute)",
+    "fullName": "Dr. B.R. Patil",
+    "specialization": "Chief Surgical Oncologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "KCTRI (Karnataka Cancer Therapy & Research Institute)",
+    "fullName": "Dr. Kiran Kattimani",
+    "specialization": "Medical Oncologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "KCTRI (Karnataka Cancer Therapy & Research Institute)",
+    "fullName": "Dr. Sai Kumari R.T",
+    "specialization": "Radiation Oncologist"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "KCTRI (Karnataka Cancer Therapy & Research Institute)",
+    "fullName": "Dr. K.S. Datta",
+    "specialization": "Pathology & Blood Bank"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Shri Balaji Institute of Neuro Sciences & Trauma",
+    "fullName": null,
+    "specialization": null
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Dr. R B Patil Multispecialty Hospital",
+    "fullName": null,
+    "specialization": null
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Lifeline Hospital (Shri Bhanji D Khimji)",
+    "fullName": "Dr. Manikant Lodaya",
+    "specialization": "Anaesthesia & Intensive Care"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Lifeline Hospital (Shri Bhanji D Khimji)",
+    "fullName": "Dr. Nagaraj Tanksali",
+    "specialization": "Anaesthesia & Intensive Care"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Lifeline Hospital (Shri Bhanji D Khimji)",
+    "fullName": "Dr. Shrinivas Deshpande",
+    "specialization": "Anaesthesia & Intensive Care"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Lifeline Hospital (Shri Bhanji D Khimji)",
+    "fullName": "Dr. Rajesh Phatake",
+    "specialization": "Anaesthesia & Intensive Care"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Dattattreya D. Bant",
+    "specialization": "Director"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. B.S. Madakantti",
+    "specialization": "Professor & HOD, General Surgery"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. K.F. Kammar",
+    "specialization": "Professor & HOD, Physiology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Ravi Rathod",
+    "specialization": "Professor & HOD, Skin & STD"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Asha B. Patil",
+    "specialization": "Professor & HOD, Microbiology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. A.N. Dattatri",
+    "specialization": "Professor & HOD, Pharmacology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Jaideep Ratkal",
+    "specialization": "Department of Urology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. S. R. Fattepur",
+    "specialization": "Department of Paediatrics"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. M.P. Chavadannavar",
+    "specialization": "Department of Obstetrics and Gynaecology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Vikram Kemmannu Bhat",
+    "specialization": "Department of Otorhinolaryngology"
+  },
+  {
+    "district": "Hubli",
+    "hospitalName": "Karnataka Institute of Medical Sciences (KIMS), Hubli",
+    "fullName": "Dr. Sandeep S Ireshanavar",
+    "specialization": "Department of Orthopaedics"
   }
 ]
-

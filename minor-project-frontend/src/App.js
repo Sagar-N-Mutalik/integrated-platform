@@ -6,6 +6,7 @@ import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import LandingPage from "./components/LandingPage";
 import DoctorSearch from "./components/DoctorSearch";
+import HospitalDirectory from "./components/HospitalDirectory";
 import "./App.css";
 
 const AppContent = () => {
@@ -28,7 +29,6 @@ const AppContent = () => {
     setLoading(false);
   }, []);
 
-  // ✅ Fixed: Added full backend URL
   const apiCall = async (endpoint, data) => {
     try {
       const response = await fetch(
@@ -42,7 +42,6 @@ const AppContent = () => {
         }
       );
 
-      // Handle non-JSON responses gracefully
       const text = await response.text();
       try {
         return JSON.parse(text);
@@ -116,7 +115,6 @@ const AppContent = () => {
     setCurrentView("login");
   };
 
-  const handleNavigation = (view) => setCurrentView(view);
   const handleAccountDeleted = () => {
     setUser(null);
     setCurrentView("landing");
@@ -165,8 +163,7 @@ const AppContent = () => {
           user={user}
           onLogout={handleLogout}
           onSearchDoctors={() => setCurrentView("doctors")}
-          onFileUpload={() => window.location.reload()}
-          onFileShare={() => {}}
+          onViewHospitals={() => setCurrentView("hospitals")}
           onAccountDeleted={handleAccountDeleted}
         />
       )}
@@ -176,6 +173,10 @@ const AppContent = () => {
           user={user}
           onBack={() => setCurrentView("dashboard")}
         />
+      )}
+
+      {currentView === "hospitals" && (
+        <HospitalDirectory />
       )}
     </div>
   );

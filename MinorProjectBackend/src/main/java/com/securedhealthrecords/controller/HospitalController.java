@@ -9,33 +9,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-// Maps requests starting with /api/v1/hospitals (due to context path + RequestMapping)
+// Final path becomes /api/v1/hospitals because server.servlet.context-path=/api/v1
 @RequestMapping("/hospitals")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") // Allows frontend requests
+@CrossOrigin(origins = "*")
 public class HospitalController {
 
-    private final HospitalService hospitalService; // Injects the updated service
+    private final HospitalService hospitalService;
 
-    // Handles GET /api/v1/hospitals/search?name=...&district=...
+    // GET /api/v1/hospitals/search?name=&district=
     @GetMapping("/search")
     public ResponseEntity<List<HospitalDTO>> searchHospitals(
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String district) { // Parameter name 'district' is correct
-        // Calls the service method which handles the logic using district
-        // and returns the DTO including the 'c' field
+            @RequestParam(required = false) String district) {
         List<HospitalDTO> hospitals = hospitalService.searchHospitals(name, district);
         return ResponseEntity.ok(hospitals);
     }
 
-    // Handles GET /api/v1/hospitals
-    // Returns a list of DTOs including the 'c' field
+    // GET /api/v1/hospitals
     @GetMapping
     public ResponseEntity<List<HospitalDTO>> getAllHospitals() {
-        List<HospitalDTO> hospitals = hospitalService.getAllHospitals();
-        return ResponseEntity.ok(hospitals);
+        return ResponseEntity.ok(hospitalService.getAllHospitals());
     }
 }
-
-
-

@@ -4,16 +4,21 @@ import com.securedhealthrecords.model.Doctor;
 import com.securedhealthrecords.model.Hospital;
 import com.securedhealthrecords.repository.DoctorRepository;
 import com.securedhealthrecords.repository.HospitalRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Tag(name = "Search", description = "Search hospitals and doctors")
 @RestController
-@RequestMapping("/api/v1/search")
+@RequestMapping("/search")
 @CrossOrigin(origins = "*")
 public class SearchController {
 
@@ -22,76 +27,90 @@ public class SearchController {
     private final HospitalRepository hospitalRepository;
     private final DoctorRepository doctorRepository;
 
-    @Autowired
     public SearchController(HospitalRepository hospitalRepository, DoctorRepository doctorRepository) {
         this.hospitalRepository = hospitalRepository;
         this.doctorRepository = doctorRepository;
         log.info(">>>>>>>>>> SearchController initialized successfully! <<<<<<<<<<");
     }
 
-    /**
-     * Endpoint to search for hospitals.
-     * Handles GET /api/v1/search/hospitals?district=...&specialty=...&name=...
-     */
+    // ====================== HOSPITAL SEARCH =======================
+    @Operation(
+            summary = "Search hospitals",
+            description = "Filter hospitals by district, specialty, or hospital name."
+    )
+    @ApiResponse(responseCode = "200", description = "Successful search")
     @GetMapping("/hospitals")
     public ResponseEntity<List<Hospital>> searchHospitals(
+            @Parameter(description = "District name (e.g., Mysuru, Bengaluru)")
             @RequestParam(required = false) String district,
+            @Parameter(description = "Specialty (case-insensitive match)")
             @RequestParam(required = false) String specialty,
-            @RequestParam(required = false) String name) {
+            @Parameter(description = "Hospital name (partial match)")
+            @RequestParam(required = false) String hospitalName) {
 
-        log.info(">>>>>>>>>> searchHospitals called with district: [{}], specialty: [{}], name: [{}] <<<<<<<<<<", district, specialty, name);
+        log.info("searchHospitals called with district: [{}], specialty: [{}], hospitalName: [{}]",
+                district, specialty, hospitalName);
 
         boolean hasDistrict = district != null && !district.isEmpty();
         boolean hasSpecialty = specialty != null && !specialty.isEmpty();
-        boolean hasName = name != null && !name.isEmpty();
+        boolean hasName = hospitalName != null && !hospitalName.isEmpty();
 
         List<Hospital> results;
 
         if (hasName) {
-            log.info("Searching hospitals by name: {}", name);
-            results = hospitalRepository.findByNameContainingIgnoreCase(name);
+            results = hospitalRepository.findByHospitalNameContainingIgnoreCase(hospitalName);
             if (hasDistrict) {
                 results = results.stream()
-                                 .filter(h -> district.equalsIgnoreCase(h.getDistrict()))
-                                 .collect(Collectors.toList());
+                        .filter(h -> h.getDistrict() != null && h.getDistrict().equalsIgnoreCase(district))
+                        .collect(Collectors.toList());
             }
             if (hasSpecialty) {
-                 results = results.stream()
-                                 .filter(h -> h.getSpecialties() != null && h.getSpecialties().toLowerCase().contains(specialty.toLowerCase()))
-                                 .collect(Collectors.toList());
+                results = results.stream()
+                        .filter(h -> h.getSpecialties() != null &&
+                                h.getSpecialties().stream()
+                                        .anyMatch(s -> s != null && s.toLowerCase().contains(specialty.toLowerCase())))
+                        .collect(Collectors.toList());
             }
         } else if (hasDistrict && hasSpecialty) {
-             log.info("Searching hospitals by district '{}' AND specialty '{}'", district, specialty);
-             results = hospitalRepository.findByDistrictIgnoreCase(district);
-             results = results.stream()
-                             .filter(h -> h.getSpecialties() != null && h.getSpecialties().toLowerCase().contains(specialty.toLowerCase()))
-                             .collect(Collectors.toList());
+            results = hospitalRepository.findByDistrictContainingIgnoreCase(district);
+            results = results.stream()
+                    .filter(h -> h.getSpecialties() != null &&
+                            h.getSpecialties().stream()
+                                    .anyMatch(s -> s != null && s.toLowerCase().contains(specialty.toLowerCase())))
+                    .collect(Collectors.toList());
         } else if (hasDistrict) {
-             log.info("Searching hospitals by district: {}", district);
-            results = hospitalRepository.findByDistrictIgnoreCase(district);
+            results = hospitalRepository.findByDistrictContainingIgnoreCase(district);
         } else if (hasSpecialty) {
-             log.info("Searching hospitals by specialty: {}", specialty);
-            results = hospitalRepository.findBySpecialtiesContainingIgnoreCase(specialty);
+            results = hospitalRepository.findAll().stream()
+                    .filter(h -> h.getSpecialties() != null &&
+                            h.getSpecialties().stream()
+                                    .anyMatch(s -> s != null && s.toLowerCase().contains(specialty.toLowerCase())))
+                    .collect(Collectors.toList());
         } else {
-             log.info("No specific criteria for hospitals, returning all.");
             results = hospitalRepository.findAll();
         }
 
-        log.info("<<<<<<<<<< searchHospitals returning {} results. >>>>>>>>>>", results.size());
+        log.info("searchHospitals returning {} results.", results.size());
         return ResponseEntity.ok(results);
     }
 
-    /**
-     * Endpoint to search for doctors.
-     * Handles GET /api/v1/search/doctors?district=...&specialization=...&fullName=...
-     */
+    // ====================== DOCTOR SEARCH =======================
+    @Operation(
+            summary = "Search doctors",
+            description = "Filter doctors by district, specialization, or full name."
+    )
+    @ApiResponse(responseCode = "200", description = "Successful search")
     @GetMapping("/doctors")
     public ResponseEntity<List<Doctor>> searchDoctors(
+            @Parameter(description = "District name")
             @RequestParam(required = false) String district,
+            @Parameter(description = "Doctor specialization (partial, case-insensitive)")
             @RequestParam(required = false) String specialization,
+            @Parameter(description = "Doctor full name (partial, case-insensitive)")
             @RequestParam(required = false) String fullName) {
 
-        log.info(">>>>>>>>>> searchDoctors called with district: [{}], specialization: [{}], fullName: [{}] <<<<<<<<<<", district, specialization, fullName);
+        log.info("searchDoctors called with district: [{}], specialization: [{}], fullName: [{}]",
+                district, specialization, fullName);
 
         boolean hasDistrict = district != null && !district.isEmpty();
         boolean hasSpecialization = specialization != null && !specialization.isEmpty();
@@ -100,37 +119,29 @@ public class SearchController {
         List<Doctor> results;
 
         if (hasFullName) {
-            log.info("Searching doctors by fullName: {}", fullName);
             results = doctorRepository.findByFullNameContainingIgnoreCase(fullName);
             if (hasDistrict) {
                 results = results.stream()
-                                 .filter(d -> district.equalsIgnoreCase(d.getDistrict()))
-                                 .collect(Collectors.toList());
+                        .filter(d -> d.getDistrict() != null && d.getDistrict().equalsIgnoreCase(district))
+                        .collect(Collectors.toList());
             }
             if (hasSpecialization) {
                 results = results.stream()
-                                 .filter(d -> d.getSpecialization() != null && d.getSpecialization().toLowerCase().contains(specialization.toLowerCase()))
-                                 .collect(Collectors.toList());
+                        .filter(d -> d.getSpecialization() != null &&
+                                d.getSpecialization().toLowerCase().contains(specialization.toLowerCase()))
+                        .collect(Collectors.toList());
             }
         } else if (hasDistrict && hasSpecialization) {
-            log.info("Searching doctors by district '{}' AND specialization '{}'", district, specialization);
             results = doctorRepository.findByDistrictIgnoreCaseAndSpecializationContainingIgnoreCase(district, specialization);
         } else if (hasDistrict) {
-            log.info("Searching doctors by district: {}", district);
             results = doctorRepository.findByDistrictIgnoreCase(district);
         } else if (hasSpecialization) {
-            log.info("Searching doctors by specialization: {}", specialization);
             results = doctorRepository.findBySpecializationContainingIgnoreCase(specialization);
         } else {
-            log.info("No specific criteria for doctors, returning all.");
             results = doctorRepository.findAll();
         }
 
-        log.info("<<<<<<<<<< searchDoctors returning {} results. >>>>>>>>>>", results.size());
+        log.info("searchDoctors returning {} results.", results.size());
         return ResponseEntity.ok(results);
     }
 }
-
-
-
-

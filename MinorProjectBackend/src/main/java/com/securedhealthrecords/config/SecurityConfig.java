@@ -48,10 +48,10 @@ public class SecurityConfig {
 
                 // --- Public GET (accessible without login) ---
                 .requestMatchers(HttpMethod.GET,
-                    "/api/v1/doctors/**",
-                    "/api/v1/hospitals/**",
-                    "/api/v1/health-tips/**",
-                    "/api/v1/search/**"
+                    "/doctors/**",
+                    "/hospitals/**",
+                    "/health-tips/**",
+                    "/search/**"
                 ).permitAll()
 
                 // --- Authenticated endpoints ---
@@ -81,8 +81,3 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 }
-
-
-
-
-

@@ -47,36 +47,51 @@ public class JsonDataLoader implements CommandLineRunner {
             }
 
             List<Map<String, Object>> hospitalData = objectMapper.readValue(
-                resource.getInputStream(),
-                new TypeReference<List<Map<String, Object>>>() {}
+                    resource.getInputStream(),
+                    new TypeReference<List<Map<String, Object>>>() {}
             );
 
             log.info("Loading {} hospitals from JSON...", hospitalData.size());
 
             for (Map<String, Object> data : hospitalData) {
                 Hospital hospital = new Hospital();
-                
-                // Map JSON fields to model fields
-                hospital.setName(getStringValue(data, "name"));
+
+                hospital.setHospitalName(getStringValue(data, "hospitalName"));
                 hospital.setDistrict(getStringValue(data, "district"));
-                hospital.setAddress(getStringValue(data, "address"));
-                hospital.setC(getStringValue(data, "C"));
-                hospital.setSpecialties(getStringValue(data, "specialties"));
-                hospital.setPhone1(getStringValue(data, "phone1"));
-                hospital.setPhone2(getStringValue(data, "phone2"));
-                hospital.setEmail(getStringValue(data, "email"));
-                
-                // Set default values
+                hospital.setLocation(getStringValue(data, "location"));
+                hospital.setHospitalType(getStringValue(data, "hospitalType"));
+
+                Object specs = data.get("specialties");
+                if (specs instanceof String s) {
+                    if (StringUtils.hasText(s)) {
+                        hospital.setSpecialties(List.of(s.split(","))
+                                .stream()
+                                .map(String::trim)
+                                .filter(str -> !str.isEmpty())
+                                .toList());
+                    }
+                } else if (specs instanceof List<?> arr) {
+                    hospital.setSpecialties(arr.stream()
+                            .map(String::valueOf)
+                            .map(String::trim)
+                            .filter(str -> !str.isEmpty())
+                            .toList());
+                }
+
+                hospital.setPhone(getStringValue(data, "phone"));
+                hospital.setAltPhone(getStringValue(data, "altPhone"));
+                hospital.setContact(getStringValue(data, "contact"));
+
                 hospital.setIsActive(true);
                 hospital.setCreatedAt(LocalDateTime.now().toString());
                 hospital.setUpdatedAt(LocalDateTime.now().toString());
-                
+
                 hospitalRepository.save(hospital);
             }
 
-            log.info("Successfully loaded {} hospitals from JSON", hospitalData.size());
+            log.info("✅ Successfully loaded {} hospitals from JSON", hospitalData.size());
         } catch (IOException e) {
-            log.error("Error loading hospitals from JSON: {}", e.getMessage());
+            log.error("❌ Error loading hospitals from JSON: {}", e.getMessage());
         }
     }
 
@@ -94,43 +109,47 @@ public class JsonDataLoader implements CommandLineRunner {
             }
 
             List<Map<String, Object>> doctorData = objectMapper.readValue(
-                resource.getInputStream(),
-                new TypeReference<List<Map<String, Object>>>() {}
+                    resource.getInputStream(),
+                    new TypeReference<List<Map<String, Object>>>() {}
             );
 
             log.info("Loading {} doctors from JSON...", doctorData.size());
 
             for (Map<String, Object> data : doctorData) {
                 Doctor doctor = new Doctor();
-                
-                // Map JSON fields to model fields
+
                 doctor.setFullName(getStringValue(data, "fullName"));
                 doctor.setSpecialization(getStringValue(data, "specialization"));
                 doctor.setDistrict(getStringValue(data, "district"));
-                doctor.setHospitalName(getStringValue(data, "hospitalName"));
-                
-                // Set default values
+
+                String hospitalName = getStringValue(data, "hospitalName");
+                doctor.setHospitalName(hospitalName);
+
+                // ✅ Auto-link hospitalId by hospitalName
+                if (hospitalName != null) {
+                    hospitalRepository.findByHospitalNameIgnoreCase(hospitalName)
+                            .ifPresent(h -> doctor.setHospitalId(h.getId()));
+                }
+
                 doctor.setIsAvailable(true);
                 doctor.setCreatedAt(LocalDateTime.now().toString());
                 doctor.setUpdatedAt(LocalDateTime.now().toString());
                 doctor.setRating(4.5);
                 doctor.setTotalReviews(20);
                 doctor.setConsultationFee("₹600");
-                
+
                 doctorRepository.save(doctor);
             }
 
-            log.info("Successfully loaded {} doctors from JSON", doctorData.size());
+            log.info("✅ Successfully loaded {} doctors from JSON", doctorData.size());
         } catch (IOException e) {
-            log.error("Error loading doctors from JSON: {}", e.getMessage());
+            log.error("❌ Error loading doctors from JSON: {}", e.getMessage());
         }
     }
 
     private String getStringValue(Map<String, Object> data, String key) {
         Object value = data.get(key);
-        if (value == null) {
-            return null;
-        }
+        if (value == null) return null;
         String stringValue = value.toString();
         return StringUtils.hasText(stringValue) && !"null".equalsIgnoreCase(stringValue) ? stringValue : null;
     }
