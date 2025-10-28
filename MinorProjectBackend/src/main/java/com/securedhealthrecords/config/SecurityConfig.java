@@ -51,6 +51,7 @@ public class SecurityConfig {
                     "/doctors/**",
                     "/hospitals/**",
                     "/health-tips/**",
+<<<<<<< HEAD
                     "/search/**",
                     "/email/**"
                 ).permitAll()
@@ -58,6 +59,9 @@ public class SecurityConfig {
                 // --- Public POST for email ---
                 .requestMatchers(HttpMethod.POST,
                     "/email/**"
+=======
+                    "/search/**"
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                 ).permitAll()
 
                 // --- Authenticated endpoints ---

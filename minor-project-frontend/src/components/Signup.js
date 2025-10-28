@@ -33,6 +33,7 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
 
   const handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     setLoading(true);
     
     const newErrors = {};
@@ -44,18 +45,37 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
     if (!formData.agreedToTerms) newErrors.termsAccepted = 'You must agree to the terms';
     
     const passwordValidation = validatePassword(formData.password);
+=======
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    const newErrors = {};
+    
+    if (!data.fullName.trim()) newErrors.fullName = 'Full name is required';
+    if (!data.email.trim()) newErrors.email = 'Email is required';
+    if (!data.dob) newErrors.dob = 'Date of birth is required';
+    if (!data.gender) newErrors.gender = 'Gender is required';
+    if (!data.termsAccepted) newErrors.termsAccepted = 'You must agree to the terms';
+    
+    const passwordValidation = validatePassword(data.password);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     if (!passwordValidation.isLongEnough || !passwordValidation.hasUpperCase || 
         !passwordValidation.hasNumbers || !passwordValidation.hasSpecialChar) {
       newErrors.password = 'Password must have 8 characters, a capital letter, a special character and a number';
     }
     
+<<<<<<< HEAD
     if (formData.password !== formData.confirmPassword) {
+=======
+    if (data.password !== data.confirmPassword) {
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
       newErrors.confirmPassword = 'Passwords do not match';
     }
     
     setErrors(newErrors);
     
     if (Object.keys(newErrors).length === 0) {
+<<<<<<< HEAD
       onSignup({
         fullName: formData.fullName,
         email: formData.email,
@@ -63,12 +83,18 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
       });
     } else {
       setLoading(false);
+=======
+      onSignup(data);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     }
   };
 
   const handlePasswordChange = (e) => {
     const password = e.target.value;
+<<<<<<< HEAD
     setFormData({ ...formData, password });
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     const validation = validatePassword(password);
     
     if (password.length > 0 && (!validation.isLongEnough || !validation.hasUpperCase || 
@@ -104,8 +130,11 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                   type="text"
                   name="fullName"
                   placeholder="Full Name"
+<<<<<<< HEAD
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                   required
                 />
                 {errors.fullName && <span className="field-error">{errors.fullName}</span>}
@@ -117,8 +146,11 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                   type="email"
                   name="email"
                   placeholder="Email Address"
+<<<<<<< HEAD
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                   required
                 />
                 {errors.email && <span className="field-error">{errors.email}</span>}
@@ -128,18 +160,26 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                 <Calendar className="input-icon" />
                 <input
                   type="date"
+<<<<<<< HEAD
                   name="dateOfBirth"
                   value={formData.dateOfBirth}
                   onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
                   required
                 />
                 {errors.dateOfBirth && <span className="field-error">{errors.dateOfBirth}</span>}
+=======
+                  name="dob"
+                  required
+                />
+                {errors.dob && <span className="field-error">{errors.dob}</span>}
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
               </div>
 
               <div className="input-group">
                 <label className="radio-label">Gender</label>
                 <div className="radio-row">
                   <label>
+<<<<<<< HEAD
                     <input 
                       type="radio" 
                       name="gender" 
@@ -167,6 +207,17 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                       checked={formData.gender === 'other'}
                       onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
                     />
+=======
+                    <input type="radio" name="gender" value="male" />
+                    <span>Male</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="female" />
+                    <span>Female</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="other" />
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                     <span>Other</span>
                   </label>
                 </div>
@@ -179,7 +230,10 @@ const Signup = ({ onSignup, onSendOtp, onVerifyOtp, onBackToHome, onSwitchToLogi
                   type={showPassword ? 'text' : 'password'}
                   name="password"
                   placeholder="Password"
+<<<<<<< HEAD
                   value={formData.password}
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                   onChange={handlePasswordChange}
                   required
                 />

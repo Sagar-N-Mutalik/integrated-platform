@@ -29,6 +29,7 @@ public class FileController {
             @RequestParam("userId") String userId,
             @RequestParam(value = "folderId", required = false) String folderId) {
         try {
+<<<<<<< HEAD
             System.out.println("📥 FileController: Upload request received");
             System.out.println("   File: " + file.getOriginalFilename());
             System.out.println("   User ID: " + userId);
@@ -41,6 +42,11 @@ public class FileController {
         } catch (Exception e) {
             System.err.println("❌ FileController: Upload failed - " + e.getMessage());
             e.printStackTrace();
+=======
+            FileRecord uploadedFile = fileService.uploadFile(file, userId, folderId);
+            return ResponseEntity.ok(uploadedFile);
+        } catch (Exception e) {
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
@@ -98,6 +104,7 @@ public class FileController {
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
+<<<<<<< HEAD
 
     @PutMapping("/{fileId}/rename")
     @PreAuthorize("hasRole('USER')")
@@ -152,4 +159,6 @@ public class FileController {
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 }

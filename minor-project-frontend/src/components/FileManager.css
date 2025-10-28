@@ -297,6 +297,7 @@
     gap: 16px;
   }
 }
+<<<<<<< HEAD
 
 /* Rename Input Styles */
 .rename-input-container {
@@ -386,3 +387,5 @@
   background: transparent;
   transform: none;
 }
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b

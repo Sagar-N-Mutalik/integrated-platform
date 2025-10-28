@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 /* Modern Auth Pages CSS - Theme Support */
 .auth-page {
   min-height: 100vh;
   background: var(--bg-color);
+=======
+/* Modern Auth Pages CSS - Dark Theme */
+.auth-page {
+  min-height: 100vh;
+  background: #0f172a;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   transition: background-color var(--transition-base);
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 }
 
 /* Floating Bubbles Animation */
@@ -65,16 +75,24 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+<<<<<<< HEAD
   background: var(--card-bg);
   backdrop-filter: blur(10px);
   border: 2px solid var(--border-color);
   color: var(--text-color);
+=======
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0.75rem 1.25rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+<<<<<<< HEAD
   box-shadow: var(--shadow-md);
 }
 
@@ -84,6 +102,15 @@
   border-color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+=======
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 }
 
 .link-btn {
@@ -192,19 +219,32 @@
 }
 
 .form-card {
+<<<<<<< HEAD
   background: var(--card-bg);
   backdrop-filter: blur(20px);
   border: 2px solid var(--border-color);
   border-radius: 24px;
   padding: 48px;
   box-shadow: var(--shadow-xl);
+=======
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid #374151;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   width: 100%;
   max-width: 480px;
   min-height: 500px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   color: var(--text-color);
+=======
+  color: #f8fafc;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   margin-top: 6rem;
 }
 
@@ -221,8 +261,13 @@
 
 .form-card:hover {
   transform: translateY(-8px) scale(1.01);
+<<<<<<< HEAD
   box-shadow: var(--shadow-xl);
   border-color: var(--primary-color);
+=======
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.25);
+  border-color: var(--border-hover);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 }
 
 .signup-card {
@@ -286,7 +331,11 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
+<<<<<<< HEAD
   color: var(--text-muted);
+=======
+  color: #94a3b8;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   z-index: 2;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -295,21 +344,35 @@
 .input-group input {
   width: 100%;
   padding: 18px 20px 18px 56px;
+<<<<<<< HEAD
   border: 2px solid var(--border-color);
+=======
+  border: 2px solid #374151;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   border-radius: 16px;
   font-size: 16px;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+<<<<<<< HEAD
   background: var(--card-bg);
   color: var(--text-color);
+=======
+  background: rgba(15, 23, 42, 0.8);
+  color: #f8fafc;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   box-sizing: border-box;
   min-height: 60px;
 }
 
 .input-group input:focus {
   outline: none;
+<<<<<<< HEAD
   border-color: var(--primary-color);
   background: var(--card-bg);
+=======
+  border-color: #6366f1;
+  background: rgba(15, 23, 42, 0.9);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
   transform: translateY(-2px);
 }
@@ -320,7 +383,11 @@
 }
 
 .input-group input::placeholder {
+<<<<<<< HEAD
   color: var(--text-muted);
+=======
+  color: #94a3b8;
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   font-weight: 400;
 }
 

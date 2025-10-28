@@ -19,16 +19,20 @@ public class CloudinaryService {
             @Value("${cloudinary.api-key}") String apiKey,
             @Value("${cloudinary.api-secret}") String apiSecret) {
         
+<<<<<<< HEAD
         System.out.println("🔧 Initializing Cloudinary with:");
         System.out.println("   Cloud Name: " + cloudName);
         System.out.println("   API Key: " + apiKey);
         System.out.println("   API Secret: " + (apiSecret != null && !apiSecret.isEmpty() ? "***configured***" : "NOT SET"));
         
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         this.cloudinary = new Cloudinary(ObjectUtils.asMap(
                 "cloud_name", cloudName,
                 "api_key", apiKey,
                 "api_secret", apiSecret
         ));
+<<<<<<< HEAD
         
         System.out.println("✅ Cloudinary initialized successfully!");
     }
@@ -39,6 +43,11 @@ public class CloudinaryService {
         System.out.println("   Size: " + file.getSize() + " bytes");
         System.out.println("   User ID: " + userId);
         
+=======
+    }
+
+    public Map<String, Object> uploadFile(MultipartFile file, String userId, String folder) throws IOException {
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         String publicId = userId + "/" + (folder != null ? folder + "/" : "") + System.currentTimeMillis() + "_" + file.getOriginalFilename();
         
         @SuppressWarnings("unchecked")
@@ -48,6 +57,7 @@ public class CloudinaryService {
                 "folder", "health_records/" + userId
         );
         
+<<<<<<< HEAD
         System.out.println("   Public ID: " + publicId);
         System.out.println("   Uploading to Cloudinary...");
         
@@ -57,6 +67,10 @@ public class CloudinaryService {
         System.out.println("✅ File uploaded successfully!");
         System.out.println("   URL: " + result.get("secure_url"));
         
+=======
+        @SuppressWarnings("unchecked")
+        Map<String, Object> result = cloudinary.uploader().upload(file.getBytes(), uploadParams);
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         return result;
     }
 

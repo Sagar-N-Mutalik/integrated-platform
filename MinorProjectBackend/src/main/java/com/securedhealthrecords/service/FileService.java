@@ -98,6 +98,7 @@ public class FileService {
         return Optional.empty();
     }
 
+<<<<<<< HEAD
     public FileRecord renameFile(String fileId, String userId, String newFileName) {
         Optional<FileRecord> fileRecord = fileRecordRepository.findById(fileId);
         if (fileRecord.isEmpty()) {
@@ -154,6 +155,8 @@ public class FileService {
         return Optional.empty();
     }
 
+=======
+>>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     private String formatFileSize(long bytes) {
         if (bytes < 1024) return bytes + " B";
         int exp = (int) (Math.log(bytes) / Math.log(1024));
