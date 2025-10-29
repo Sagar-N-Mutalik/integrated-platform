@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple File Upload Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; border-color: #c3e6cb; }
+        .error { background: #f8d7da; border-color: #f5c6cb; }
+        .info { background: #d1ecf1; border-color: #bee5eb; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 File Upload Debug Tool</h1>
+        
+        <div class="test-section info">
+            <h3>Step 1: Check Backend Status</h3>
+            <button onclick="checkBackend()">Test Backend Connection</button>
+            <div id="backend-result" class="result"></div>
+        </div>
+
+        <div class="test-section info">
+            <h3>Step 2: Check Upload Directory</h3>
+            <button onclick="checkUploadDir()">Test Upload Directory</button>
+            <div id="upload-dir-result" class="result"></div>
+        </div>
+
+        <div class="test-section info">
+            <h3>Step 3: Simple File Upload Test (No Auth)</h3>
+            <input type="file" id="simple-file" accept="*/*">
+            <button onclick="simpleUpload()">Test Simple Upload</button>
+            <div id="simple-upload-result" class="result"></div>
+        </div>
+
+        <div class="test-section info">
+            <h3>Step 4: Authenticated Upload Test</h3>
+            <p>First, get your token from the browser:</p>
+            <ol>
+                <li>Login to your app</li>
+                <li>Open DevTools (F12)</li>
+                <li>Go to Console tab</li>
+                <li>Type: <code>localStorage.getItem('token')</code></li>
+                <li>Copy the token and paste below</li>
+            </ol>
+            <input type="text" id="auth-token" placeholder="Paste your JWT token here" style="width: 100%; margin: 10px 0;">
+            <input type="text" id="user-id" placeholder="Your user ID" style="width: 100%; margin: 10px 0;">
+            <input type="file" id="auth-file" accept="*/*">
+            <button onclick="authUpload()">Test Authenticated Upload</button>
+            <div id="auth-upload-result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api/v1';
+
+        async function checkBackend() {
+            const result = document.getElementById('backend-result');
+            try {
+                const response = await fetch(`${API_BASE}/test/data-count`);
+                const data = await response.json();
+                result.textContent = `✅ Backend is running!\n${JSON.stringify(data, null, 2)}`;
+                result.className = 'result success';
+            } catch (error) {
+                result.textContent = `❌ Backend connection failed:\n${error.message}`;
+                result.className = 'result error';
+            }
+        }
+
+        async function checkUploadDir() {
+            const result = document.getElementById('upload-dir-result');
+            try {
+                const response = await fetch(`${API_BASE}/test/upload-test`);
+                const data = await response.json();
+                result.textContent = `✅ Upload directory check:\n${JSON.stringify(data, null, 2)}`;
+                result.className = 'result success';
+            } catch (error) {
+                result.textContent = `❌ Upload directory check failed:\n${error.message}`;
+                result.className = 'result error';
+            }
+        }
+
+        async function simpleUpload() {
+            const result = document.getElementById('simple-upload-result');
+            const fileInput = document.getElementById('simple-file');
+            
+            if (!fileInput.files[0]) {
+                result.textContent = '❌ Please select a file first';
+                result.className = 'result error';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                result.textContent = '⏳ Uploading...';
+                result.className = 'result info';
+
+                const response = await fetch(`${API_BASE}/test/simple-upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                
+                if (response.ok && data.status === 'success') {
+                    result.textContent = `✅ Simple upload successful!\n${JSON.stringify(data, null, 2)}`;
+                    result.className = 'result success';
+                } else {
+                    result.textContent = `❌ Simple upload failed:\n${JSON.stringify(data, null, 2)}`;
+                    result.className = 'result error';
+                }
+            } catch (error) {
+                result.textContent = `❌ Simple upload error:\n${error.message}`;
+                result.className = 'result error';
+            }
+        }
+
+        async function authUpload() {
+            const result = document.getElementById('auth-upload-result');
+            const fileInput = document.getElementById('auth-file');
+            const token = document.getElementById('auth-token').value;
+            const userId = document.getElementById('user-id').value;
+            
+            if (!fileInput.files[0]) {
+                result.textContent = '❌ Please select a file first';
+                result.className = 'result error';
+                return;
+            }
+
+            if (!token) {
+                result.textContent = '❌ Please enter your JWT token';
+                result.className = 'result error';
+                return;
+            }
+
+            if (!userId) {
+                result.textContent = '❌ Please enter your user ID';
+                result.className = 'result error';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('userId', userId);
+
+            try {
+                result.textContent = '⏳ Uploading with authentication...';
+                result.className = 'result info';
+
+                const response = await fetch(`${API_BASE}/files/upload`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    result.textContent = `✅ Authenticated upload successful!\n${JSON.stringify(data, null, 2)}`;
+                    result.className = 'result success';
+                } else {
+                    result.textContent = `❌ Authenticated upload failed (${response.status}):\n${JSON.stringify(data, null, 2)}`;
+                    result.className = 'result error';
+                }
+            } catch (error) {
+                result.textContent = `❌ Authenticated upload error:\n${error.message}`;
+                result.className = 'result error';
+            }
+        }
+
+        // Auto-check backend on page load
+        window.onload = () => {
+            checkBackend();
+        };
+    </script>
+</body>
+</html>

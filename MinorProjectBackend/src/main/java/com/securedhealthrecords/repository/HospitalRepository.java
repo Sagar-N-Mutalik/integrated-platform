@@ -12,10 +12,7 @@ public interface HospitalRepository extends MongoRepository<Hospital, String> {
 
     // ✅ Finder methods for search and linking
     Optional<Hospital> findByHospitalNameIgnoreCase(String hospitalName);
-<<<<<<< HEAD
     Optional<Hospital> findByHospitalNameAndDistrict(String hospitalName, String district);
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 
     List<Hospital> findByDistrictContainingIgnoreCase(String district);
     List<Hospital> findByHospitalNameContainingIgnoreCase(String hospitalName);

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Search, MapPin, Star, Building, Stethoscope, Info, Phone, Mail, ArrowLeft, X, Filter, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import './DoctorSearch.css';
@@ -43,7 +42,7 @@ const DoctorSearch = ({ user, onBack }) => {
     // Fetch all data once on component mount or type change
     const fetchAllData = useCallback(async (type) => {
         setLoading(true);
-        const endpoint = type === 'doctor' ? '/api/v1/search/doctors' : '/api/v1/search/hospitals';
+        const endpoint = type === 'doctor' ? 'http://localhost:8080/api/v1/search/doctors' : 'http://localhost:8080/api/v1/search/hospitals';
         
         try {
             const response = await fetch(endpoint);
@@ -61,74 +60,11 @@ const DoctorSearch = ({ user, onBack }) => {
             console.error('API Error:', error);
             showToast('Could not connect to server. Please ensure backend is running on port 8080.', 'error');
             setAllResults([]);
-=======
-import React, { useState, useEffect, useCallback } from 'react';
-// Correct icons are imported (Info icon is already included)
-import { Search, MapPin, Star, Building, Stethoscope, Info } from 'lucide-react';
-import './DoctorSearch.css';
-import { useToast } from './ToastContext';
-
-const DoctorSearch = ({ user }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [selectedDistrict, setSelectedDistrict] = useState('');
-    const [selectedSpecialization, setSelectedSpecialization] = useState('');
-    const [results, setResults] = useState([]);
-    const [searchType, setSearchType] = useState('doctor'); // 'doctor' or 'hospital'
-    const [loading, setLoading] = useState(true);
-    const { showToast } = useToast();
-
-    // Districts list matching your data and requirement
-    const districts = [
-        "Mysuru",
-        "Bengaluru",
-        "Udupi",
-        "Raichur",
-        "Davangere",
-        "Hubli",
-        "Shivamogga"
-    ];
-
-    // Specialization list
-    const specializations = [
-       "Cardiology", "Neurology", "Nephrology", "Gastroenterology", "Pulmonology (Respiratory Medicine)",
-        "Endocrinology", "Oncology (Cancer Care)", "Urology", "Orthopedics", "General Surgery", "Plastic Surgery",
-        "Pediatric Surgery", "Neurosurgery", "Cardiothoracic Surgery", "Vascular Surgery", "ENT (Otorhinolaryngology)",
-        "Ophthalmology", "Dermatology", "Psychiatry", "Psychology", "Pediatrics", "Obstetrics and Gynecology",
-        "General Medicine", "Critical Care / Intensive Care", "Emergency Medicine", "Radiology", "Pathology",
-        "Dentistry", "Anesthesiology", "Physiotherapy", "Diabetology", "Rheumatology", "Hematology", "Nuclear Medicine",
-        "Transplant Medicine", "Infectious Diseases", "Pain Management", "Family Medicine", "Geriatrics",
-        "Occupational Therapy", "Speech Therapy", "Nutrition and Dietetics"
-    ];
-
-    // Fetch initial data
-    const fetchInitialData = useCallback(async (type = 'doctor') => {
-        setLoading(true);
-        const endpoint = type === 'doctor' ? '/api/v1/search/doctors' : '/api/v1/search/hospitals';
-        try {
-            const token = localStorage.getItem('token');
-            const response = await fetch(endpoint, {
-                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                setResults(data);
-            } else if (response.status === 401 || response.status === 403) {
-                 showToast('Session expired. Please log in again.', 'error');
-                 setResults([]);
-            } else {
-                 showToast(`Failed to load ${type}s: Server error ${response.status}`, 'error');
-            }
-        } catch (error) {
-            showToast(`Failed to load ${type}s. Could not connect or parse response.`, 'error');
-            setResults([]);
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         } finally {
             setLoading(false);
         }
     }, [showToast]);
 
-<<<<<<< HEAD
     // Initial data load
     useEffect(() => {
         fetchAllData(searchType);
@@ -183,63 +119,11 @@ const DoctorSearch = ({ user }) => {
     }, [allResults, searchTerm, selectedDistrict, selectedSpecialization, searchType, initialLoadComplete]);
 
     // Handle tab change
-=======
-    useEffect(() => {
-        fetchInitialData('doctor');
-    }, [fetchInitialData]);
-
-    const handleSearch = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setResults([]);
-
-        const token = localStorage.getItem('token');
-        let query = new URLSearchParams();
-
-        if (selectedDistrict) query.append('district', selectedDistrict);
-
-        let urlBase = '';
-        if (searchType === 'doctor') {
-            if (selectedSpecialization) query.append('specialization', selectedSpecialization);
-            if (searchTerm) query.append('fullName', searchTerm);
-            urlBase = '/api/v1/search/doctors';
-        } else {
-            if (selectedSpecialization) query.append('specialty', selectedSpecialization);
-            if (searchTerm) query.append('name', searchTerm);
-            urlBase = '/api/v1/search/hospitals';
-        }
-        const url = `${urlBase}?${query.toString()}`;
-
-        try {
-            const response = await fetch(url, {
-                headers: token ? { 'Authorization': `Bearer ${token}` } : {}
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                setResults(data);
-                if (data.length === 0) {
-                    showToast('No results found for your search criteria.', 'info');
-                }
-            } else if (response.status === 401 || response.status === 403) {
-                 showToast('Session expired. Please log in again.', 'error');
-            } else {
-                 showToast(`Search failed: Server error ${response.status}`, 'error');
-            }
-        } catch (error) {
-            showToast('Search failed. Could not connect to the server.', 'error');
-        } finally {
-            setLoading(false);
-        }
-    };
-
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     const handleTabChange = (type) => {
         setSearchType(type);
         setSearchTerm('');
         setSelectedDistrict('');
         setSelectedSpecialization('');
-<<<<<<< HEAD
         setInitialLoadComplete(false);
         setCurrentPage(1);
         setSelectedItem(null);
@@ -710,81 +594,18 @@ const DoctorSearch = ({ user }) => {
                     onClick={() => handleTabChange('hospital')}
                 >
                     <Building size={20} />
-=======
-        fetchInitialData(type);
-    };
-
-    const ResultCard = ({ item, type }) => (
-        <div className="doctor-card">
-            <div className="doctor-avatar">
-                <div className="avatar-placeholder">
-                    {type === 'doctor' ? <Stethoscope size={40} /> : <Building size={40} />}
-                </div>
-            </div>
-            {type === 'doctor' ? (
-                <div className="doctor-info">
-                    <h3>{item.fullName || 'N/A'}</h3>
-                    <p className="specialization">{item.specialization || 'N/A'}</p>
-                    <div className="doctor-location"><MapPin size={16} /> <span>{item.hospitalName || 'N/A'}, {item.district || 'N/A'}</span></div>
-                    {item.rating != null && <div className="doctor-rating"><Star size={16} fill="currentColor" /> <span>{item.rating} ({item.totalReviews || 0} reviews)</span></div>}
-                    {item.consultationFee && <p className="consultation-fee">{item.consultationFee}</p>}
-                </div>
-            ) : (
-                 <div className="doctor-info">
-                    <h3>{item.name || 'N/A'}</h3>
-                    <p className="hospital-type"><Info size={16} /> Type: {item.c || 'N/A'}</p>
-                    <p className="specialization">
-                      Specialties: {
-                        Array.isArray(item.specialties)
-                          ? item.specialties.join(', ')
-                          : (item.specialties || 'N/A')
-                      }
-                    </p>
-                    <div className="doctor-location"><MapPin size={16} /> <span>{item.address || 'N/A'}, {item.district || 'N/A'}</span></div>
-                    {(item.phone1 || item.phone2) && <p className="phone">Phone: {item.phone1}{item.phone2 && item.phone2 !== 'N/A' ? ` / ${item.phone2}` : ''}</p>}
-                    {item.email && item.email !== 'N/A' && <p className="email">Email: {item.email}</p>}
-                </div>
-            )}
-        </div>
-    );
-
-    return (
-         <div className="doctor-search">
-            <div className="search-header">
-                <h1>Find Doctors & Hospitals</h1>
-            </div>
-
-            <div className="search-tabs">
-                 <button
-                    className={`tab-btn ${searchType === 'doctor' ? 'active' : ''}`}
-                    onClick={() => handleTabChange('doctor')}
-                >
-                    Doctors
-                </button>
-                <button
-                    className={`tab-btn ${searchType === 'hospital' ? 'active' : ''}`}
-                    onClick={() => handleTabChange('hospital')}
-                >
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                     Hospitals
                 </button>
             </div>
 
-<<<<<<< HEAD
             <div className="search-filters-container">
                 <div className="search-input-wrapper">
                     <Search size={20} />
-=======
-            <form className="search-filters" onSubmit={handleSearch}>
-                <div className="search-box">
-                    <Search />
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                     <input
                         type="text"
                         placeholder={searchType === 'doctor' ? "Search by doctor name..." : "Search by hospital name..."}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-<<<<<<< HEAD
                         className="search-input"
                     />
                     {searchTerm && (
@@ -802,39 +623,23 @@ const DoctorSearch = ({ user }) => {
                     value={selectedDistrict}
                     onChange={(e) => setSelectedDistrict(e.target.value)}
                     className="search-select"
-=======
-                    />
-                </div>
-                <select
-                    value={selectedDistrict}
-                    onChange={(e) => setSelectedDistrict(e.target.value)}
-                    className="filter-select"
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                 >
                     <option value="">All Districts</option>
                     {districts.map(d => (
                         <option key={d} value={d}>{d}</option>
                     ))}
                 </select>
-<<<<<<< HEAD
 
                 <select
                     value={selectedSpecialization}
                     onChange={(e) => setSelectedSpecialization(e.target.value)}
                     className="search-select"
-=======
-                <select
-                    value={selectedSpecialization}
-                    onChange={(e) => setSelectedSpecialization(e.target.value)}
-                    className="filter-select"
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                 >
                     <option value="">All Specializations</option>
                     {specializations.map(spec => (
                         <option key={spec} value={spec}>{spec}</option>
                     ))}
                 </select>
-<<<<<<< HEAD
 
                 {hasActiveFilters && (
                     <button 
@@ -975,30 +780,8 @@ const DoctorSearch = ({ user }) => {
 
             {/* Email Modal */}
             {EmailModal}
-=======
-                <button type="submit" className="btn btn-primary search-submit-btn" disabled={loading}>
-                    {loading ? 'Searching...' : 'Search'}
-                </button>
-            </form>
-
-            <div className="doctors-grid">
-                {loading ? (
-                    <div className="loading">Loading results...</div>
-                ) : results.length > 0 ? (
-                    results.map((item, index) => (
-                        <ResultCard key={item.id || `${searchType}-${index}-${item.name || item.fullName || item.district}`} item={item} type={searchType} />
-                    ))
-                ) : (
-                    <p>No {searchType === 'doctor' ? 'doctors' : 'hospitals'} found matching your criteria.</p>
-                )}
-            </div>
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         </div>
     );
 };
 
-<<<<<<< HEAD
 export default DoctorSearch;
-=======
-export default DoctorSearch;
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b

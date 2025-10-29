@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FINAL FILE UPLOAD TEST</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f0f8ff; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .upload-area { border: 3px dashed #3498db; padding: 30px; text-align: center; margin: 20px 0; border-radius: 10px; background: #ecf0f1; }
+        input[type="file"] { margin: 15px 0; padding: 10px; }
+        button { background: #27ae60; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #229954; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #d5f4e6; color: #27ae60; border: 1px solid #27ae60; }
+        .error { background: #fadbd8; color: #e74c3c; border: 1px solid #e74c3c; }
+        .info { background: #d6eaf8; color: #2980b9; border: 1px solid #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 FINAL FILE UPLOAD TEST</h1>
+        <p style="text-align: center; color: #7f8c8d;">Direct Cloudinary upload - No authentication required</p>
+        
+        <div class="upload-area">
+            <h3>📁 Select Your File</h3>
+            <input type="file" id="fileInput" accept="*/*">
+            <br>
+            <button onclick="uploadFile()">🚀 UPLOAD TO CLOUDINARY</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showResult(message, type = 'info') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${type}`;
+            resultDiv.innerHTML = message;
+        }
+
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResult('❌ Please select a file first!', 'error');
+                return;
+            }
+
+            showResult('📤 Uploading to Cloudinary...', 'info');
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('userId', 'test-user-123');
+            formData.append('folderId', 'root');
+
+            try {
+                const response = await fetch('http://localhost:8080/test/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showResult(`
+                        <h3>🎉 SUCCESS! File uploaded to Cloudinary!</h3>
+                        <p><strong>📁 File:</strong> ${result.fileName}</p>
+                        <p><strong>🔗 URL:</strong> <a href="${result.fileUrl}" target="_blank">${result.fileUrl}</a></p>
+                        <p><strong>📊 Size:</strong> ${result.fileSize} bytes</p>
+                        <p><strong>💬 Message:</strong> ${result.message}</p>
+                        <p style="color: #27ae60; font-weight: bold;">✅ Your file is now stored on Cloudinary!</p>
+                    `, 'success');
+                } else {
+                    const error = await response.json();
+                    showResult(`❌ Upload failed: ${error.error || 'Unknown error'}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ Network error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test backend connection on page load
+        window.onload = async function() {
+            try {
+                const response = await fetch('http://localhost:8080/test/ping');
+                if (response.ok) {
+                    showResult('✅ Backend is connected and ready!', 'success');
+                } else {
+                    showResult('⚠️ Backend connection issue', 'error');
+                }
+            } catch (error) {
+                showResult('❌ Cannot connect to backend. Make sure it\'s running on port 8080.', 'error');
+            }
+        };
+    </script>
+</body>
+</html>

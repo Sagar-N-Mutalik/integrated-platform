@@ -1,18 +1,21 @@
 /* FileManager Styles - Unified Dark Theme */
 .file-manager {
-  padding: 32px;
+  padding: 2rem;
   height: 100%;
   overflow-y: auto;
-  background: #0f172a;
-  color: #f8fafc;
+  background: var(--bg-color);
+  color: var(--text-color);
   position: relative;
+  transition: all 0.3s ease;
+
 }
 
 .file-manager-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 42px;
+  margin-top: 15px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -20,7 +23,7 @@
 .file-manager-header h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #1f2937;
+  background-color: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   margin: 0;
 }
 
@@ -297,7 +300,6 @@
     gap: 16px;
   }
 }
-<<<<<<< HEAD
 
 /* Rename Input Styles */
 .rename-input-container {
@@ -387,5 +389,3 @@
   background: transparent;
   transform: none;
 }
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b

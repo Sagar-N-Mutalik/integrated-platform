@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Google Drive File Upload Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .upload-section {
+            border: 2px dashed #4CAF50;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .status {
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Google Drive File Upload Test</h1>
+        
+        <div class="status info">
+            <div>🎭 <strong>Google Drive Simulation Mode Active</strong></div>
+            <div>Files will be uploaded using Google Drive API simulation</div>
+        </div>
+
+        <div class="upload-section">
+            <h3>📁 Upload File to Google Drive</h3>
+            <input type="file" id="fileInput" accept="*/*">
+            <br>
+            <button onclick="uploadFile()">🚀 Upload to Google Drive</button>
+            <button onclick="listFiles()">📋 List My Files</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api/v1';
+        
+        // Mock user ID for testing
+        const TEST_USER_ID = 'test-user-123';
+        
+        function showResult(message, type = 'info') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${type}`;
+            resultDiv.textContent = message;
+        }
+
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResult('❌ Please select a file first!', 'error');
+                return;
+            }
+
+            showResult('📤 Uploading to Google Drive...', 'info');
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('userId', TEST_USER_ID);
+            formData.append('folderId', 'root'); // Google Drive root folder
+
+            try {
+                const response = await fetch(`${API_BASE}/files/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showResult(`✅ SUCCESS! File uploaded to Google Drive:
+
+📁 File Name: ${result.fileName}
+🆔 File ID: ${result.id}
+🔗 Google Drive URL: ${result.fileUrl}
+📊 Size: ${result.fileSize} bytes
+📅 Uploaded: ${new Date(result.uploadDate).toLocaleString()}
+
+🎭 Note: This is simulation mode. In production, this would be a real Google Drive file!`, 'success');
+                } else {
+                    const error = await response.text();
+                    showResult(`❌ Upload failed: ${error}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ Network error: ${error.message}`, 'error');
+            }
+        }
+
+        async function listFiles() {
+            showResult('📋 Loading files from Google Drive...', 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/files/user/${TEST_USER_ID}`);
+                
+                if (response.ok) {
+                    const files = await response.json();
+                    
+                    if (files.length === 0) {
+                        showResult('📂 No files found. Upload some files first!', 'info');
+                        return;
+                    }
+
+                    let fileList = `📋 Your Google Drive Files (${files.length} files):\n\n`;
+                    files.forEach((file, index) => {
+                        fileList += `${index + 1}. 📁 ${file.fileName}
+   🆔 ID: ${file.id}
+   🔗 URL: ${file.fileUrl}
+   📊 Size: ${file.fileSize} bytes
+   📅 Uploaded: ${new Date(file.uploadDate).toLocaleString()}
+   
+`;
+                    });
+
+                    showResult(fileList, 'success');
+                } else {
+                    const error = await response.text();
+                    showResult(`❌ Failed to load files: ${error}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ Network error: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-load files on page load
+        window.onload = function() {
+            showResult('🚀 Google Drive File Upload Test Ready!\n\n📝 Instructions:\n1. Select any file using the file input\n2. Click "Upload to Google Drive"\n3. See your file uploaded with Google Drive simulation\n4. Click "List My Files" to see all uploaded files', 'info');
+        };
+    </script>
+</body>
+</html>

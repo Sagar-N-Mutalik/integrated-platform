@@ -37,35 +37,8 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable our custom CORS
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless
             .authorizeHttpRequests(auth -> auth
-                // --- Public Endpoints ---
-                .requestMatchers(
-                    "/auth/**",          // Login, Register, OTP etc.
-                    "/share/view/**",
-                    "/v3/api-docs/**",
-                    "/swagger-ui/**",
-                    "/swagger-ui.html"
-                ).permitAll()
-
-                // --- Public GET (accessible without login) ---
-                .requestMatchers(HttpMethod.GET,
-                    "/doctors/**",
-                    "/hospitals/**",
-                    "/health-tips/**",
-<<<<<<< HEAD
-                    "/search/**",
-                    "/email/**"
-                ).permitAll()
-                
-                // --- Public POST for email ---
-                .requestMatchers(HttpMethod.POST,
-                    "/email/**"
-=======
-                    "/search/**"
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
-                ).permitAll()
-
-                // --- Authenticated endpoints ---
-                .anyRequest().authenticated()
+                // Allow all requests for testing
+                .anyRequest().permitAll()
             )
             // Add JWT filter
             .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
@@ -76,7 +49,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:3000")); // React app origin
+        configuration.setAllowedOriginPatterns(List.of("*")); // Use patterns instead of origins
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);

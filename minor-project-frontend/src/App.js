@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./components/ThemeContext";
 import { ToastProvider } from "./components/ToastContext";
-<<<<<<< HEAD
 import ThemeToggle from "./components/ThemeToggle";
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
@@ -17,7 +14,6 @@ const AppContent = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
-<<<<<<< HEAD
   
   // Initialize currentView from localStorage or default to "landing"
   const [currentView, setCurrentView] = useState(() => {
@@ -74,25 +70,6 @@ const AppContent = () => {
   useEffect(() => {
     localStorage.setItem("currentView", currentView);
   }, [currentView]);
-
-=======
-  const [currentView, setCurrentView] = useState("landing");
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    const userData = localStorage.getItem("user");
-    if (token && userData) {
-      try {
-        setUser(JSON.parse(userData));
-      } catch (err) {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-      }
-    }
-    setLoading(false);
-  }, []);
-
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   const apiCall = async (endpoint, data) => {
     try {
       const response = await fetch(
@@ -123,7 +100,6 @@ const AppContent = () => {
     setAuthError("");
     let data = {};
 
-<<<<<<< HEAD
     try {
       switch (action) {
         case "login":
@@ -172,49 +148,6 @@ const AppContent = () => {
     } catch (error) {
       setAuthError("An unexpected error occurred. Please try again.");
       return { success: false, error: "An unexpected error occurred" };
-=======
-    switch (action) {
-      case "login":
-        data = await apiCall("login", {
-          email: formData.email,
-          password: formData.password,
-        });
-        break;
-      case "register":
-        data = await apiCall("register", {
-          fullName: formData.fullName,
-          email: formData.email,
-          password: formData.password,
-        });
-        break;
-      case "sendOtp":
-        data = await apiCall("send-otp", { email: formData });
-        break;
-      case "verifyOtp":
-        data = await apiCall("verify-otp", {
-          email: formData.email,
-          otp: formData.otp,
-          fullName: formData.fullName,
-          password: formData.password,
-        });
-        break;
-      default:
-        break;
-    }
-
-    if (data.token) {
-      const userData = {
-        id: data.userId,
-        email: data.email,
-        fullName: data.fullName,
-      };
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(userData));
-      setUser(userData);
-      setCurrentView("dashboard");
-    } else if (data.message || data.error) {
-      setAuthError(data.message || data.error);
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     }
   };
 
@@ -226,7 +159,6 @@ const AppContent = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-<<<<<<< HEAD
     localStorage.setItem("currentView", "landing");
     setUser(null);
     setCurrentView("landing");
@@ -236,13 +168,6 @@ const AppContent = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.setItem("currentView", "landing");
-=======
-    setUser(null);
-    setCurrentView("login");
-  };
-
-  const handleAccountDeleted = () => {
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     setUser(null);
     setCurrentView("landing");
   };
@@ -258,11 +183,8 @@ const AppContent = () => {
 
   return (
     <div className="App">
-<<<<<<< HEAD
       <ThemeToggle />
       
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
       {currentView === "landing" && (
         <LandingPage
           onLogin={() => setCurrentView("login")}
@@ -297,10 +219,7 @@ const AppContent = () => {
           onSearchDoctors={() => setCurrentView("doctors")}
           onViewHospitals={() => setCurrentView("hospitals")}
           onAccountDeleted={handleAccountDeleted}
-<<<<<<< HEAD
           onBackToHome={() => setCurrentView("landing")}
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         />
       )}
 
@@ -312,11 +231,7 @@ const AppContent = () => {
       )}
 
       {currentView === "hospitals" && (
-<<<<<<< HEAD
         <HospitalDirectory onBack={() => setCurrentView("dashboard")} />
-=======
-        <HospitalDirectory />
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
       )}
     </div>
   );

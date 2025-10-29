@@ -125,17 +125,11 @@ public class JsonDataLoader implements CommandLineRunner {
                 String hospitalName = getStringValue(data, "hospitalName");
                 doctor.setHospitalName(hospitalName);
 
-<<<<<<< HEAD
                 // ✅ Auto-link hospitalId by hospitalName and district
                 String district = doctor.getDistrict();
                 if (hospitalName != null && district != null) {
                     // Try to find hospital by both name and district
                     hospitalRepository.findByHospitalNameAndDistrict(hospitalName, district)
-=======
-                // ✅ Auto-link hospitalId by hospitalName
-                if (hospitalName != null) {
-                    hospitalRepository.findByHospitalNameIgnoreCase(hospitalName)
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                             .ifPresent(h -> doctor.setHospitalId(h.getId()));
                 }
 

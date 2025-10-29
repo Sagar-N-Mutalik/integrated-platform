@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Drive Upload Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .upload-area { border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Google Drive Upload Test</h1>
+        
+        <div class="upload-area">
+            <input type="file" id="fileInput">
+            <br><br>
+            <button onclick="testUpload()">Upload to Google Drive</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function testUpload() {
+            const fileInput = document.getElementById('fileInput');
+            const resultDiv = document.getElementById('result');
+            
+            if (!fileInput.files[0]) {
+                resultDiv.innerHTML = '<div class="error">Please select a file first!</div>';
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('userId', 'test-user-123');
+            formData.append('folderId', 'root');
+            
+            resultDiv.innerHTML = '<div>Uploading...</div>';
+            
+            try {
+                const response = await fetch('http://localhost:8080/api/v1/files/test-upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <h3>✅ Upload Successful!</h3>
+                            <p><strong>File:</strong> ${result.fileName}</p>
+                            <p><strong>ID:</strong> ${result.id}</p>
+                            <p><strong>URL:</strong> <a href="${result.fileUrl}" target="_blank">${result.fileUrl}</a></p>
+                            <p><strong>Size:</strong> ${result.fileSize} bytes</p>
+                            <p><strong>Uploaded:</strong> ${new Date(result.uploadDate).toLocaleString()}</p>
+                        </div>
+                    `;
+                } else {
+                    const error = await response.text();
+                    resultDiv.innerHTML = `<div class="error">Upload failed: ${error}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">Network error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

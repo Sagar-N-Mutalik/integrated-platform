@@ -1,0 +1,12 @@
+﻿This is a test file for Google Drive upload!
+Created at: 10/29/2025 06:38:28
+Testing Google Drive API integration.
+
+Features:
+- File upload to Google Drive
+- Simulation mode for development  
+- Fallback to local storage
+- Public sharing links
+- File management
+
+This file will be uploaded to Google Drive (simulation mode).

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Upload, Folder, File, Download, Share2, Trash2, 
-<<<<<<< HEAD
   Plus, Search, Filter, AlertCircle, CheckCircle, Edit2, RefreshCw 
-=======
-  Plus, Search, Filter, AlertCircle, CheckCircle 
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useToast } from './ToastContext';
@@ -14,10 +10,7 @@ import './FileManager.css';
 // Utility function to format file size
 const formatFileSize = (bytes) => {
   if (bytes === 0) return '0 Bytes';
-<<<<<<< HEAD
   const k = 1024;
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
@@ -29,12 +22,9 @@ const FileManager = ({ user }) => {
   const [isUploading, setIsUploading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isDragging, setIsDragging] = useState(false);
-<<<<<<< HEAD
   const [renamingFileId, setRenamingFileId] = useState(null);
   const [newFileName, setNewFileName] = useState('');
   const [updatingFileId, setUpdatingFileId] = useState(null);
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   const { showToast } = useToast();
 
   const handleDragEnter = (e) => {
@@ -71,14 +61,23 @@ const FileManager = ({ user }) => {
 
   const fetchUserFiles = async () => {
     try {
-      const response = await fetch(`/api/v1/files/user/${user.id}`, {
+      const userId = user.id || user.userId;
+      console.log('Fetching files for user:', userId);
+      
+      const response = await fetch(`http://localhost:8080/api/v1/files/user/${userId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
+      
+      console.log('Fetch files response status:', response.status);
+      
       if (response.ok) {
         const data = await response.json();
+        console.log('Files fetched:', data.length);
         setFiles(data);
+      } else {
+        console.error('Failed to fetch files:', response.status);
       }
     } catch (error) {
       console.error('Error fetching files:', error);
@@ -92,7 +91,6 @@ const FileManager = ({ user }) => {
   };
 
   const handleFileUpload = async (event) => {
-<<<<<<< HEAD
     console.log('📤 handleFileUpload called');
     const files = event.target.files;
     console.log('Files selected:', files.length);
@@ -103,51 +101,38 @@ const FileManager = ({ user }) => {
     }
 
     console.log('User:', user);
-    if (!user || !user.id) {
+    if (!user || (!user.id && !user.userId)) {
       console.error('User not authenticated:', user);
       showToast('User not authenticated. Please login again.', 'error');
       return;
     }
 
-    console.log('Starting upload for user:', user.id);
-=======
-    const files = event.target.files;
-    if (!files.length) return;
-
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
+    // Use either user.id or user.userId depending on what's available
+    const userId = user.id || user.userId;
+    console.log('Starting upload for user:', userId);
     setIsUploading(true);
     setUploadProgress(0);
 
     try {
       const totalFiles = files.length;
       let uploadedCount = 0;
-<<<<<<< HEAD
       let failedCount = 0;
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
 
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         if (!validateFile(file)) {
-<<<<<<< HEAD
           showToast(`Invalid file type: ${file.name}`, 'error');
           failedCount++;
           continue;
-=======
-          throw new Error(`Invalid file type: ${file.name}`);
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         }
 
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('userId', user.id);
+        formData.append('userId', userId);
 
-<<<<<<< HEAD
-        console.log('Uploading file:', file.name, 'for user:', user.id);
+        console.log('Uploading file:', file.name, 'for user:', userId);
 
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
-        const response = await fetch('/api/v1/files/upload', {
+        const response = await fetch('http://localhost:8080/api/v1/files/upload', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -155,7 +140,6 @@ const FileManager = ({ user }) => {
           body: formData
         });
 
-<<<<<<< HEAD
         console.log('Upload response status:', response.status);
 
         if (response.ok) {
@@ -170,20 +154,10 @@ const FileManager = ({ user }) => {
           console.error('Upload failed:', errorData);
           showToast(`Failed to upload ${file.name}: ${errorData.error || 'Unknown error'}`, 'error');
           failedCount++;
-=======
-        if (response.ok) {
-          const uploadedFile = await response.json();
-          setFiles(prev => [...prev, uploadedFile]);
-          uploadedCount++;
-          setUploadProgress((uploadedCount / totalFiles) * 100);
-        } else {
-          throw new Error(`Failed to upload ${file.name}`);
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         }
       }
 
       // Refresh the file list after all uploads are complete
-<<<<<<< HEAD
       if (uploadedCount > 0) {
         await fetchUserFiles();
         showToast(`Successfully uploaded ${uploadedCount} file(s)`, 'success');
@@ -192,9 +166,6 @@ const FileManager = ({ user }) => {
       if (failedCount > 0) {
         showToast(`${failedCount} file(s) failed to upload`, 'error');
       }
-=======
-      fetchUserFiles();
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     } catch (error) {
       console.error('Error uploading file:', error);
       showToast(error.message || 'Error uploading file', 'error');
@@ -207,7 +178,7 @@ const FileManager = ({ user }) => {
 
   const deleteFile = async (fileId) => {
     try {
-      const response = await fetch(`/api/v1/files/${fileId}`, {
+      const response = await fetch(`http://localhost:8080/api/v1/files/${fileId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -226,7 +197,7 @@ const FileManager = ({ user }) => {
 
   const shareFile = async (fileId) => {
     try {
-      const response = await fetch(`/api/v1/files/${fileId}/share`, {
+      const response = await fetch(`http://localhost:8080/api/v1/files/${fileId}/share`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -235,12 +206,8 @@ const FileManager = ({ user }) => {
 
       if (response.ok) {
         const shareData = await response.json();
-<<<<<<< HEAD
         const shareUrl = `${window.location.origin}/share/view/${shareData.shareUrl}`;
         navigator.clipboard.writeText(shareUrl);
-=======
-        navigator.clipboard.writeText(shareData.shareUrl);
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
         showToast('Share link copied to clipboard', 'success');
       }
     } catch (error) {
@@ -249,10 +216,9 @@ const FileManager = ({ user }) => {
     }
   };
 
-<<<<<<< HEAD
   const startRename = (file) => {
     setRenamingFileId(file.id);
-    setNewFileName(file.fileName || file.name);
+    setNewFileName(file.name);
   };
 
   const cancelRename = () => {
@@ -267,7 +233,7 @@ const FileManager = ({ user }) => {
     }
 
     try {
-      const response = await fetch(`/api/v1/files/${fileId}/rename`, {
+      const response = await fetch(`http://localhost:8080/api/v1/files/${fileId}/rename`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -300,7 +266,7 @@ const FileManager = ({ user }) => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch(`/api/v1/files/${fileId}/update`, {
+      const response = await fetch(`http://localhost:8080/api/v1/files/${fileId}/update`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -325,12 +291,8 @@ const FileManager = ({ user }) => {
   };
 
   const filteredFiles = files.filter(file => {
-    const fileName = file.fileName || file.name || '';
+    const fileName = file.name || '';
     const matchesSearch = fileName.toLowerCase().includes(searchTerm.toLowerCase());
-=======
-  const filteredFiles = files.filter(file => {
-    const matchesSearch = file.name.toLowerCase().includes(searchTerm.toLowerCase());
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     return matchesSearch;
   });
   return (
@@ -395,19 +357,13 @@ const FileManager = ({ user }) => {
         {filteredFiles.map(file => (
           <div key={file.id} className="file-item">
             <div className="file-icon">
-<<<<<<< HEAD
               {file.mimeType?.includes('image') ? (
-                <img src={file.url} alt={file.fileName || file.name} />
-=======
-              {file.type.includes('image') ? (
-                <img src={file.thumbnailUrl || file.url} alt={file.name} />
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
+                <img src={file.url} alt={file.name} />
               ) : (
                 <File size={48} />
               )}
             </div>
             <div className="file-info">
-<<<<<<< HEAD
               {renamingFileId === file.id ? (
                 <div className="rename-input-container">
                   <input
@@ -428,18 +384,12 @@ const FileManager = ({ user }) => {
                 </div>
               ) : (
                 <>
-                  <span className="file-name">{file.fileName || file.name}</span>
+                  <span className="file-name">{file.name}</span>
                   <span className="file-meta">
                     {formatFileSize(file.size)}
                   </span>
                 </>
               )}
-=======
-              <span className="file-name">{file.name}</span>
-              <span className="file-meta">
-                {(file.size / 1024 / 1024).toFixed(2)} MB
-              </span>
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
             </div>
             <div className="file-actions">
               <button 
@@ -450,7 +400,6 @@ const FileManager = ({ user }) => {
                 <Download size={16} />
               </button>
               <button 
-<<<<<<< HEAD
                 onClick={() => startRename(file)}
                 className="action-btn"
                 title="Rename"
@@ -474,8 +423,6 @@ const FileManager = ({ user }) => {
                 accept="*/*"
               />
               <button 
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                 onClick={() => shareFile(file.id)}
                 className="action-btn"
                 title="Share"

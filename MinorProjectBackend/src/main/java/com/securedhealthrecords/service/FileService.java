@@ -21,6 +21,7 @@ public class FileService {
     private final CloudinaryService cloudinaryService;
 
     public FileRecord uploadFile(MultipartFile file, String userId, String folderId) throws IOException {
+        System.out.println("📤 FileService: Starting upload with Cloudinary...");
         Map<String, Object> uploadResult = cloudinaryService.uploadFile(file, userId, folderId);
         
         String publicId = (String) uploadResult.get("public_id");
@@ -35,6 +36,8 @@ public class FileService {
             publicId,
             url
         );
+        
+        System.out.println("✅ FileService: File uploaded successfully using Cloudinary");
         
         if (folderId != null && !folderId.isEmpty()) {
             fileRecord.setFolderId(folderId);
@@ -69,7 +72,8 @@ public class FileService {
     public void deleteFile(String fileId, String userId) throws IOException {
         Optional<FileRecord> fileRecord = fileRecordRepository.findById(fileId);
         if (fileRecord.isPresent() && fileRecord.get().getUserId().equals(userId)) {
-            cloudinaryService.deleteFile(fileRecord.get().getCloudinaryPublicId());
+            FileRecord file = fileRecord.get();
+            cloudinaryService.deleteFile(file.getCloudinaryPublicId());
             fileRecordRepository.deleteById(fileId);
         }
     }
@@ -98,7 +102,6 @@ public class FileService {
         return Optional.empty();
     }
 
-<<<<<<< HEAD
     public FileRecord renameFile(String fileId, String userId, String newFileName) {
         Optional<FileRecord> fileRecord = fileRecordRepository.findById(fileId);
         if (fileRecord.isEmpty()) {
@@ -110,7 +113,7 @@ public class FileService {
             throw new RuntimeException("Unauthorized: You don't have permission to rename this file");
         }
         
-        file.setFileName(newFileName);
+        file.setName(newFileName);
         file.setUpdatedAt(LocalDateTime.now());
         return fileRecordRepository.save(file);
     }
@@ -126,7 +129,7 @@ public class FileService {
             throw new RuntimeException("Unauthorized: You don't have permission to update this file");
         }
         
-        // Delete old file from Cloudinary
+        // Delete old file from storage
         cloudinaryService.deleteFile(file.getCloudinaryPublicId());
         
         // Upload new file
@@ -136,8 +139,8 @@ public class FileService {
         String url = (String) uploadResult.get("secure_url");
         
         // Update file record
-        file.setFileName(newFile.getOriginalFilename());
-        file.setOriginalFileName(newFile.getOriginalFilename());
+        file.setName(newFile.getOriginalFilename());
+        file.setOriginalName(newFile.getOriginalFilename());
         file.setMimeType(newFile.getContentType());
         file.setSize(newFile.getSize());
         file.setCloudinaryPublicId(publicId);
@@ -155,8 +158,6 @@ public class FileService {
         return Optional.empty();
     }
 
-=======
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
     private String formatFileSize(long bytes) {
         if (bytes < 1024) return bytes + " B";
         int exp = (int) (Math.log(bytes) / Math.log(1024));

@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
 import {
-=======
-import { 
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   User, FileText, Calendar, Settings, Upload, Users, Home
 } from 'lucide-react';
 import FileManager from './FileManager';
 import './Dashboard.css';
 import { useToast } from './ToastContext';
 
-<<<<<<< HEAD
 const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccountDeleted, onBackToHome }) => {
-=======
-const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccountDeleted }) => {
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
   const [currentView, setCurrentView] = useState('overview');
   const [stats, setStats] = useState({
     totalFiles: 0,
@@ -168,11 +160,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
         <div className="quick-actions">
           <h2>Quick Actions</h2>
           <div className="action-grid">
-<<<<<<< HEAD
             <button
-=======
-            <button 
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
               className="action-card"
               onClick={() => setCurrentView('files')}
             >
@@ -180,11 +168,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
               <h3>Manage Files</h3>
               <p>Upload, organize and share your medical records</p>
             </button>
-<<<<<<< HEAD
             <button
-=======
-            <button 
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
               className="action-card"
               onClick={() => onSearchDoctors()}
             >
@@ -192,11 +176,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
               <h3>Find Doctors</h3>
               <p>Search for doctors and book appointments</p>
             </button>
-<<<<<<< HEAD
             <button
-=======
-            <button 
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
               className="action-card"
               onClick={() => onViewHospitals && onViewHospitals()}
             >
@@ -226,11 +206,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
             <div className="settings-card">
               <div className="setting-item">
                 <label>Full Name</label>
-<<<<<<< HEAD
                 <input type="text" value={profile.fullName} onChange={(e) => setProfile({ ...profile, fullName: e.target.value })} />
-=======
-                <input type="text" value={profile.fullName} onChange={(e)=> setProfile({...profile, fullName: e.target.value})} />
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
               </div>
               <div className="setting-item">
                 <label>Email</label>
@@ -239,7 +215,6 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
               <div className="setting-grid">
                 <div className="setting-item">
                   <label>Age</label>
-<<<<<<< HEAD
                   <input type="number" value={profile.age} onChange={(e) => setProfile({ ...profile, age: e.target.value })} />
                 </div>
                 <div className="setting-item">
@@ -249,17 +224,6 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
                 <div className="setting-item">
                   <label>Phone</label>
                   <input type="tel" value={profile.phone} onChange={(e) => setProfile({ ...profile, phone: e.target.value })} />
-=======
-                  <input type="number" value={profile.age} onChange={(e)=> setProfile({...profile, age: e.target.value})} />
-                </div>
-                <div className="setting-item">
-                  <label>Gender</label>
-                  <input type="text" value={profile.gender} onChange={(e)=> setProfile({...profile, gender: e.target.value})} />
-                </div>
-                <div className="setting-item">
-                  <label>Phone</label>
-                  <input type="tel" value={profile.phone} onChange={(e)=> setProfile({...profile, phone: e.target.value})} />
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                 </div>
               </div>
               <div className="setting-actions">
@@ -275,11 +239,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
               <div className="settings-card">
                 <h3>Settings</h3>
                 <div className="setting-actions">
-<<<<<<< HEAD
                   <button className="action-btn primary" onClick={() => setCurrentView('profile')}>
-=======
-                  <button className="action-btn primary" onClick={()=> setCurrentView('profile')}>
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
                     Edit Profile
                   </button>
                   <button className="action-btn secondary" onClick={onLogout}>
@@ -302,7 +262,6 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
     <div className="dashboard">
       <div className="dashboard-sidebar">
         <div className="sidebar-header">
-<<<<<<< HEAD
           {onBackToHome && (
             <button className="back-to-home-btn" onClick={onBackToHome}>
               <Home size={18} />
@@ -310,9 +269,6 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
             </button>
           )}
           <div className="user-info" onClick={() => setCurrentView('profile')} style={{ cursor: 'pointer' }}>
-=======
-          <div className="user-info" onClick={() => setCurrentView('profile')} style={{cursor: 'pointer'}}>
->>>>>>> d10f94631a71022b5f3fa56f6f7cbcb904a0828b
             <div className="user-avatar">
               <User size={24} />
             </div>

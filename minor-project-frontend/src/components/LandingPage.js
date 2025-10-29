@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Heart, Shield, Users, Calendar, FileText, 
+import {
+  Heart, Shield, Users, Calendar, FileText,
   ArrowRight, Star, MapPin, ChevronRight, Check,
   Zap, Lock, Share2, Activity, Award, Clock, MessageSquare, Phone, Mail, Upload
 } from 'lucide-react';
@@ -11,8 +11,8 @@ import './LandingPage.css';
 // Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
   }
@@ -30,19 +30,19 @@ const staggerContainer = {
 };
 
 const slideIn = (direction = 'left') => ({
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     x: direction === 'left' ? -50 : 50,
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
-    transition: { 
-      duration: 0.8, 
+    transition: {
+      duration: 0.8,
       ease: [0.16, 1, 0.3, 1],
       delay: 0.2
-    } 
+    }
   }
 });
 
@@ -108,30 +108,30 @@ const LandingPage = ({ onLogin, onSignup }) => {
   useEffect(() => {
     // Fetch data on component mount
     const fetchData = async () => {
-        try {
-            // These functions are defined below in your component
-            await fetchHealthTips();
-            await fetchFeaturedDoctors();
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+      try {
+        // These functions are defined below in your component
+        await fetchHealthTips();
+        await fetchFeaturedDoctors();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
-    
+
     fetchData();
 
     // Add scroll event listener for header styling
     const handleScroll = () => {
-        // setScrolled is a state updater from useState
-        setScrolled(window.scrollY > 50);
+      // setScrolled is a state updater from useState
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
 
     // Cleanup the scroll listener when the component unmounts
     return () => {
-        window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-}, []); // <-- The empty dependency array ensures this runs only once.
+  }, []); // <-- The empty dependency array ensures this runs only once.
 
   const fetchHealthTips = async () => {
     try {
@@ -260,13 +260,13 @@ const LandingPage = ({ onLogin, onSignup }) => {
     <div className="landing-page">
       <header className={`landing-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <button className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Heart className="logo-icon" />
             <span className="logo-text">HealthVault</span>
-          </a>
-          
-          <button 
-            className={`mobile-menu-button ${isMenuOpen ? 'open' : ''}`} 
+          </button>
+
+          <button
+            className={`mobile-menu-button ${isMenuOpen ? 'open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -275,7 +275,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
             <span></span>
             <span></span>
           </button>
-          
+
           <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <a href="#features" onClick={() => scrollTo(featuresRef)}>Features</a>
             <a href="#how-it-works" onClick={() => scrollTo(howItWorksRef)}>How It Works</a>
@@ -291,7 +291,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             className="mobile-menu-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -311,48 +311,48 @@ const LandingPage = ({ onLogin, onSignup }) => {
               animate="visible"
               variants={staggerContainer}
             >
-              <motion.span 
+              <motion.span
                 className="section-subtitle"
                 variants={fadeInUp}
               >
                 Welcome to HealthVault
               </motion.span>
-              
-              <motion.h1 
+
+              <motion.h1
                 className="hero-title"
                 variants={fadeInUp}
               >
                 Your Health, <span className="gradient-text">Your Control</span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 className="hero-subtitle"
                 variants={fadeInUp}
               >
-                Securely store, manage, and share your medical records with healthcare providers. 
+                Securely store, manage, and share your medical records with healthcare providers.
                 Get personalized health insights and connect with top doctors—all in one place.
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 className="hero-buttons"
                 variants={fadeInUp}
               >
-                <button 
-                  onClick={onSignup} 
+                <button
+                  onClick={onSignup}
                   className="btn btn-primary btn-large"
                 >
                   Get Started Free
                   <ArrowRight size={20} />
                 </button>
-                <button 
-                  onClick={onLogin} 
+                <button
+                  onClick={onLogin}
                   className="btn btn-outline btn-large"
                 >
                   Login to Dashboard
                 </button>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="trust-badges"
                 variants={fadeInUp}
               >
@@ -366,8 +366,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 </div>
               </motion.div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="hero-image"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -390,7 +390,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="floating-elements">
                 <div className="element element-1"></div>
                 <div className="element element-2"></div>
@@ -399,7 +399,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
             </motion.div>
           </div>
         </div>
-        
+
         <div className="scroll-indicator">
           <div className="mouse">
             <div className="wheel"></div>
@@ -420,12 +420,12 @@ const LandingPage = ({ onLogin, onSignup }) => {
             <span className="section-subtitle">Features</span>
             <h2 className="section-title">Everything You Need in One Place</h2>
             <p className="section-description">
-              Our platform combines cutting-edge technology with user-friendly design to give you 
+              Our platform combines cutting-edge technology with user-friendly design to give you
               complete control over your healthcare journey.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="features-grid"
             variants={staggerContainer}
             initial="hidden"
@@ -433,7 +433,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
             viewport={{ once: true, margin: "-50px" }}
           >
             {features.map((feature, index) => (
-              <FeatureCard 
+              <FeatureCard
                 key={index}
                 icon={feature.icon}
                 title={feature.title}
@@ -442,10 +442,10 @@ const LandingPage = ({ onLogin, onSignup }) => {
               />
             ))}
           </motion.div>
-          
+
           <div className="stats-container">
             {stats.map((stat, index) => (
-              <StatItem 
+              <StatItem
                 key={index}
                 value={stat.value}
                 label={stat.label}
@@ -454,7 +454,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
             ))}
           </div>
         </div>
-        
+
         <div className="features-cta">
           <div className="container">
             <motion.div
@@ -466,8 +466,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
             >
               <h3>Ready to take control of your health records?</h3>
               <p>Join thousands of users who trust HealthVault for their healthcare needs.</p>
-              <button 
-                onClick={onSignup} 
+              <button
+                onClick={onSignup}
                 className="btn btn-primary btn-large"
               >
                 Get Started for Free
@@ -476,7 +476,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
-      
+
       {/* How It Works Section */}
       <section id="how-it-works" className="section how-it-works" ref={howItWorksRef}>
         <div className="container">
@@ -490,14 +490,14 @@ const LandingPage = ({ onLogin, onSignup }) => {
             <span className="section-subtitle">Process</span>
             <h2 className="section-title">How It Works</h2>
             <p className="section-description">
-              Getting started with HealthVault is quick and easy. Follow these simple steps to take 
+              Getting started with HealthVault is quick and easy. Follow these simple steps to take
               control of your health records today.
             </p>
           </motion.div>
-          
+
           <div className="steps-container">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={step.number}
                 className="step-card"
                 initial={{ opacity: 0, y: 30 }}
@@ -514,7 +514,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section id="testimonials" className="section testimonials" ref={testimonialsRef}>
         <div className="container">
@@ -531,10 +531,10 @@ const LandingPage = ({ onLogin, onSignup }) => {
               Don't just take our word for it. Here's what our community has to say about their experience.
             </p>
           </motion.div>
-          
+
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="testimonial-card"
                 initial={{ opacity: 0, y: 30 }}
@@ -544,11 +544,11 @@ const LandingPage = ({ onLogin, onSignup }) => {
               >
                 <div className="testimonial-rating">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      size={16} 
-                      fill={i < testimonial.rating ? "#F59E0B" : "none"} 
-                      color={i < testimonial.rating ? "#F59E0B" : "#D1D5DB"} 
+                    <Star
+                      key={i}
+                      size={16}
+                      fill={i < testimonial.rating ? "#F59E0B" : "none"}
+                      color={i < testimonial.rating ? "#F59E0B" : "#D1D5DB"}
                     />
                   ))}
                 </div>
@@ -567,7 +567,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section
       <section className="section cta">
         <div className="container">
@@ -597,12 +597,12 @@ const LandingPage = ({ onLogin, onSignup }) => {
           </motion.div>
         </div>
       </section> */}
-      
+
       {/* Contact Section */}
       <section id="contact" className="section contact" ref={contactRef}>
         <div className="container">
           <div className="contact-grid">
-            <motion.div 
+            <motion.div
               className="contact-info"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -611,10 +611,10 @@ const LandingPage = ({ onLogin, onSignup }) => {
             >
               <h2 className="section-title">Get In Touch</h2>
               <p className="section-description">
-                Have questions or need assistance? Our team is here to help you with any inquiries 
+                Have questions or need assistance? Our team is here to help you with any inquiries
                 about our platform and services.
               </p>
-              
+
               <div className="contact-methods">
                 <div className="contact-method">
                   <div className="contact-icon">
@@ -625,7 +625,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
                     <a href="mailto:support@healthvault.com">support@healthvault.com</a>
                   </div>
                 </div>
-                
+
                 <div className="contact-method">
                   <div className="contact-icon">
                     <Phone size={24} />
@@ -635,7 +635,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
                     <a href="tel:+18005551234">+1 (800) 555-1234</a>
                   </div>
                 </div>
-                
+
                 <div className="contact-method">
                   <div className="contact-icon">
                     <Clock size={24} />
@@ -648,8 +648,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 </div>
               </div>
             </motion.div>
-            
-            <motion.form 
+
+            <motion.form
               className="contact-form"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -658,44 +658,44 @@ const LandingPage = ({ onLogin, onSignup }) => {
             >
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  placeholder="John Doe" 
-                  required 
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="John Doe"
+                  required
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  placeholder="you@example.com" 
-                  required 
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  required
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="subject">Subject</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  placeholder="How can we help?" 
-                  required 
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="How can we help?"
+                  required
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea 
-                  id="message" 
-                  rows="5" 
-                  placeholder="Tell us more about your inquiry..." 
+                <textarea
+                  id="message"
+                  rows="5"
+                  placeholder="Tell us more about your inquiry..."
                   required
                 ></textarea>
               </div>
-              
+
               <button type="submit" className="btn btn-primary">
                 Send Message
               </button>
@@ -776,7 +776,7 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 Learn More
               </a>
             </div>
-            
+
             <div className="trust-badges">
               <div className="badge">
                 <Shield size={18} />
@@ -788,8 +788,8 @@ const LandingPage = ({ onLogin, onSignup }) => {
               </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="hero-image"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -805,14 +805,14 @@ const LandingPage = ({ onLogin, onSignup }) => {
             </div>
           </motion.div>
         </div>
-        
+
         <div className="scroll-indicator">
           <div className="mouse">
             <div className="wheel"></div>
           </div>
         </div>
       </section>
-      
+
       {/* Floating particles background */}
       <div className="particles">
         {[...Array(15)].map((_, i) => (
@@ -837,25 +837,25 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 <span className="logo-text">HealthVault</span>
               </div>
               <p className="footer-description">
-                Empowering individuals to take control of their health data with secure, 
+                Empowering individuals to take control of their health data with secure,
                 accessible, and comprehensive health record management.
               </p>
               <div className="social-links">
-                <a href="#" aria-label="Facebook">
+                <button aria-label="Facebook" onClick={() => console.log('Facebook link clicked')}>
                   <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="Twitter">
+                </button>
+                <button aria-label="Twitter" onClick={() => console.log('Twitter link clicked')}>
                   <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn">
+                </button>
+                <button aria-label="LinkedIn" onClick={() => console.log('LinkedIn link clicked')}>
                   <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="Instagram">
+                </button>
+                <button aria-label="Instagram" onClick={() => console.log('Instagram link clicked')}>
                   <i className="fab fa-instagram"></i>
-                </a>
+                </button>
               </div>
             </div>
-            
+
             <div className="footer-col">
               <h3 className="footer-heading">Quick Links</h3>
               <ul className="footer-links">
@@ -863,41 +863,41 @@ const LandingPage = ({ onLogin, onSignup }) => {
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Pricing</a></li>
+                <li><button onClick={() => console.log('Pricing clicked')}>Pricing</button></li>
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h3 className="footer-heading">Resources</h3>
               <ul className="footer-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">API Documentation</a></li>
-                <li><a href="#">Status</a></li>
+                <li><button onClick={() => console.log('Blog clicked')}>Blog</button></li>
+                <li><button onClick={() => console.log('Help Center clicked')}>Help Center</button></li>
+                <li><button onClick={() => console.log('Tutorials clicked')}>Tutorials</button></li>
+                <li><button onClick={() => console.log('API Documentation clicked')}>API Documentation</button></li>
+                <li><button onClick={() => console.log('Status clicked')}>Status</button></li>
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h3 className="footer-heading">Company</h3>
               <ul className="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><button onClick={() => console.log('About Us clicked')}>About Us</button></li>
+                <li><button onClick={() => console.log('Careers clicked')}>Careers</button></li>
+                <li><button onClick={() => console.log('Press clicked')}>Press</button></li>
+                <li><button onClick={() => console.log('Partners clicked')}>Partners</button></li>
+                <li><button onClick={() => console.log('Contact clicked')}>Contact</button></li>
               </ul>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
             <p className="copyright">
               &copy; {new Date().getFullYear()} HealthVault. All rights reserved.
             </p>
             <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
+              <button onClick={() => console.log('Privacy Policy clicked')}>Privacy Policy</button>
+              <button onClick={() => console.log('Terms of Service clicked')}>Terms of Service</button>
+              <button onClick={() => console.log('Cookie Policy clicked')}>Cookie Policy</button>
             </div>
           </div>
         </div>

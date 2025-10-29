@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import './Toast.css';
 
-const ToastContext = createContext({ showToast: () => {} });
+const ToastContext = createContext({ showToast: () => { } });
 
 export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);

@@ -1,0 +1,127 @@
+# =========================================
+# 🌐 Application Configuration
+# =========================================
+spring:
+  application:
+    name: secured-health-records-backend
+  
+  # =========================================
+  # 🗄️ MongoDB Configuration
+  # =========================================
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/secured_health_records
+      auto-index-creation: true
+  
+  # =========================================
+  # 📧 Email Configuration (Gmail SMTP)
+  # =========================================
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+  
+  # =========================================
+  # 📂 File Upload Configuration
+  # =========================================
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+# =========================================
+# 📁 File Storage Configuration
+# =========================================
+app:
+  upload:
+    dir: uploads
+  storage:
+    # Priority order: local, base64, firebase, googledrive, cloudinary
+    # First available option will be used
+    priority: local,base64,firebase,googledrive,cloudinary
+
+# =========================================
+# ⚙️ Server Configuration
+# =========================================
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+# =========================================
+# 🔐 JWT (Authentication) Configuration
+# =========================================
+jwt:
+  secret: ${JWT_SECRET:your-256-bit-secret-key-change-this-in-production}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+# =========================================
+# ☁️ Cloudinary Configuration (for image uploads)
+# =========================================
+cloudinary:
+  cloud-name: ${CLOUDINARY_CLOUD_NAME:didsv9ntf}
+  api-key: ${CLOUDINARY_API_KEY:732379488357699}
+  api-secret: ${CLOUDINARY_API_SECRET:YhKxMqP9kMtFKRUvnVMLHEj4EZg}
+
+# =========================================
+# 📧 Email Configuration
+# =========================================
+mail:
+  from:
+    email: ${MAIL_FROM_EMAIL:noreply@healthrecords.com}
+    name: ${MAIL_FROM_NAME:Secured Health Records}
+
+# MailerSend Configuration
+mailersend:
+  api-key: ${MAILERSEND_API_KEY:your-mailersend-api-key}
+  from-email: ${MAILERSEND_FROM_EMAIL:noreply@yourdomain.com}
+  from-name: ${MAILERSEND_FROM_NAME:Secured Health Records}
+
+# =========================================
+# 🧾 Logging Configuration
+# =========================================
+logging:
+  level:
+    com.securedhealthrecords: INFO
+    org.springframework.security: WARN
+    org.mongodb.driver: WARN
+    io.netty: WARN
+    sun.misc: OFF
+    com.google.inject: OFF
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# =========================================
+# 🌍 CORS Configuration
+# =========================================
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:3001}
+
+# =========================================
+# 💻 Frontend URL Configuration
+# =========================================
+frontend:
+  url: ${FRONTEND_URL:http://localhost:3000}
+
+# =========================================
+# 🔧 Management & Actuator
+# =========================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
