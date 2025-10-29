@@ -32,18 +32,43 @@ public class UserController {
     @PutMapping("/me")
     public ResponseEntity<UserDTO> updateMe(@RequestBody UserDTO request, Authentication authentication) {
         String email = authentication.getName();
+        System.out.println("📝 Updating profile for: " + email);
+        System.out.println("📝 Request data: " + request);
+        
         Optional<User> userOpt = userRepository.findByEmail(email);
         if (userOpt.isEmpty()) {
+            System.out.println("❌ User not found: " + email);
             return ResponseEntity.notFound().build();
         }
+        
         User user = userOpt.get();
-        if (request.getFullName() != null) user.setFullName(request.getFullName());
-        if (request.getAge() != null) user.setAge(request.getAge());
-        if (request.getGender() != null) user.setGender(request.getGender());
-        if (request.getPhone() != null) user.setPhone(request.getPhone());
-        if (request.getNotificationsEnabled() != null) user.setNotificationsEnabled(request.getNotificationsEnabled());
-        userRepository.save(user);
-        return ResponseEntity.ok(toDTO(user));
+        System.out.println("📝 Current user: " + user);
+        
+        if (request.getFullName() != null) {
+            System.out.println("✏️ Updating fullName: " + request.getFullName());
+            user.setFullName(request.getFullName());
+        }
+        if (request.getAge() != null) {
+            System.out.println("✏️ Updating age: " + request.getAge());
+            user.setAge(request.getAge());
+        }
+        if (request.getGender() != null) {
+            System.out.println("✏️ Updating gender: " + request.getGender());
+            user.setGender(request.getGender());
+        }
+        if (request.getPhone() != null) {
+            System.out.println("✏️ Updating phone: " + request.getPhone());
+            user.setPhone(request.getPhone());
+        }
+        if (request.getNotificationsEnabled() != null) {
+            System.out.println("✏️ Updating notificationsEnabled: " + request.getNotificationsEnabled());
+            user.setNotificationsEnabled(request.getNotificationsEnabled());
+        }
+        
+        User savedUser = userRepository.save(user);
+        System.out.println("✅ User saved: " + savedUser);
+        
+        return ResponseEntity.ok(toDTO(savedUser));
     }
 
     @DeleteMapping("/me")

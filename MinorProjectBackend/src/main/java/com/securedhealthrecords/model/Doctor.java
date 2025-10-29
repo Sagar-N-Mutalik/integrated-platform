@@ -52,4 +52,14 @@ public class Doctor {
     @Field("consultationFee")
     @JsonProperty("consultationFee")
     private String consultationFee;
+
+    // Email for appointment notifications
+    @Field("email")
+    @JsonProperty("email")
+    private String email;
+
+    // Phone number
+    @Field("phone")
+    @JsonProperty("phone")
+    private String phone;
 }

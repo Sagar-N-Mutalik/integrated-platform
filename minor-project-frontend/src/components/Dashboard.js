@@ -3,6 +3,8 @@ import {
   User, FileText, Calendar, Settings, Upload, Users, Home
 } from 'lucide-react';
 import FileManager from './FileManager';
+import Appointments from './Appointments';
+import Profile from './Profile';
 import './Dashboard.css';
 import { useToast } from './ToastContext';
 
@@ -21,6 +23,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
   const navigationItems = [
     { id: 'overview', icon: Home, label: 'Overview' },
     { id: 'files', icon: FileText, label: 'My Files' },
+    { id: 'appointments', icon: Calendar, label: 'Appointments' },
     { id: 'doctors', icon: Users, label: 'Find Doctors' },
     { id: 'settings', icon: Settings, label: 'Settings' }
   ];
@@ -170,6 +173,14 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
             </button>
             <button
               className="action-card"
+              onClick={() => setCurrentView('appointments')}
+            >
+              <Calendar size={32} />
+              <h3>My Appointments</h3>
+              <p>View and manage your medical appointments</p>
+            </button>
+            <button
+              className="action-card"
               onClick={() => onSearchDoctors()}
             >
               <Users size={32} />
@@ -196,42 +207,13 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
         return renderOverview();
       case 'files':
         return <FileManager user={user} />;
+      case 'appointments':
+        return <Appointments user={user} onBack={() => setCurrentView('overview')} />;
       case 'doctors':
         onSearchDoctors();
         return null;
       case 'profile':
-        return (
-          <div className="settings-section">
-            <h2>My Profile</h2>
-            <div className="settings-card">
-              <div className="setting-item">
-                <label>Full Name</label>
-                <input type="text" value={profile.fullName} onChange={(e) => setProfile({ ...profile, fullName: e.target.value })} />
-              </div>
-              <div className="setting-item">
-                <label>Email</label>
-                <input type="email" value={profile.email} readOnly />
-              </div>
-              <div className="setting-grid">
-                <div className="setting-item">
-                  <label>Age</label>
-                  <input type="number" value={profile.age} onChange={(e) => setProfile({ ...profile, age: e.target.value })} />
-                </div>
-                <div className="setting-item">
-                  <label>Gender</label>
-                  <input type="text" value={profile.gender} onChange={(e) => setProfile({ ...profile, gender: e.target.value })} />
-                </div>
-                <div className="setting-item">
-                  <label>Phone</label>
-                  <input type="tel" value={profile.phone} onChange={(e) => setProfile({ ...profile, phone: e.target.value })} />
-                </div>
-              </div>
-              <div className="setting-actions">
-                <button className="action-btn" onClick={saveProfile} disabled={savingProfile}>{savingProfile ? 'Saving...' : 'Save Changes'}</button>
-              </div>
-            </div>
-          </div>
-        );
+        return <Profile user={user} onSettings={() => setCurrentView('settings')} />;
       case 'settings':
         return (
           <div className="settings-section">
@@ -242,7 +224,7 @@ const Dashboard = ({ user, onLogout, onSearchDoctors, onViewHospitals, onAccount
                   <button className="action-btn primary" onClick={() => setCurrentView('profile')}>
                     Edit Profile
                   </button>
-                  <button className="action-btn secondary" onClick={onLogout}>
+                  <button className="action-btn secondary" onClick={confirmLogout}>
                     Logout
                   </button>
                   <button className="action-btn danger" onClick={deleteAccount}>

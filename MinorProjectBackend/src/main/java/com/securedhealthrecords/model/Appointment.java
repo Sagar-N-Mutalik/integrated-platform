@@ -18,11 +18,13 @@ public class Appointment {
     private String patientPhone;
     private String doctorId;
     private String doctorName;
+    private String doctorEmail;
     private String hospitalId;
     private String hospitalName;
     private LocalDateTime appointmentDateTime;
     private String appointmentType; // CONSULTATION, FOLLOW_UP, EMERGENCY
-    private String status; // SCHEDULED, CONFIRMED, COMPLETED, CANCELLED
+    private String status; // PENDING, ACCEPTED, REJECTED, COMPLETED, CANCELLED
+    private String reason; // Reason for appointment
     private String symptoms;
     private String notes;
     private List<String> attachedRecords; // File IDs
@@ -30,4 +32,5 @@ public class Appointment {
     private Boolean isPaid;
     private String createdAt;
     private String updatedAt;
+    private Boolean reminderSent; // Track if reminder was sent
 }

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, ArrowLeft, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft, Mail, Lock, Phone } from 'lucide-react';
 import './Auth.css';
 
 const Login = ({ onLogin, onBackToHome, onSwitchToSignup, authError }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showOtpForm, setShowOtpForm] = useState(false);
+  const [otpStep, setOtpStep] = useState('phone'); // 'phone' or 'verify'
+  const [otpSent, setOtpSent] = useState(false);
+  const [sendingOtp, setSendingOtp] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    phone: '',
     otp: ''
   });
 
@@ -30,6 +34,39 @@ const Login = ({ onLogin, onBackToHome, onSwitchToSignup, authError }) => {
   const handleOtpRequest = (e) => {
     e.preventDefault();
     setShowOtpForm(true);
+    setOtpStep('phone');
+    setOtpSent(false);
+  };
+
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.phone) {
+      alert('Please enter your phone number');
+      return;
+    }
+
+    setSendingOtp(true);
+    
+    try {
+      // TODO: Replace with actual API call to send OTP
+      // const response = await fetch('/api/v1/auth/send-otp', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ phone: formData.phone })
+      // });
+      
+      // Simulate OTP sending
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setOtpSent(true);
+      setOtpStep('verify');
+      alert(`OTP sent to ${formData.phone} (Demo: Use 123456)`);
+    } catch (error) {
+      alert('Failed to send OTP. Please try again.');
+    } finally {
+      setSendingOtp(false);
+    }
   };
 
   return (

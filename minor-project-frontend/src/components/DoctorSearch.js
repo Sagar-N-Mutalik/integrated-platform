@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { Search, MapPin, Star, Building, Stethoscope, Info, Phone, Mail, ArrowLeft, X, Filter, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { Search, MapPin, Star, Building, Stethoscope, Info, Phone, Mail, ArrowLeft, X, Filter, ChevronLeft, ChevronRight, ExternalLink, Calendar } from 'lucide-react';
 import './DoctorSearch.css';
 import { useToast } from './ToastContext';
+import AppointmentBooking from './AppointmentBooking';
 
 const DoctorSearch = ({ user, onBack }) => {
     // State Management
@@ -16,6 +17,7 @@ const DoctorSearch = ({ user, onBack }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(12);
     const [showEmailModal, setShowEmailModal] = useState(false);
+    const [showAppointmentModal, setShowAppointmentModal] = useState(false);
     const [emailFormData, setEmailFormData] = useState({
         patientName: user?.fullName || '',
         patientEmail: user?.email || '',
@@ -550,8 +552,20 @@ const DoctorSearch = ({ user, onBack }) => {
                             </>
                         )}
 
-                        {/* Send Inquiry Button */}
+                        {/* Action Buttons */}
                         <div className="modal-actions">
+                            {type === 'doctor' && (
+                                <button 
+                                    className="book-appointment-btn"
+                                    onClick={() => {
+                                        // Don't close the detail modal, just open appointment modal
+                                        setShowAppointmentModal(true);
+                                    }}
+                                >
+                                    <Calendar size={20} />
+                                    Book Appointment
+                                </button>
+                            )}
                             <button 
                                 className="send-inquiry-btn"
                                 onClick={() => {
@@ -780,6 +794,22 @@ const DoctorSearch = ({ user, onBack }) => {
 
             {/* Email Modal */}
             {EmailModal}
+
+            {/* Appointment Booking Modal */}
+            {showAppointmentModal && selectedItem && searchType === 'doctor' && (
+                <AppointmentBooking
+                    doctor={selectedItem}
+                    user={user}
+                    onClose={() => {
+                        setShowAppointmentModal(false);
+                        // Keep the detail modal open when closing appointment modal
+                    }}
+                    onSuccess={() => {
+                        setShowAppointmentModal(false);
+                        setSelectedItem(null); // Close both modals on success
+                    }}
+                />
+            )}
         </div>
     );
 };
